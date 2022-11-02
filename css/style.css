@@ -25,7 +25,7 @@ header {
 	grid-area: header;
 	display: flex;
 	font-family: "Bebas Neue", cursive;
-  
+  background-color: #2B59C3;
 }
 .logo {
 	display: flex;
@@ -40,10 +40,15 @@ nav {
 	justify-content: center;
 	align-items: center;
   font-size: 40px;
+	
 }
 nav ul {
 	display: flex;
 	list-style-type: none;
+	
+}
+a{
+	color: #53DD6C;
 }
 a:hover{
 color: #F18F01;
@@ -67,14 +72,17 @@ nav ul li {
 
 main {
 	grid-area: main;
-  background-color: #F18F01;
+  background-color: #F49301;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 article {
+	display: flex;
 	flex: 1;
 	font-family: "Source Sans Pro", sans-serif;
+	justify-content: center;
+  align-items: center;
 }
 section{
 	display: flex;
@@ -82,11 +90,16 @@ section{
   align-items: center;
   margin: 2%;
   gap: 5%;
+	max-width: 60%;
 }
 h2{
   font-size: 50px;
 }
 section p{font-size: 30px;}
+
+.about-section h1{
+	font-size: 40px;
+}
 
 form{
 	flex:1;
@@ -118,4 +131,5 @@ footer {
 	padding-left: 30px;
 	padding-right: 30px;
 	font-family: "Bebas Neue", cursive;
+	background-color: #2B59C3;
 }
