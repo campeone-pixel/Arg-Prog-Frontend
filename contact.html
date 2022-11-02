@@ -21,11 +21,11 @@
       <div class="logo"><img src="./images/logo-no-background.png" alt="logo"></div>
       <nav>
         <ul>
-          <li>Home</li>
-          <li>About me</li>
-          <li>Projects</li>
-          <li>Services</li>
-          <li>Contact</li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about_me.html">About me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="configuracion"><i class="fa-solid fa-gear fa-2xl"></i></div>
@@ -36,19 +36,19 @@
         <section>
           
             <form action="">
-              <div>
+              <div class="container-input">
                 <label for="name"></label>
-                <input id="name" type="text" name="name">
+                <input id="name" type="text" name="name" placeholder="Ingrese tu nombre" class="input-name">
               </div>
 
-              <div>
+              <div class="container-input">
                 <label for="mail"></label>
-                <input id="name" type="email" name="mail">
+                <input id="email" type="email" name="mail" placeholder="Ingrese tu mail" class="input-email">
               </div>
 
-              <div>
+              <div class="container-input">
                 <label for="content"></label>
-                <input id="content" type="text" name="content">
+                <textarea name="content" rows="20" class="textarea"></textarea>
               </div>
 
               <input type="submit" value="Save">
