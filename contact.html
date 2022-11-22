@@ -6,77 +6,129 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/74442afa79.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./css/style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <title>Matias Poses Portfolio</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 
 <body>
 
   <div class="container-grid">
 
-    <header>
-      <div class="logo"><img src="./images/logo-no-background.png" alt="logo"></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about_me.html">About me</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <header class="d-flex col-md-12">
+      <nav class="navbar navbar-expand-lg navbar-light  col-xxl-6 col-xl-8  col-lg-10 col-12 ">
+        <div class="container-fluid flex-grow-1">
+          <div class="logo"><img src="./images/logo-no-background.png" alt="logo"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse flex-lg-row" id="navbarSupportedContent">
+            <ul class="navbar-nav d-lg-flex d-lg-flex  flex-lg-fill">
+              <div class=" nav-item d-lg-flex flex-grow-1 justify-content-lg-center  bd-highlight">
+                <li class="nav-item">
+                  <a class="nav-link active text-light" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-light" aria-current="page" href="about_me.html">About me</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-light" aria-current="page" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-light" aria-current="page" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-light" aria-current="page" href="contact.html">Contact</a>
+                </li>
+              </div>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Dark Mode</a></li>
+                  <li><a class="dropdown-item" href="#">Language</a></li>
+
+                  
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
-      <div class="configuracion"><i class="fa-solid fa-gear fa-2xl"></i></div>
+
     </header>
-
     <main>
-      <article class="article-index">
-        <section>
-          
-            <form action="">
-              <div class="container-input">
-                <label for="name"></label>
-                <input id="name" type="text" name="name" placeholder="Ingrese tu nombre" class="input-name">
-              </div>
+      <!-- Wrapper container -->
+      <div class="container py-4">
 
-              <div class="container-input">
-                <label for="mail"></label>
-                <input id="email" type="email" name="mail" placeholder="Ingrese tu mail" class="input-email">
-              </div>
+        <!-- Bootstrap 5 starter form -->
+        <form id="contactForm">
 
-              <div class="container-input">
-                <label for="content"></label>
-                <textarea name="content" rows="20" class="textarea"></textarea>
-              </div>
+          <!-- Name input -->
+          <div class="mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-control" id="name" type="text" placeholder="Name" />
+          </div>
 
-              <input type="submit" value="Save">
+          <!-- Email address input -->
+          <div class="mb-3">
+            <label class="form-label" for="emailAddress">Email Address</label>
+            <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" />
+          </div>
 
+          <!-- Message input -->
+          <div class="mb-3">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-control" id="message" type="text" placeholder="Message"
+              style="height: 10rem;"></textarea>
+          </div>
 
-            </form>
+          <!-- Form submit button -->
+          <div class="d-grid">
+            <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+          </div>
 
-          
-        </section>
-      </article>
+        </form>
+
+      </div>
     </main>
 
-    <footer>
-      <div class="mail">
-        <p>posesmatiasabel@gmail.com</p>
-        <p>© 2022 Matias Abel Poses </p>
-      </div>
-      <div>
-        <p>Contact me in my social media</p>
-        <div class="social-media">
-          <i class="fa-brands fa-whatsapp"></i>
-          <i class="fa-brands fa-discord"></i>
-          <i class="fa-brands fa-linkedin"></i>
-          <i class="fa-brands fa-github"></i>
+    <footer >
+    
+      <section class="d-flex flex-md-row flex-column    justify-content-md-between justify-content-center d-flex align-items-center col-xxl-6 col-xl-8  col-lg-10 col-12 ">
+        <div class="mail">
+          <p>posesmatiasabel@gmail.com</p>
+          <p>© 2022 Matias Abel Poses </p>
         </div>
-      </div>
-    </footer>
+        <div class="rounded-social-buttons">
+          <a class="social-button whatsapp" href="https://www.facebook.com/" target="_blank"><i
+              class="fa-brands fa-whatsapp"></i></a>
+          <a class="social-button discord" href="https://www.twitter.com/" target="_blank"><i
+              class="fa-brands fa-discord"></i></a>
+          <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i
+              class="fab fa-linkedin"></i></a>
+          <a class="social-button github" href="https://www.instagram.com/" target="_blank"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </section>
+    
+  </footer>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
 
 </body>
 

@@ -1,0 +1,108 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* configuro el grid */
+.container-grid {
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 5em auto 10em;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+		justify-items: stretch;
+		align-items: stretch;
+		justify-content: stretch;
+
+}
+
+
+
+
+header,footer {
+	font-family: "Bebas Neue", cursive;
+  background-color: #2B59C3;
+	padding: 1em;
+}
+
+main{
+	background-color: #F49301;
+	font-family: "Source Sans Pro", sans-serif;
+	padding: 1em;
+}
+
+.logo img {
+	
+	width: 7em;
+}
+
+img{
+	width: 10em;
+}
+
+iframe{
+	width:14em ;
+	height: 8em;
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+
+
+}
+
+
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+
+
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+	.contenido {
+		max-width: 60em  ;
+		
+		
+	}
+
+
+
+}
+
+
+
+@media only screen and (min-width: 980px) and (max-width: 1023px) {
+
+
+
+}
+
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+
+
+
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+
+
+
+}
