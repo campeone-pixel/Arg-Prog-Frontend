@@ -1,0 +1,25 @@
+{
+  "name": "trabajo-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass styles/sass/main.scss styles/css/style.css -w"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/campeone-pixel/desarrollo-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/campeone-pixel/desarrollo-web/issues"
+  },
+  "homepage": "https://github.com/campeone-pixel/desarrollo-web#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
