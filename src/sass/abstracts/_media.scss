@@ -1,0 +1,24 @@
+@media only screen and (min-width: 480px) {
+}
+
+@media only screen and (min-width: 840px) {
+	main section {
+		flex-direction: row;
+		align-items: center;
+		justify-content: stretch;
+		margin: 1em;
+		padding: 0.5em;
+		max-width: 800px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	main section {
+		max-width: 900px;
+		height: 500px;
+	}
+	div .text-container {
+		margin: 1em 0.8em 1em 0.8em;
+		font-size: 20px;
+	}
+}
