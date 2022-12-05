@@ -5,16 +5,15 @@
 main {
 	@include a.fx-col-all-center;
 	grid-area: main;
-	background-color: #2b59c3;
-	padding: 0.5;
+	background-color: v.$celeste;
 
 	section {
 		@include a.fx-col-all-center;
-		flex-grow: 1;
+		padding: 0 0.5em 0 0.5em;
 		gap: 1em;
 		margin: 1em;
 		padding: 0.5em;
-		max-width: 480px;
+		max-width: 400px;
 	}
 
 	.imag,
@@ -23,18 +22,16 @@ main {
 	}
 
 	.text-container {
+		color: v.$amarillo;
 		margin: 1em 0.8em 1em 0.8em;
 
 		h1 {
 			font-weight: 900;
-		}
-
-		h2 {
-			font-size: x-large;
+			font-family: t.$serif;
 		}
 
 		span {
-			color: #f49301;
+			color: v.$azul;
 		}
 	}
 	.imag {
@@ -56,11 +53,9 @@ main {
 		@include a.fx-all-center;
 		padding: 1.05em 1.8em;
 
-		text-align: center;
-		cursor: pointer;
 		outline: none;
-		color: #fff;
-		background-color: #04aa6d;
+
+		background-color: v.$azul;
 		border: none;
 		border-radius: 15px;
 		animation-name: pulse;
@@ -71,6 +66,8 @@ main {
 
 		a {
 			font-size: 1.4em;
+			color: v.$amarillo;
+			font-family: t.$sans-serif;
 		}
 	}
 

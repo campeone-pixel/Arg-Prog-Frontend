@@ -2,7 +2,7 @@
 	height: 100vh;
 	width: 100vw;
 	display: grid;
-	grid-template-rows: 0.5fr 3fr 0.5fr;
+	grid-template-rows: 0.15fr auto 0.15fr;
 	grid-template-areas:
 		"header"
 		"main"

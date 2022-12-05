@@ -6,9 +6,13 @@ footer {
 	@include a.fx-all-center;
 	font-family: t.$sans-serif, sans-serif;
 	grid-area: footer;
-	font-size: 1.5em;
-	padding: 0 0.5em 0 0.5em;
-	max-width: 1400px;
+	font-size: 1.2em;
+
+	background-color: v.$azul;
+
+  section{
+    @include a.fx-col-all-center;
+  }
 
 	.mail {
 		display: flex;
