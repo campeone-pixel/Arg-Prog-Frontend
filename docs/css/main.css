@@ -136,8 +136,12 @@ a {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-rows: 0.15fr auto 0.15fr;
+  grid-template-rows: 0.1fr auto 0.1fr;
   grid-template-areas: "header" "main" "footer";
+}
+
+section, nav {
+  max-width: 1400px;
 }
 
 header {
@@ -147,11 +151,20 @@ header {
   display: flex;
   justify-content: center;
   background-color: #0049b7;
+  padding: 1% 8% 1% 8%;
 }
 header nav {
   flex: 1;
   display: flex;
   justify-content: space-between;
+  color: #fff685;
+}
+header nav .container-fluid {
+  color: #fff685;
+}
+header nav .container-fluid li .nav-link {
+  font-size: x-large;
+  color: #fff685 !important;
 }
 header .logo img {
   width: 7em;
@@ -168,6 +181,7 @@ footer {
   grid-area: footer;
   font-size: 1.2em;
   background-color: #0049b7;
+  padding: 1% 8% 1% 8%;
 }
 footer section {
   display: flex;
@@ -182,14 +196,20 @@ footer .mail {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  color: #fff685;
 }
 footer .rounded-social-buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 2em;
+  font-size: 1.4em;
+}
+footer .rounded-social-buttons i {
+  color: #fff685;
 }
 
-main {
+.index {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,8 +218,9 @@ main {
   justify-items: center;
   grid-area: main;
   background-color: #00ddff;
+  padding: 1% 8% 1% 8%;
 }
-main section {
+.index section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -210,36 +231,20 @@ main section {
   gap: 1em;
   margin: 1em;
   padding: 0.5em;
-  max-width: 400px;
 }
-main .imag,
-main .text-container {
-  flex: 1 0;
-}
-main .text-container {
+.index section .text-container {
   color: #fff685;
   margin: 1em 0.8em 1em 0.8em;
 }
-main .text-container h1 {
+.index section .text-container h1 {
   font-weight: 900;
   font-family: "Avenir", Georgia, "Times New Roman", serif;
 }
-main .text-container span {
+.index section .text-container span {
   color: #0049b7;
+  font-family: "Source Code Pro", Courier, mono;
 }
-main .imag {
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-}
-main .imag img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  background-position: center;
-  background-size: cover;
-}
-main div button {
+.index section .text-container div button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -254,10 +259,22 @@ main div button {
   animation-duration: 10s;
   will-change: transform;
 }
-main div button a {
+.index section .text-container div button a {
   font-size: 1.4em;
   color: #fff685;
   font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
+}
+.index section .imag {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.index section .imag img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  background-position: center;
+  background-size: cover;
 }
 @keyframes pulse {
   0% {
@@ -277,6 +294,182 @@ main div button a {
   }
 }
 
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  grid-area: main;
+  background-color: #00ddff;
+  padding: 1% 8% 1% 8%;
+}
+.aboutMe section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 0 0.5em 0 0.5em;
+  gap: 1em;
+  margin: 1em;
+  padding: 0.5em;
+}
+.aboutMe section .text-container {
+  color: #fff685;
+  max-width: 600px;
+  margin: 1em 0.8em 1em 0.8em;
+}
+.aboutMe section .text-container h1 {
+  font-weight: 900;
+  font-family: "Avenir", Georgia, "Times New Roman", serif;
+}
+.aboutMe section .text-container span {
+  color: #0049b7;
+  font-family: "Source Code Pro", Courier, mono;
+}
+.aboutMe section .imag {
+  margin: 1em 0.8em 1em 0.8em;
+  background-position: center;
+  background-size: cover;
+  max-width: 300px;
+}
+.aboutMe section .imag img {
+  width: 100%;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  grid-area: main;
+  background-color: #00ddff;
+  padding: 1% 8% 1% 8%;
+}
+.contact div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 0 0.5em 0 0.5em;
+  align-items: stretch;
+  gap: 1em;
+  margin: 1em;
+  padding: 0.5em;
+  max-width: 700px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  grid-area: main;
+  background-color: #00ddff;
+  padding: 1% 8% 1% 8%;
+}
+.projects h1 {
+  font-weight: 900;
+  font-family: "Avenir", Georgia, "Times New Roman", serif;
+  font-size: 3em;
+  color: #ff1d58;
+}
+.projects section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 0 0.5em 0 0.5em;
+  gap: 1em;
+  margin: 1em;
+  padding: 0.5em;
+}
+.projects section .text-container {
+  color: #fff685;
+  max-width: 600px;
+  margin: 1em 0.8em 1em 0.8em;
+}
+.projects section .text-container h1 {
+  font-weight: 900;
+  font-family: "Avenir", Georgia, "Times New Roman", serif;
+}
+.projects section .text-container span {
+  color: #0049b7;
+  font-family: "Source Code Pro", Courier, mono;
+}
+.projects section .imag {
+  margin: 1em 0.8em 1em 0.8em;
+  background-position: center;
+  background-size: cover;
+  max-width: 300px;
+}
+.projects section .imag img {
+  width: 100%;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  grid-area: main;
+  background-color: #00ddff;
+  padding: 1% 8% 1% 8%;
+}
+.services section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  padding: 0 0.5em 0 0.5em;
+  gap: 1em;
+  margin: 1em;
+  padding: 0.5em;
+}
+.services section .imag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.services section .text-container {
+  color: #fff685;
+  max-width: 600px;
+  margin: 1em 0.8em 1em 0.8em;
+}
+.services section .text-container h1 {
+  font-weight: 900;
+  font-family: "Avenir", Georgia, "Times New Roman", serif;
+}
+.services section .text-container span {
+  color: #0049b7;
+  font-family: "Source Code Pro", Courier, mono;
+}
+.services section .imag {
+  margin: 1em 0.8em 1em 0.8em;
+  background-position: center;
+  background-size: cover;
+  max-width: 300px;
+}
+.services section .imag img {
+  width: 100%;
+}
+
 @media only screen and (min-width: 480px) {
   footer section {
     flex-direction: row;
@@ -286,21 +479,62 @@ main div button a {
   }
 }
 @media only screen and (min-width: 840px) {
-  main section {
+  .index section,
+  .aboutMe section,
+  .projects section,
+  .services section,
+  .contact section {
     flex-direction: row;
     align-items: center;
     justify-content: stretch;
     margin: 1em;
     padding: 0.5em;
-    max-width: 1100px;
+    max-width: 800px;
+    max-height: 300px;
+  }
+  .index section .imag, .index section .text-container,
+  .aboutMe section .imag,
+  .aboutMe section .text-container,
+  .projects section .imag,
+  .projects section .text-container,
+  .services section .imag,
+  .services section .text-container,
+  .contact section .imag,
+  .contact section .text-container {
+    flex: 1 0;
+  }
+  .index section img,
+  .aboutMe section img,
+  .projects section img,
+  .services section img,
+  .contact section img {
+    max-width: 400px;
   }
 }
 @media only screen and (min-width: 1024px) {
-  main section {
+  .index section,
+  .aboutMe section,
+  .projects section,
+  .services section,
+  .contact section {
     max-width: 1200px;
-    height: 500px;
   }
-  div .text-container {
+  .index section .imag, .index section .text-container,
+  .aboutMe section .imag,
+  .aboutMe section .text-container,
+  .projects section .imag,
+  .projects section .text-container,
+  .services section .imag,
+  .services section .text-container,
+  .contact section .imag,
+  .contact section .text-container {
+    flex: 1 0;
+  }
+  .index section div .text-container,
+  .aboutMe section div .text-container,
+  .projects section div .text-container,
+  .services section div .text-container,
+  .contact section div .text-container {
     margin: 1em 0.8em 1em 0.8em;
     font-size: 20px;
   }

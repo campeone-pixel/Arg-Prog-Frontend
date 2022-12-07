@@ -1,0 +1,24 @@
+@use "../abstracts/mixins" as a;
+@use "../abstracts/variables" as v;
+@use "../abstracts/typography" as t;
+
+.contact {
+	@include a.fx-col-all-center;
+	grid-area: main;
+	background-color: v.$celeste;
+	padding: 1% 8% 1% 8%;
+
+	div{
+		@include a.fx-col-all-center;
+		padding: 0 0.5em 0 0.5em;
+		align-items: stretch;
+		gap: 1em;
+		margin: 1em;
+		padding: 0.5em;
+		max-width: 700px;
+		
+
+		
+		
+	}
+}

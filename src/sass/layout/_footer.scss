@@ -9,7 +9,7 @@ footer {
 	font-size: 1.2em;
 
 	background-color: v.$azul;
-
+	padding: 1% 8% 1% 8%;
   section{
     @include a.fx-col-all-center;
   }
@@ -19,11 +19,18 @@ footer {
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
+		color: v.$amarillo;
 	}
 
 	.rounded-social-buttons {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
+		gap: 2em;
+		font-size: 1.4em;
+		i{
+			color: v.$amarillo;
+		}
+		
 	}
 }

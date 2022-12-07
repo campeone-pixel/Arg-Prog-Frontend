@@ -3,20 +3,29 @@
 @use "../abstracts/typography" as t;
 
 header {
-	
 	font-family: t.$sans-serif, sans-serif;
 	font-size: 1.3em;
 	grid-area: header;
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 	background-color: v.$azul;
-  
+	padding: 1% 8% 1% 8%;
 
-  nav{
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-  }
+	nav {
+		flex: 1;
+		display: flex;
+		justify-content: space-between;
+		color: v.$amarillo;
+
+		.container-fluid {
+			color: v.$amarillo;
+
+			li .nav-link {
+				font-size: x-large;
+				color: v.$amarillo !important;
+			}
+		}
+	}
 
 	.logo img {
 		width: 7em;

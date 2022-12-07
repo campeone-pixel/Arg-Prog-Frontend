@@ -2,10 +2,11 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/typography" as t;
 
-main {
+.index {
 	@include a.fx-col-all-center;
 	grid-area: main;
 	background-color: v.$celeste;
+	padding: 1% 8% 1% 8%;
 
 	section {
 		@include a.fx-col-all-center;
@@ -13,79 +14,78 @@ main {
 		gap: 1em;
 		margin: 1em;
 		padding: 0.5em;
-		max-width: 400px;
-	}
+		
+		
 
-	.imag,
-	.text-container {
-		flex: 1 0;
-	}
+		.text-container {
+			color: v.$amarillo;
 
-	.text-container {
-		color: v.$amarillo;
-		margin: 1em 0.8em 1em 0.8em;
+			margin: 1em 0.8em 1em 0.8em;
 
-		h1 {
-			font-weight: 900;
-			font-family: t.$serif;
+			h1 {
+				font-weight: 900;
+				font-family: t.$serif;
+			}
+
+			span {
+				color: v.$azul;
+				font-family: t.$mono;
+			}
+
+			div button {
+				@include a.fx-all-center;
+				padding: 1.05em 1.8em;
+
+				outline: none;
+
+				background-color: v.$azul;
+				border: none;
+				border-radius: 15px;
+				animation-name: pulse;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in;
+				animation-duration: 10s;
+				will-change: transform;
+
+				a {
+					font-size: 1.4em;
+					color: v.$amarillo;
+					font-family: t.$sans-serif;
+				}
+			}
 		}
-
-		span {
-			color: v.$azul;
-		}
-	}
-	.imag {
-		width: 100%;
-		background-position: center;
-		background-size: cover;
-
-		img {
+		.imag {
 			width: 100%;
-			height: auto;
-
-			border-radius: 5px;
+			
 			background-position: center;
 			background-size: cover;
-		}
-	}
 
-	div button {
-		@include a.fx-all-center;
-		padding: 1.05em 1.8em;
+			img {
+				width: 100%;
+				height: auto;
 
-		outline: none;
+				border-radius: 5px;
+				background-position: center;
+				background-size: cover;
+			}
+		}
 
-		background-color: v.$azul;
-		border: none;
-		border-radius: 15px;
-		animation-name: pulse;
-		animation-iteration-count: infinite;
-		animation-timing-function: ease-in;
-		animation-duration: 10s;
-		will-change: transform;
-
-		a {
-			font-size: 1.4em;
-			color: v.$amarillo;
-			font-family: t.$sans-serif;
-		}
-	}
-
-	@keyframes pulse {
-		0% {
-			transform: scale(1);
-		}
-		25% {
-			transform: scale(1.1);
-		}
-		50% {
-			transform: scale(1);
-		}
-		75% {
-			transform: scale(1.1);
-		}
-		100% {
-			transform: scale(1);
+		@keyframes pulse {
+			0% {
+				transform: scale(1);
+			}
+			25% {
+				transform: scale(1.1);
+			}
+			50% {
+				transform: scale(1);
+			}
+			75% {
+				transform: scale(1.1);
+			}
+			100% {
+				transform: scale(1);
+			}
 		}
 	}
 }
