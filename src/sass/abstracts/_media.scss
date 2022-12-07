@@ -1,4 +1,6 @@
-@use "./mixins" as a;
+@use "../abstracts/mixins" as a;
+@use "../abstracts/variables" as v;
+@use "../abstracts/typography" as t;
 
 
 
@@ -11,12 +13,14 @@
 
 		flex: 1;
 	}
+
+	
 }
 
 @media only screen and (min-width: 840px) {
 
 
-	.index section,
+	
 	.aboutMe section,
 	.projects section,
 	.services section,
@@ -24,22 +28,108 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: stretch;
-		margin: 1em;
-		padding: 0.5em;
-		max-width: 800px;
-		max-height: 300px;
+		padding: 0;
+		margin: 0;
+		height: 400px;
+		max-width: 900px;
+		
 		
 	
 		.imag, .text-container{
-			flex: 1 0;
+			padding: 0;
+			margin: 0;
+			flex: 1 1;
+			max-height: 400px;
 			
 		}
 		
+		.text-container{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			justify-items: center;
+			align-content: center;
+		}
 
 		img {
+			margin: 0;
+			padding: 0;
+			width: auto;
+			max-height: 100%;
 			
-			max-width: 400px;
 		}
+	}
+
+	.index section{
+		display: flex;
+		flex-direction: row;
+		
+
+
+
+
+align-items: stretch;
+		padding: 0;
+		margin: 0;
+		
+		max-width: 1100px;
+
+		.text-container {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			color: v.$amarillo;
+			align-content: space-between;
+			justify-content: space-around;
+			margin: 1em 0.8em 1em 0.8em;
+
+			h1 {
+				font-weight: 900;
+				font-family: t.$serif;
+				font-size: 180%;
+			}
+
+			span {
+				color: v.$azul;
+				font-family: t.$mono;
+			}
+
+			div button {
+				@include a.fx-all-center;
+				padding: 1.05em 1.8em;
+
+				outline: none;
+
+				background-color: v.$azul;
+				border: none;
+				border-radius: 15px;
+				animation-name: pulse;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in;
+				animation-duration: 10s;
+				will-change: transform;
+
+				a {
+					font-size: 1.4em;
+					color: v.$amarillo;
+					font-family: t.$sans-serif;
+				}
+			}
+		}
+		.imag {
+			margin: 1em 0.8em 1em 0.8em;
+			background-position: center;
+			background-size: cover;
+			max-width: 400px;
+
+			img{
+				width: 100%;
+			}
+		}
+			
+		
+
 	}
 }
 
@@ -52,7 +142,7 @@
 		max-width: 1200px;
 
 		.imag, .text-container{
-			flex: 1 0;
+			flex: 1 1;
 			
 		}
 		

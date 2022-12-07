@@ -234,6 +234,7 @@ footer .rounded-social-buttons i {
 }
 .index section .text-container {
   color: #fff685;
+  max-width: 400px;
   margin: 1em 0.8em 1em 0.8em;
 }
 .index section .text-container h1 {
@@ -265,16 +266,13 @@ footer .rounded-social-buttons i {
   font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
 }
 .index section .imag {
-  width: 100%;
+  margin: 1em 0.8em 1em 0.8em;
   background-position: center;
   background-size: cover;
+  max-width: 400px;
 }
 .index section .imag img {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
-  background-position: center;
-  background-size: cover;
 }
 @keyframes pulse {
   0% {
@@ -319,22 +317,21 @@ footer .rounded-social-buttons i {
 }
 .aboutMe section .text-container {
   color: #fff685;
-  max-width: 600px;
+  max-width: 400px;
   margin: 1em 0.8em 1em 0.8em;
 }
 .aboutMe section .text-container h1 {
   font-weight: 900;
   font-family: "Avenir", Georgia, "Times New Roman", serif;
 }
-.aboutMe section .text-container span {
-  color: #0049b7;
-  font-family: "Source Code Pro", Courier, mono;
+.aboutMe section .text-container p {
+  font-size: 1.3em;
 }
 .aboutMe section .imag {
   margin: 1em 0.8em 1em 0.8em;
   background-position: center;
   background-size: cover;
-  max-width: 300px;
+  max-width: 400px;
 }
 .aboutMe section .imag img {
   width: 100%;
@@ -397,22 +394,21 @@ footer .rounded-social-buttons i {
 }
 .projects section .text-container {
   color: #fff685;
-  max-width: 600px;
+  max-width: 400px;
   margin: 1em 0.8em 1em 0.8em;
 }
 .projects section .text-container h1 {
   font-weight: 900;
   font-family: "Avenir", Georgia, "Times New Roman", serif;
 }
-.projects section .text-container span {
-  color: #0049b7;
-  font-family: "Source Code Pro", Courier, mono;
+.projects section .text-container p {
+  font-size: 1.3em;
 }
 .projects section .imag {
   margin: 1em 0.8em 1em 0.8em;
   background-position: center;
   background-size: cover;
-  max-width: 300px;
+  max-width: 400px;
 }
 .projects section .imag img {
   width: 100%;
@@ -449,22 +445,21 @@ footer .rounded-social-buttons i {
 }
 .services section .text-container {
   color: #fff685;
-  max-width: 600px;
+  max-width: 400px;
   margin: 1em 0.8em 1em 0.8em;
 }
 .services section .text-container h1 {
   font-weight: 900;
   font-family: "Avenir", Georgia, "Times New Roman", serif;
 }
-.services section .text-container span {
-  color: #0049b7;
-  font-family: "Source Code Pro", Courier, mono;
+.services section .text-container p {
+  font-size: 1.3em;
 }
 .services section .imag {
   margin: 1em 0.8em 1em 0.8em;
   background-position: center;
   background-size: cover;
-  max-width: 300px;
+  max-width: 400px;
 }
 .services section .imag img {
   width: 100%;
@@ -479,7 +474,6 @@ footer .rounded-social-buttons i {
   }
 }
 @media only screen and (min-width: 840px) {
-  .index section,
   .aboutMe section,
   .projects section,
   .services section,
@@ -487,28 +481,97 @@ footer .rounded-social-buttons i {
     flex-direction: row;
     align-items: center;
     justify-content: stretch;
-    margin: 1em;
-    padding: 0.5em;
-    max-width: 800px;
-    max-height: 300px;
+    padding: 0;
+    margin: 0;
+    height: 400px;
+    max-width: 900px;
   }
-  .index section .imag, .index section .text-container,
-  .aboutMe section .imag,
-  .aboutMe section .text-container,
+  .aboutMe section .imag, .aboutMe section .text-container,
   .projects section .imag,
   .projects section .text-container,
   .services section .imag,
   .services section .text-container,
   .contact section .imag,
   .contact section .text-container {
-    flex: 1 0;
+    padding: 0;
+    margin: 0;
+    flex: 1 1;
+    max-height: 400px;
   }
-  .index section img,
+  .aboutMe section .text-container,
+  .projects section .text-container,
+  .services section .text-container,
+  .contact section .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+  }
   .aboutMe section img,
   .projects section img,
   .services section img,
   .contact section img {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    max-height: 100%;
+  }
+  .index section {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    max-width: 1100px;
+  }
+  .index section .text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff685;
+    align-content: space-between;
+    justify-content: space-around;
+    margin: 1em 0.8em 1em 0.8em;
+  }
+  .index section .text-container h1 {
+    font-weight: 900;
+    font-family: "Avenir", Georgia, "Times New Roman", serif;
+    font-size: 180%;
+  }
+  .index section .text-container span {
+    color: #0049b7;
+    font-family: "Source Code Pro", Courier, mono;
+  }
+  .index section .text-container div button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.05em 1.8em;
+    outline: none;
+    background-color: #0049b7;
+    border: none;
+    border-radius: 15px;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 10s;
+    will-change: transform;
+  }
+  .index section .text-container div button a {
+    font-size: 1.4em;
+    color: #fff685;
+    font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
+  }
+  .index section .imag {
+    margin: 1em 0.8em 1em 0.8em;
+    background-position: center;
+    background-size: cover;
     max-width: 400px;
+  }
+  .index section .imag img {
+    width: 100%;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -528,7 +591,7 @@ footer .rounded-social-buttons i {
   .services section .text-container,
   .contact section .imag,
   .contact section .text-container {
-    flex: 1 0;
+    flex: 1 1;
   }
   .index section div .text-container,
   .aboutMe section div .text-container,
