@@ -10,7 +10,7 @@ footer {
 	grid-area: footer;
 	font-size: 1.2em;
 	padding: 0 20px 0 20px;
-	background-color: v.$tercero;
+	background-color: v.$secundario;
 
 	section {
 		@include a.fx-col-all-center;
@@ -21,7 +21,7 @@ footer {
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		color: v.$secundario;
+		color: v.$tercero;
 	}
 
 	.rounded-social-buttons {
@@ -37,7 +37,7 @@ footer {
 			display:flex;
 			justify-content:center;
 			align-items:center;
-			background-color:v.$secundario;
+			background-color:v.$tercero;
 			height:40px;
 			width:40px;
 			border-radius:100%;
@@ -54,7 +54,7 @@ footer {
 		}
 	
 		i {
-			color: v.$primario;
+			color: v.$secundario;
 		}
 	}
 }

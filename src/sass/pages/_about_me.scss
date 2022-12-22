@@ -62,9 +62,9 @@
 		padding: 1em;
 		border-radius:10px 10px 10px 10px;
 		border: 2px solid v.$tercero;
-		h1 {
+		h2 {
 			font-family: t.$sans-serif;
-			font-size: 50px;
+			font-size: 35px;
 			text-align: center;
 			color: v.$primario;
 			text-shadow: 5px 5px black;
@@ -75,7 +75,7 @@
 			width: 100%;
 			padding: 20px 20px;
 			background-color: v.$secundario;
-			
+			color: v.$primario;
 			border-radius: 10px;
 			margin-bottom: 50px;
 		}
@@ -118,7 +118,7 @@
 			border-radius: 10px;
 			transform: scaleX(0);
 			transform-origin: left;
-			background: #ff4d4f;
+			background: v.$cuarto;
 			animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 		}
 		.progress-line span::before {
