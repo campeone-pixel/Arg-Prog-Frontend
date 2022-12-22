@@ -21,12 +21,30 @@
 		}
 	}
 
-	
 
-	
+
+
 }
 
 @media only screen and (min-width: 767px) {
+	header {
+		nav {
+			.container-fluid {
+				.navbar-collapse {
+					.menu-principal {
+						.nav-item .nav-link.active {
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
 	.container-grid {
 		grid-template-rows: 93.95px auto 100px;
 	}
@@ -79,6 +97,7 @@
 				overflow: hidden;
 				height: 100%;
 				border-radius: 10px 0px 0px 10px;
+
 				img {
 					position: absolute;
 					height: 100%;
@@ -90,14 +109,14 @@
 		}
 	}
 
-	main {
+	.main-aboutme {
 		.aboutMe {
 			flex-direction: row;
 			max-width: 700px;
-			
+
 			.imag,
 			.text-container {
-				
+
 				flex: 1;
 			}
 
@@ -108,6 +127,7 @@
 				align-content: center;
 				justify-content: center;
 				justify-items: center;
+
 				p {
 					font-size: 1.1em;
 				}
@@ -117,14 +137,15 @@
 				position: relative;
 				overflow: hidden;
 				height: 100%;
-				border-radius:10px 0px 0px 10px;
+
 				img {
-					padding: 10px;
 					position: absolute;
 					height: 120%;
 					width: auto;
-					left: -100px;
+
+					left: -40px;
 					top: -10px;
+					right: 0;
 				}
 			}
 		}
@@ -159,26 +180,28 @@
 
 @media only screen and (min-width: 840px) {
 	.projects {
-		
+
 
 		section {
 			flex-direction: row;
 			min-width: 800px;
-			
 
-		
+
+
 		}
 	}
 
 
-	main {
+	.main-aboutme {
 		.aboutMe {
 			height: 300px;
 			max-width: 900px;
+
 			.imag {
 				position: relative;
 				overflow: hidden;
 				height: 100%;
+
 				img {
 					position: absolute;
 					height: 120%;
@@ -203,14 +226,14 @@
 @media only screen and (min-width: 1024px) {
 
 	.projects {
-		
+
 
 		section {
 			flex-direction: row;
 			min-width: 900px;
-			
 
-		
+
+
 		}
 	}
 
@@ -235,11 +258,12 @@
 				font-size: 180%;
 			}
 
-			
 
-			
-			
+
+
+
 		}
+
 		.imag {
 			background-position: center;
 			background-size: cover;

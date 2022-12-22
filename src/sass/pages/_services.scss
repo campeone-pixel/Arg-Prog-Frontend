@@ -5,7 +5,7 @@
 .services {
 	@include a.fx-col-all-center;
 	grid-area: main;
-	
+	gap: 1em;
 	section {
 		@include a.fx-col-all-center;
 		background-color: v.$secundario;
@@ -46,7 +46,7 @@
 			border-radius: 50%;
 			background-color: v.$tercero;
 			img {
-				width: 70px;
+				width: 100px;
 				height: auto;
 				background-position: center;
 				background-size: cover;

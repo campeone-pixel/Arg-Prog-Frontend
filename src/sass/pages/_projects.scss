@@ -5,7 +5,7 @@
 .projects {
 	@include a.fx-col-all-center;
 	grid-area: main;
-
+	gap: 1em;
 	
 
 	h1 {

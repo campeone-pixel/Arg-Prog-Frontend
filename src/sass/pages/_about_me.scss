@@ -4,11 +4,19 @@
 
 
 
-main {
+.main-aboutme {
 	@include a.fx-col-all-center;
 
 	padding: 1em;
 	gap: 1em;
+
+	h1 {
+		font-weight: 900;
+		font-family: t.$sans-serif;
+		text-shadow: 5px 5px black;
+		font-size: 3em;
+		color: v.$primario;
+	}
 
 	.aboutMe {
 		@include a.fx-col-all-center;
@@ -21,7 +29,7 @@ main {
 		.text-container {
 			color: v.$primario;
 			padding: 1em;
-
+			flex: 1;
 			h1 {
 				font-family: t.$sans-serif;
 				font-size: 50px;
@@ -35,7 +43,7 @@ main {
 			}
 		}
 		.imag {
-			
+			flex: 1;
 
 			img {
 				border-radius:10px 10px 0px 0px;

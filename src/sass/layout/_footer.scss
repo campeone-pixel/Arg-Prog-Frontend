@@ -31,13 +31,13 @@ footer {
 		gap: 2em;
 		font-size: 1.4em;
 		.social-button:hover{
-			background-color:blue;
+			background-color:v.$cuarto;
 		}
 		.social-button{
 			display:flex;
 			justify-content:center;
 			align-items:center;
-			background-color:red;
+			background-color:v.$secundario;
 			height:40px;
 			width:40px;
 			border-radius:100%;

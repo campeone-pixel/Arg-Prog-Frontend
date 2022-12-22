@@ -260,7 +260,7 @@ main {
 }
 header {
   font-family: "Bebas Neue", Helvetica, Verdana, sans-serif, sans-serif;
-  background-color: #7EBC89;
+  background-color: #101820;
   font-size: 1.3em;
   grid-area: header;
   display: flex;
@@ -278,20 +278,20 @@ header nav .container-fluid {
 }
 header nav .container-fluid .navbar-collapse .menu-principal .nav-item .nav-link.active {
   width: 100px;
-  text-align: center;
+  text-align: left;
   color: #101820;
   letter-spacing: 0.05em;
   transform: scaleY(1.1);
 }
 header nav .container-fluid .navbar-collapse .menu-principal .nav-item a {
   text-decoration: none;
-  color: #333;
   letter-spacing: 2px;
   text-align: center;
   position: relative;
   transition: all 0.35s;
 }
 header nav .container-fluid .navbar-collapse .menu-principal .nav-item a span {
+  color: #7EBC89;
   position: relative;
   z-index: 2;
 }
@@ -313,7 +313,7 @@ header nav .container-fluid .navbar-collapse .menu-principal .nav-item a:hover:a
 }
 header nav .container-fluid .navbar-collapse .nav-item.dropdown .nav-link {
   font-size: 1em;
-  color: #101820;
+  color: #7EBC89;
 }
 header .logo img {
   width: 7em;
@@ -419,13 +419,13 @@ footer .rounded-social-buttons {
   font-size: 1.4em;
 }
 footer .rounded-social-buttons .social-button:hover {
-  background-color: blue;
+  background-color: #FE5D26;
 }
 footer .rounded-social-buttons .social-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: #101820;
   height: 40px;
   width: 40px;
   border-radius: 100%;
@@ -548,7 +548,7 @@ footer .rounded-social-buttons i {
   }
 }
 
-main {
+.main-aboutme {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -558,7 +558,14 @@ main {
   padding: 1em;
   gap: 1em;
 }
-main .aboutMe {
+.main-aboutme h1 {
+  font-weight: 900;
+  font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
+  text-shadow: 5px 5px black;
+  font-size: 3em;
+  color: #FEE715;
+}
+.main-aboutme .aboutMe {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -571,28 +578,32 @@ main .aboutMe {
   max-width: 450px;
   border: 2px solid #7EBC89;
 }
-main .aboutMe .text-container {
+.main-aboutme .aboutMe .text-container {
   color: #FEE715;
   padding: 1em;
+  flex: 1;
 }
-main .aboutMe .text-container h1 {
+.main-aboutme .aboutMe .text-container h1 {
   font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
   font-size: 50px;
   text-shadow: 5px 5px black;
 }
-main .aboutMe .text-container p {
+.main-aboutme .aboutMe .text-container p {
   font-family: "Source sans Pro", Courier, mono;
   font-style: normal;
   font-size: 1em;
 }
-main .aboutMe .imag img {
+.main-aboutme .aboutMe .imag {
+  flex: 1;
+}
+.main-aboutme .aboutMe .imag img {
   border-radius: 10px 10px 0px 0px;
   height: auto;
   width: 100%;
   background-position: center;
   background-size: cover;
 }
-main .skills {
+.main-aboutme .skills {
   width: 100%;
   background-color: #101820;
   max-width: 450px;
@@ -600,7 +611,7 @@ main .skills {
   border-radius: 10px 10px 10px 10px;
   border: 2px solid #7EBC89;
 }
-main .skills h1 {
+.main-aboutme .skills h1 {
   font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
   font-size: 50px;
   text-align: center;
@@ -608,24 +619,24 @@ main .skills h1 {
   text-shadow: 5px 5px black;
   margin-top: 50px;
 }
-main .skills .skill-bars {
+.main-aboutme .skills .skill-bars {
   width: 100%;
   padding: 20px 20px;
   background-color: #101820;
   border-radius: 10px;
   margin-bottom: 50px;
 }
-main .skills .bar {
+.main-aboutme .skills .bar {
   margin: 20px 0;
   padding: 8px 0;
 }
-main .skills .bar:first-child {
+.main-aboutme .skills .bar:first-child {
   margin-top: 0px;
 }
-main .skills .info {
+.main-aboutme .skills .info {
   margin-bottom: 5px;
 }
-main .skills .info span {
+.main-aboutme .skills .info span {
   font-weight: 500;
   font-size: 17px;
   opacity: 0;
@@ -636,7 +647,7 @@ main .skills .info span {
     opacity: 1;
   }
 }
-main .skills .progress-line {
+.main-aboutme .skills .progress-line {
   height: 10px;
   width: 100%;
   background: #f0f0f0;
@@ -647,7 +658,7 @@ main .skills .progress-line {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05), 0 1px rgba(255, 255, 255, 0.8);
   animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
-main .skills .progress-line span {
+.main-aboutme .skills .progress-line span {
   height: 100%;
   position: absolute;
   border-radius: 10px;
@@ -656,7 +667,7 @@ main .skills .progress-line span {
   background: #ff4d4f;
   animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
-main .skills .progress-line span::before {
+.main-aboutme .skills .progress-line span::before {
   position: absolute;
   content: "";
   top: -10px;
@@ -670,7 +681,7 @@ main .skills .progress-line span::before {
   border-top-color: #000;
   animation: showText2 0.5s 1.5s linear forwards;
 }
-main .skills .progress-line span::after {
+.main-aboutme .skills .progress-line span::after {
   position: absolute;
   top: -28px;
   right: 0;
@@ -688,16 +699,16 @@ main .skills .progress-line span::after {
     transform: scaleX(1);
   }
 }
-main .skills .html span {
+.main-aboutme .skills .html span {
   width: 84%;
 }
-main .skills .css span {
+.main-aboutme .skills .css span {
   width: 92%;
 }
-main .skills .JavaScript span {
+.main-aboutme .skills .JavaScript span {
   width: 60%;
 }
-main .skills .react span {
+.main-aboutme .skills .react span {
   width: 80%;
 }
 @keyframes showText2 {
@@ -705,16 +716,16 @@ main .skills .react span {
     opacity: 1;
   }
 }
-main .skills .html span::after {
+.main-aboutme .skills .html span::after {
   content: "84%";
 }
-main .skills .css span::after {
+.main-aboutme .skills .css span::after {
   content: "92%";
 }
-main .skills .JavaScript span::after {
+.main-aboutme .skills .JavaScript span::after {
   content: "60%";
 }
-main .skills .react span::after {
+.main-aboutme .skills .react span::after {
   content: "80%";
 }
 
@@ -794,6 +805,7 @@ main .skills .react span::after {
   align-content: center;
   justify-items: center;
   grid-area: main;
+  gap: 1em;
 }
 .projects h1 {
   font-weight: 900;
@@ -846,6 +858,7 @@ main .skills .react span::after {
   align-content: center;
   justify-items: center;
   grid-area: main;
+  gap: 1em;
 }
 .services section {
   display: flex;
@@ -891,7 +904,7 @@ main .skills .react span::after {
   background-color: #7EBC89;
 }
 .services section .imag img {
-  width: 70px;
+  width: 100px;
   height: auto;
   background-position: center;
   background-size: cover;
@@ -912,6 +925,9 @@ main .skills .react span::after {
   }
 }
 @media only screen and (min-width: 767px) {
+  header nav .container-fluid .navbar-collapse .menu-principal .nav-item .nav-link.active {
+    text-align: center;
+  }
   .container-grid {
     grid-template-rows: 93.95px auto 100px;
   }
@@ -963,15 +979,15 @@ main .skills .react span::after {
     background-position: center;
     left: -60px;
   }
-  main .aboutMe {
+  .main-aboutme .aboutMe {
     flex-direction: row;
     max-width: 700px;
   }
-  main .aboutMe .imag,
-  main .aboutMe .text-container {
+  .main-aboutme .aboutMe .imag,
+  .main-aboutme .aboutMe .text-container {
     flex: 1;
   }
-  main .aboutMe .text-container {
+  .main-aboutme .aboutMe .text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -979,31 +995,30 @@ main .skills .react span::after {
     justify-content: center;
     justify-items: center;
   }
-  main .aboutMe .text-container p {
+  .main-aboutme .aboutMe .text-container p {
     font-size: 1.1em;
   }
-  main .aboutMe .imag {
+  .main-aboutme .aboutMe .imag {
     position: relative;
     overflow: hidden;
     height: 100%;
-    border-radius: 10px 0px 0px 10px;
   }
-  main .aboutMe .imag img {
-    padding: 10px;
+  .main-aboutme .aboutMe .imag img {
     position: absolute;
     height: 120%;
     width: auto;
-    left: -100px;
+    left: -40px;
     top: -10px;
+    right: 0;
   }
-  main .skills {
+  .main-aboutme .skills {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 700px;
   }
-  main .skills .skill-bars {
+  .main-aboutme .skills .skill-bars {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1014,7 +1029,7 @@ main .skills .react span::after {
     gap: 1em;
     width: 800px;
   }
-  main .skills .skill-bars .bar {
+  .main-aboutme .skills .skill-bars .bar {
     width: 350px;
     margin-top: 0px;
   }
@@ -1024,16 +1039,16 @@ main .skills .react span::after {
     flex-direction: row;
     min-width: 800px;
   }
-  main .aboutMe {
+  .main-aboutme .aboutMe {
     height: 300px;
     max-width: 900px;
   }
-  main .aboutMe .imag {
+  .main-aboutme .aboutMe .imag {
     position: relative;
     overflow: hidden;
     height: 100%;
   }
-  main .aboutMe .imag img {
+  .main-aboutme .aboutMe .imag img {
     position: absolute;
     height: 120%;
     width: auto;
@@ -1041,7 +1056,7 @@ main .skills .react span::after {
     top: -10px;
     right: 0;
   }
-  main .skills {
+  .main-aboutme .skills {
     flex-direction: row;
     padding: 0;
     margin: 0;

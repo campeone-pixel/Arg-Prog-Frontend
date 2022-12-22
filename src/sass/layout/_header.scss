@@ -4,7 +4,7 @@
 
 header {
 	font-family: t.$sans-serif, sans-serif;
-	background-color: v.$tercero;
+	background-color: v.$secundario;
 	font-size: 1.3em;
 	grid-area: header;
 	display: flex;
@@ -24,7 +24,7 @@ header {
 				.menu-principal{
 					.nav-item .nav-link.active {
 						width: 100px;
-						text-align: center;
+						text-align: left;
 						color: v.$secundario;
 						letter-spacing: 0.05em;
 						transform: scaleY(1.1);
@@ -36,7 +36,7 @@ header {
 					
 						
 						text-decoration: none;
-						color: #333;
+						
 						
 						letter-spacing: 2px;
 						text-align: center;
@@ -45,6 +45,7 @@ header {
 					}
 				
 					.nav-item a span{
+						color: v.$tercero;
 						position: relative;
 						z-index: 2;
 					}
@@ -78,7 +79,7 @@ header {
 				.nav-item.dropdown .nav-link {
 					font-size: 1em;
 
-					color: v.$secundario;
+					color: v.$tercero;
 				}
 			}
 		}
