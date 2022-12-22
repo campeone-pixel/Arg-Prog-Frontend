@@ -916,6 +916,16 @@ footer .rounded-social-buttons i {
   grid-area: main;
   gap: 1em;
 }
+.services .titulo {
+  flex: 1 0 100%;
+  text-align: center;
+  font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
+  text-shadow: 5px 5px black;
+  color: #FEE715;
+}
+.services .titulo h1 {
+  font-size: 50px;
+}
 .services section {
   display: flex;
   flex-direction: column;
