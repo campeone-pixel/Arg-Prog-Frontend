@@ -5,20 +5,69 @@
 .contact {
 	@include a.fx-col-all-center;
 	grid-area: main;
-	background-color: v.$celeste;
-	padding: 1% 8% 1% 8%;
 
-	div{
+	.container {
 		@include a.fx-col-all-center;
-		padding: 0 0.5em 0 0.5em;
+		background-color: v.$secundario;
+		border: 2px solid v.$tercero;
+		border-radius: 10px 10px 10px 10px;
 		align-items: stretch;
-		gap: 1em;
-		margin: 1em;
-		padding: 0.5em;
-		max-width: 700px;
-		
+		padding: 1.5em 1em 1.5em 1em;
+		border-radius: 10px 10px 10px 10px;
+		max-width: 500px;
+		gap: 20px;
+		color: v.$primario;
 
-		
-		
+		form {
+			.wrapper a {
+				display: block;
+				width: 160px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 18px;
+				font-family: t.$sans-serif;
+				text-decoration: none;
+				color: v.$tercero;
+				border: 2px solid v.$tercero;
+				letter-spacing: 2px;
+				text-align: center;
+				position: relative;
+				transition: all 0.35s;
+				text-decoration: none;
+				transition: 0.4s ease;
+				z-index: 1;
+
+				span{
+					position: relative;
+					z-index: 2;
+					color: v.$cuarto;
+					font-size: 20px;
+					letter-spacing: 0.2em;
+				}
+
+				&:before,
+				&:after {
+					background: v.$primario;
+					transition: 0.3s ease;
+					content: "";
+					position: absolute;
+					z-index: -1;
+				}
+			}
+
+			.left {
+				&:before {
+					top: 0;
+					right: 100%;
+					bottom: 0;
+					left: 0;
+				}
+				&:hover {
+					&:before {
+						right: 0;
+					}
+				}
+			}
+		}
 	}
 }

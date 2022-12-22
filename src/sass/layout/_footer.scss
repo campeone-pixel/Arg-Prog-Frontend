@@ -2,24 +2,26 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/typography" as t;
 
+@use "../components/animations";
+
 footer {
 	@include a.fx-all-center;
 	font-family: t.$sans-serif, sans-serif;
 	grid-area: footer;
 	font-size: 1.2em;
+	padding: 0 20px 0 20px;
+	background-color: v.$tercero;
 
-	background-color: v.$azul;
-	padding: 1% 8% 1% 8%;
-  section{
-    @include a.fx-col-all-center;
-  }
+	section {
+		@include a.fx-col-all-center;
+	}
 
 	.mail {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		color: v.$amarillo;
+		color: v.$secundario;
 	}
 
 	.rounded-social-buttons {
@@ -28,9 +30,33 @@ footer {
 		align-items: center;
 		gap: 2em;
 		font-size: 1.4em;
-		i{
-			color: v.$amarillo;
+		.social-button:hover{
+			background-color:blue;
 		}
-		
+		.social-button{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			background-color:red;
+			height:40px;
+			width:40px;
+			border-radius:100%;
+			transition: background 0.5s ease-in-out;
+			.fa-brands:hover{
+				transform: rotate(360deg);
+					
+				}
+			.fa-brands{
+				font-size:100%;
+				position: relative;
+				transition: transform 0.5s ease-in-out; 
+			}
+		}
+	
+		i {
+			color: v.$primario;
+		}
 	}
 }
+
+

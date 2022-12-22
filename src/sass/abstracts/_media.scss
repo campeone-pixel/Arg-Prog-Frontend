@@ -2,10 +2,35 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/typography" as t;
 
+@media only screen and (min-width: 340px) {
+	.services {
+		section {
+			max-width: 300px;
 
+			.text-container {
+				color: v.$primario;
 
+				h1 {
+					font-size: 1.5em;
+				}
 
-@media only screen and (min-width: 480px) {
+				p {
+					font-size: 1.4em;
+				}
+			}
+		}
+	}
+
+	
+
+	
+}
+
+@media only screen and (min-width: 767px) {
+	.container-grid {
+		grid-template-rows: 93.95px auto 100px;
+	}
+
 	footer section {
 		flex-direction: row;
 		display: flex;
@@ -14,142 +39,215 @@
 		flex: 1;
 	}
 
-	
-}
-
-@media only screen and (min-width: 840px) {
-
-
-	
-	.aboutMe section,
-	.projects section,
-	.services section,
-	.contact section {
+	.services {
 		flex-direction: row;
-		align-items: center;
-		justify-content: stretch;
-		padding: 0;
-		margin: 0;
-		height: 400px;
-		max-width: 900px;
-		
-		
-	
-		.imag, .text-container{
-			padding: 0;
-			margin: 0;
-			flex: 1 1;
-			max-height: 400px;
-			
-		}
-		
-		.text-container{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			justify-items: center;
-			align-content: center;
-		}
+		flex-wrap: wrap;
 
-		img {
-			margin: 0;
-			padding: 0;
-			width: auto;
-			max-height: 100%;
-			
+		max-width: 900px;
+
+		gap: 3em;
+
+		section {
+			margin: 1em;
 		}
 	}
 
-	.index section{
+	.projects {
+		gap: 50px;
+
+		section {
+			flex-direction: row;
+			min-width: 700px;
+			height: 400px;
+
+			.imag,
+			.text-container {
+				flex: 1;
+			}
+
+			.text-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-content: center;
+				justify-content: center;
+				justify-items: center;
+			}
+
+			.imag {
+				position: relative;
+				overflow: hidden;
+				height: 100%;
+				border-radius: 10px 0px 0px 10px;
+				img {
+					position: absolute;
+					height: 100%;
+					width: auto;
+					background-position: center;
+					left: -60px;
+				}
+			}
+		}
+	}
+
+	main {
+		.aboutMe {
+			flex-direction: row;
+			max-width: 700px;
+			
+			.imag,
+			.text-container {
+				
+				flex: 1;
+			}
+
+			.text-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				align-content: center;
+				justify-content: center;
+				justify-items: center;
+				p {
+					font-size: 1.1em;
+				}
+			}
+
+			.imag {
+				position: relative;
+				overflow: hidden;
+				height: 100%;
+				border-radius:10px 0px 0px 10px;
+				img {
+					padding: 10px;
+					position: absolute;
+					height: 120%;
+					width: auto;
+					left: -100px;
+					top: -10px;
+				}
+			}
+		}
+
+		.skills {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			max-width: 700px;
+
+			.skill-bars {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				align-content: center;
+				justify-content: space-around;
+				justify-items: center;
+				gap: 1em;
+				width: 800px;
+
+				.bar {
+					width: 350px;
+					margin-top: 0px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 840px) {
+	.projects {
+		
+
+		section {
+			flex-direction: row;
+			min-width: 800px;
+			
+
+		
+		}
+	}
+
+
+	main {
+		.aboutMe {
+			height: 300px;
+			max-width: 900px;
+			.imag {
+				position: relative;
+				overflow: hidden;
+				height: 100%;
+				img {
+					position: absolute;
+					height: 120%;
+					width: auto;
+
+					left: -40px;
+					top: -10px;
+					right: 0;
+				}
+			}
+		}
+
+		.skills {
+			flex-direction: row;
+			padding: 0;
+			margin: 0;
+			max-width: 900px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.projects {
+		
+
+		section {
+			flex-direction: row;
+			min-width: 900px;
+			
+
+		
+		}
+	}
+
+	.index section {
 		display: flex;
 		flex-direction: row;
-		
-
-
-
-
-align-items: stretch;
+		align-items: stretch;
 		padding: 0;
 		margin: 0;
-		
+
 		max-width: 1100px;
 
 		.text-container {
 			flex: 1;
 			display: flex;
 			flex-direction: column;
-			color: v.$amarillo;
+
 			align-content: space-between;
 			justify-content: space-around;
-			margin: 1em 0.8em 1em 0.8em;
 
 			h1 {
-				font-weight: 900;
-				font-family: t.$serif;
 				font-size: 180%;
 			}
 
-			span {
-				color: v.$azul;
-				font-family: t.$mono;
-			}
+			
 
-			div button {
-				@include a.fx-all-center;
-				padding: 1.05em 1.8em;
-
-				outline: none;
-
-				background-color: v.$azul;
-				border: none;
-				border-radius: 15px;
-				animation-name: pulse;
-				animation-iteration-count: infinite;
-				animation-timing-function: ease-in;
-				animation-duration: 10s;
-				will-change: transform;
-
-				a {
-					font-size: 1.4em;
-					color: v.$amarillo;
-					font-family: t.$sans-serif;
-				}
-			}
+			
+			
 		}
 		.imag {
-			margin: 1em 0.8em 1em 0.8em;
 			background-position: center;
 			background-size: cover;
 			max-width: 400px;
 
-			img{
+			img {
 				width: 100%;
 			}
-		}
-			
-		
-
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-	.index section,
-	.aboutMe section,
-	.projects section,
-	.services section,
-	.contact section {
-		max-width: 1200px;
-
-		.imag, .text-container{
-			flex: 1 1;
-			
-		}
-		
-
-		div .text-container {
-			margin: 1em 0.8em 1em 0.8em;
-			font-size: 20px;
 		}
 	}
 }
