@@ -458,6 +458,7 @@ footer section {
   justify-content: center;
   align-content: center;
   justify-items: center;
+  gap: 0.5em;
 }
 footer .mail {
   display: flex;
@@ -470,7 +471,7 @@ footer .rounded-social-buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2em;
+  gap: 0.5em;
   font-size: 1.4em;
 }
 footer .rounded-social-buttons .social-button:hover {
@@ -506,7 +507,7 @@ footer .rounded-social-buttons i {
   align-content: center;
   justify-items: center;
   grid-area: main;
-  padding: 1% 8% 1% 8%;
+  padding: 1em;
 }
 .index section {
   display: flex;
@@ -516,17 +517,17 @@ footer .rounded-social-buttons i {
   align-content: center;
   justify-items: center;
   gap: 1em;
-  margin: 1em;
-  padding: 0.5em;
   background-color: #101820;
   border: 2px solid #7EBC89;
   border-radius: 10px 10px 10px 10px;
+  max-width: 400px;
 }
 .index section .text-container {
   color: #FEE715;
   max-width: 400px;
   font-family: "Source sans Pro", Courier, mono;
   font-style: normal;
+  padding: 1em;
 }
 .index section .text-container h1 {
   font-weight: 500;
@@ -576,14 +577,16 @@ footer .rounded-social-buttons i {
   width: 100%;
 }
 .index section .imag {
-  background-position: center;
-  background-size: cover;
-  max-width: 400px;
+  flex: 1;
+  overflow: hidden;
   border-radius: 10px 10px 0px 0px;
 }
 .index section .imag img {
+  height: auto;
   width: 100%;
-  border-radius: 10px 10px 0px 0px;
+  background-position: center;
+  background-size: cover;
+  scale: 110%;
 }
 @keyframes pulse {
   0% {
@@ -793,6 +796,7 @@ footer .rounded-social-buttons i {
   align-content: center;
   justify-items: center;
   grid-area: main;
+  padding: 1em;
 }
 .contact .container {
   display: flex;
@@ -862,6 +866,7 @@ footer .rounded-social-buttons i {
   justify-items: center;
   grid-area: main;
   gap: 1em;
+  padding: 1em;
 }
 .projects h1 {
   font-weight: 900;
@@ -881,7 +886,6 @@ footer .rounded-social-buttons i {
   border: 2px solid #7EBC89;
   border-radius: 10px 10px 10px 10px;
   gap: 1em;
-  max-width: 450px;
 }
 .projects section .text-container {
   color: #FEE715;
@@ -894,7 +898,7 @@ footer .rounded-social-buttons i {
 }
 .projects section .text-container p {
   font-family: "Source sans Pro", Courier, mono;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .projects section .imag {
   border-radius: 10px 10px 0px 0px;
@@ -907,14 +911,8 @@ footer .rounded-social-buttons i {
 }
 
 .services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
   grid-area: main;
-  gap: 1em;
+  padding: 1em;
 }
 .services .titulo {
   flex: 1 0 100%;
@@ -925,6 +923,7 @@ footer .rounded-social-buttons i {
 }
 .services .titulo h1 {
   font-size: 50px;
+  margin-bottom: 0.5em;
 }
 .services section {
   display: flex;
@@ -938,10 +937,9 @@ footer .rounded-social-buttons i {
   border-radius: 10px 10px 10px 10px;
   gap: 0.5em;
   height: 380px;
-  border-radius: 10px 10px 10px 10px;
-  padding: 0em 0em 0em 0em;
+  margin-bottom: 1em;
+  max-width: 300px;
   flex-shrink: 0;
-  flex-grow: 1;
 }
 .services section .text-container,
 .services section .imag {
@@ -977,6 +975,32 @@ footer .rounded-social-buttons i {
 }
 
 @media only screen and (min-width: 340px) {
+  .projects section {
+    max-width: 500px;
+  }
+}
+@media only screen and (min-width: 767px) {
+  header nav .container-fluid .navbar-collapse .menu-principal .nav-item .nav-link.active {
+    text-align: center;
+  }
+  .services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+  }
+  .services .titulo {
+    flex: 1 0 100%;
+    text-align: center;
+    font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
+    text-shadow: 5px 5px black;
+    color: #FEE715;
+  }
+  .services .titulo h1 {
+    font-size: 50px;
+  }
   .services section {
     max-width: 300px;
   }
@@ -985,11 +1009,6 @@ footer .rounded-social-buttons i {
   }
   .services section .text-container p {
     font-size: 1.4em;
-  }
-}
-@media only screen and (min-width: 767px) {
-  header nav .container-fluid .navbar-collapse .menu-principal .nav-item .nav-link.active {
-    text-align: center;
   }
   .container-grid {
     grid-template-rows: 93.95px auto 100px;
@@ -1100,7 +1119,13 @@ footer .rounded-social-buttons i {
 @media only screen and (min-width: 840px) {
   .projects section {
     flex-direction: row;
-    min-width: 800px;
+    max-width: 850px;
+  }
+  .projects section .text-container h2 {
+    font-size: 3em;
+  }
+  .projects section .text-container p {
+    font-size: 1.5em;
   }
   .main-aboutme .aboutMe {
     height: 300px;
@@ -1125,12 +1150,16 @@ footer .rounded-social-buttons i {
     margin: 0;
     max-width: 900px;
   }
+  .index section .imag {
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px 0px 0px 20px;
+  }
+  .index section .imag img {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 1024px) {
-  .projects section {
-    flex-direction: row;
-    min-width: 900px;
-  }
   .index section {
     display: flex;
     flex-direction: row;

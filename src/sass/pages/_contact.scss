@@ -5,7 +5,7 @@
 .contact {
 	@include a.fx-col-all-center;
 	grid-area: main;
-
+	padding: 1em;
 	.container {
 		@include a.fx-col-all-center;
 		background-color: v.$secundario;

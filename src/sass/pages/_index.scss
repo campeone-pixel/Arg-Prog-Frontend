@@ -6,24 +6,25 @@
 	@include a.fx-col-all-center;
 	grid-area: main;
 	
-	padding: 1% 8% 1% 8%;
+	padding: 1em;
 	
 	section {
 		@include a.fx-col-all-center;
 		
 		gap: 1em;
-		margin: 1em;
-		padding: 0.5em;
+		
+		
 		background-color: v.$secundario;
 		border: 2px solid v.$tercero;
 		border-radius:10px 10px 10px 10px;
+		max-width: 400px;
 
 		.text-container {
 			color: v.$primario;
 			max-width: 400px;
 			font-family: t.$sans-serif-2;
 			font-style: normal;
-			
+			padding: 1em;
 			
 
 			h1 {
@@ -35,6 +36,7 @@
 				color: v.$tercero;
 				font-style: italic;
 				font-weight: 900;
+
 			}
 
 			
@@ -92,14 +94,17 @@
 			
 		}
 		.imag {
-			
-			background-position: center;
-			background-size: cover;
-			max-width: 400px;
-border-radius:10px 10px 0px 0px;
-			img{
+			flex: 1;
+			overflow:hidden;
+			border-radius:10px 10px 0px 0px;
+			img {
+				
+				height: auto;
 				width: 100%;
-				border-radius:10px 10px 0px 0px;
+				background-position: center;
+				background-size: cover;
+				scale: 110%;
+				
 			}
 		}
 

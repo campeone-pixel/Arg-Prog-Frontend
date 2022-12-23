@@ -6,6 +6,7 @@
 	@include a.fx-col-all-center;
 	grid-area: main;
 	gap: 1em;
+	padding: 1em;
 	
 
 	h1 {
@@ -18,11 +19,11 @@
 
 	section {
 		@include a.fx-col-all-center;
-				background-color: v.$secundario;
+		background-color: v.$secundario;
 		border: 2px solid v.$tercero;
 		border-radius:10px 10px 10px 10px;
 		gap: 1em;
-		max-width: 450px;
+		
 
 		
 
@@ -38,7 +39,7 @@
 
 			p {
 				font-family: t.$sans-serif-2;
-				font-size: 1.5em;
+				font-size: 1em;
 				
 			}
 		}

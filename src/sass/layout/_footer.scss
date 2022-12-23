@@ -11,9 +11,10 @@ footer {
 	font-size: 1.2em;
 	padding: 0 20px 0 20px;
 	background-color: v.$secundario;
-
+	
 	section {
 		@include a.fx-col-all-center;
+		gap: 0.5em;
 	}
 
 	.mail {
@@ -28,7 +29,7 @@ footer {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
-		gap: 2em;
+		gap: 0.5em;
 		font-size: 1.4em;
 		.social-button:hover{
 			background-color:v.$cuarto;
