@@ -3,23 +3,20 @@
 @use "../abstracts/typography" as t;
 
 .services {
-	
 	grid-area: main;
 	padding: 1em;
 
-	
 	.titulo {
 		flex: 1 0 100%;
-		text-align: center;
+		display: flex;
 		font-family: t.$sans-serif;
-		
+		justify-content: center;
+		align-items: center;
 		text-shadow: 5px 5px black;
 		color: v.$primario;
-		h1{
+		h1 {
 			font-size: 50px;
-			margin-bottom: 0.5em;
 		}
-		
 	}
 	section {
 		@include a.fx-col-all-center;
@@ -30,10 +27,9 @@
 		height: 380px;
 		margin-bottom: 1em;
 		max-width: 300px;
-		
-		
+		padding-top: 2em;
 		flex-shrink: 0;
-		
+
 		.text-container,
 		.imag {
 			flex: 1;
@@ -42,7 +38,7 @@
 		.text-container {
 			color: v.$primario;
 
-			padding: 0.5em 1em 0em 2em;
+			padding: 2em 1em 0em 2em;
 
 			h1 {
 				font-weight: 900;
@@ -53,18 +49,44 @@
 				font-size: 1.2em;
 			}
 		}
-		.imag {
-			@include a.fx-all-center;
-			margin: 2em 0em 0.5em 0em;
-			flex: 1;
-			border-style: solid;
-			width: 170px;
 
-			border-radius: 50%;
-			background-color: v.$tercero;
+		.imag:before {
+			content: " ";
+			width: 0;
+			height: 0;
+			border-bottom: 30px solid #6c6;
+			border-left: 52px solid transparent;
+			border-right: 52px solid transparent;
+			position: absolute;
+			top: -30px;
+		}
+
+		.imag {
+			margin-top: 30px;
+			width: 105px;
+			height: 50px;
+			background-color: #6c6;
+			position: relative;
+			
+		}
+
+		.imag:after {
+			content: "";
+			width: 0;
+			position: absolute;
+			bottom: -30px;
+			border-top: 30px solid #6c6;
+			border-left: 52px solid transparent;
+			border-right: 52px solid transparent;
+		}
+		.imag {
+			display: flex;
+			flex: 0;
+			margin: 2em;
 			img {
-				width: 100px;
-				height: auto;
+				flex: 1;
+				width: auto;
+				height: 50px;
 				background-position: center;
 				background-size: cover;
 			}

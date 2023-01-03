@@ -4,7 +4,24 @@
 
 @use "../components/animations";
 
+footer::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	top: -15px;
+	left: 0;
+	right: 0;
+	background: inherit;
+	transform-origin: top left;
+	transform: skewY(-2deg);
+	z-index: -1;
+	background-color: v.$secundario;
+}
+
 footer {
+	position: relative;
 	@include a.fx-all-center;
 	font-family: t.$sans-serif, sans-serif;
 	grid-area: footer;

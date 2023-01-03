@@ -139,6 +139,7 @@ body {
   background-image: url("../images/Hexagon.svg");
   background-attachment: fixed;
   background-size: cover;
+  position: relative;
 }
 
 main {
@@ -273,6 +274,7 @@ header nav {
   display: flex;
   justify-content: space-around;
   color: #101820;
+  position: relative;
 }
 header nav .container-fluid {
   color: #101820;
@@ -376,6 +378,22 @@ header .logo img {
   width: 7em;
 }
 
+nav::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: inherit;
+  transform-origin: top right;
+  transform: skewY(-2deg);
+  z-index: -1;
+  background-color: #101820;
+}
+
 @-webkit-keyframes horizontal {
   0% {
     -webkit-transform: translate(0, 0);
@@ -443,7 +461,24 @@ header .logo img {
     transform: translate(0, 0);
   }
 }
+footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  top: -15px;
+  left: 0;
+  right: 0;
+  background: inherit;
+  transform-origin: top left;
+  transform: skewY(-2deg);
+  z-index: -1;
+  background-color: #101820;
+}
+
 footer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -510,6 +545,7 @@ footer .rounded-social-buttons i {
   justify-items: center;
   grid-area: main;
   padding: 1em;
+  padding-bottom: 2em;
 }
 .index section {
   display: flex;
@@ -616,6 +652,7 @@ footer .rounded-social-buttons i {
   align-content: center;
   justify-items: center;
   padding: 1em;
+  padding-bottom: 2em;
   gap: 1em;
 }
 .main-aboutme h1 {
@@ -799,6 +836,7 @@ footer .rounded-social-buttons i {
   justify-items: center;
   grid-area: main;
   padding: 1em;
+  padding-bottom: 2em;
 }
 .contact .container {
   display: flex;
@@ -869,6 +907,7 @@ footer .rounded-social-buttons i {
   grid-area: main;
   gap: 1em;
   padding: 1em;
+  padding-bottom: 2em;
 }
 .projects h1 {
   font-weight: 900;
@@ -918,14 +957,15 @@ footer .rounded-social-buttons i {
 }
 .services .titulo {
   flex: 1 0 100%;
-  text-align: center;
+  display: flex;
   font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
+  justify-content: center;
+  align-items: center;
   text-shadow: 5px 5px black;
   color: #FEE715;
 }
 .services .titulo h1 {
   font-size: 50px;
-  margin-bottom: 0.5em;
 }
 .services section {
   display: flex;
@@ -941,6 +981,7 @@ footer .rounded-social-buttons i {
   height: 380px;
   margin-bottom: 1em;
   max-width: 300px;
+  padding-top: 2em;
   flex-shrink: 0;
 }
 .services section .text-container,
@@ -949,7 +990,7 @@ footer .rounded-social-buttons i {
 }
 .services section .text-container {
   color: #FEE715;
-  padding: 0.5em 1em 0em 2em;
+  padding: 2em 1em 0em 2em;
 }
 .services section .text-container h1 {
   font-weight: 900;
@@ -958,30 +999,80 @@ footer .rounded-social-buttons i {
 .services section .text-container p {
   font-size: 1.2em;
 }
+.services section .imag:before {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #6c6;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+  position: absolute;
+  top: -30px;
+}
+.services section .imag {
+  margin-top: 30px;
+  width: 105px;
+  height: 50px;
+  background-color: #6c6;
+  position: relative;
+}
+.services section .imag:after {
+  content: "";
+  width: 0;
+  position: absolute;
+  bottom: -30px;
+  border-top: 30px solid #6c6;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+}
 .services section .imag {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2em 0em 0.5em 0em;
-  flex: 1;
-  border-style: solid;
-  width: 170px;
-  border-radius: 50%;
-  background-color: #7EBC89;
+  flex: 0;
+  margin: 2em;
 }
 .services section .imag img {
-  width: 100px;
-  height: auto;
+  flex: 1;
+  width: auto;
+  height: 50px;
   background-position: center;
   background-size: cover;
 }
 
 @media only screen and (min-width: 340px) {
+  main {
+    margin: 1em;
+  }
   .projects section {
     max-width: 500px;
   }
 }
+@media only screen and (min-width: 500px) {
+  main {
+    margin: 2em;
+  }
+}
 @media only screen and (min-width: 767px) {
+  main {
+    margin: 2em;
+  }
+  nav::after {
+    content: none;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    transform-origin: top right;
+    transform: skewY(-2deg);
+    z-index: -2;
+    background-color: #101820;
+    max-width: 100%;
+  }
+  header {
+    position: relative;
+  }
   header nav .container-fluid .navbar-collapse .menu-principal .nav-item .nav-link.active {
     text-align: center;
   }
@@ -994,9 +1085,11 @@ footer .rounded-social-buttons i {
     justify-items: center;
   }
   .services .titulo {
+    display: flex;
     flex: 1 0 100%;
-    text-align: center;
+    align-items: center;
     font-family: "Bebas Neue", Helvetica, Verdana, sans-serif;
+    justify-content: center;
     text-shadow: 5px 5px black;
     color: #FEE715;
   }
@@ -1025,18 +1118,19 @@ footer .rounded-social-buttons i {
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 900px;
-    gap: 3em;
+    gap: 1em;
   }
   .services section {
     margin: 1em;
   }
   .projects {
-    gap: 50px;
+    gap: 1em;
   }
   .projects section {
     flex-direction: row;
     min-width: 700px;
     height: 400px;
+    margin: 1em;
   }
   .projects section .imag,
   .projects section .text-container {
@@ -1066,6 +1160,7 @@ footer .rounded-social-buttons i {
   .main-aboutme .aboutMe {
     flex-direction: row;
     max-width: 700px;
+    margin: 1em;
   }
   .main-aboutme .aboutMe .imag,
   .main-aboutme .aboutMe .text-container {
@@ -1100,6 +1195,7 @@ footer .rounded-social-buttons i {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 1em;
     max-width: 700px;
   }
   .main-aboutme .skills .skill-bars {
@@ -1119,6 +1215,9 @@ footer .rounded-social-buttons i {
   }
 }
 @media only screen and (min-width: 840px) {
+  main {
+    margin: 3em;
+  }
   .projects section {
     flex-direction: row;
     max-width: 850px;
@@ -1162,6 +1261,12 @@ footer .rounded-social-buttons i {
   }
 }
 @media only screen and (min-width: 1024px) {
+  main {
+    margin: 4em;
+  }
+  header::after {
+    transform: skewY(-2deg);
+  }
   .index section {
     display: flex;
     flex-direction: row;
