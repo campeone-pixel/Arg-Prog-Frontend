@@ -1,0 +1,80 @@
+@use "../abstracts/mixins" as a;
+@use "../abstracts/variables" as v;
+@use "../abstracts/typography" as t;
+
+@use "../components/animations";
+
+footer::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	top: -15px;
+	left: 0;
+	right: 0;
+	background: inherit;
+	transform-origin: top left;
+	transform: skewY(-2deg);
+	z-index: -1;
+	background-color: v.$secundario;
+}
+
+footer {
+	position: relative;
+	@include a.fx-all-center;
+	font-family: t.$sans-serif, sans-serif;
+	grid-area: footer;
+	font-size: 1.2em;
+	padding: 0 20px 0 20px;
+	background-color: v.$secundario;
+	
+	section {
+		@include a.fx-col-all-center;
+		gap: 0.5em;
+	}
+
+	.mail {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		color: v.$tercero;
+	}
+
+	.rounded-social-buttons {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 0.5em;
+		font-size: 1.4em;
+		.social-button:hover{
+			background-color:v.$cuarto;
+		}
+		.social-button{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			background-color:v.$tercero;
+			height:40px;
+			width:40px;
+			border-radius:100%;
+			transition: background 0.5s ease-in-out;
+			.fa-brands:hover{
+				transform: rotate(360deg);
+					
+				}
+			.fa-brands{
+				font-size:100%;
+				position: relative;
+				transition: transform 0.5s ease-in-out; 
+			}
+		}
+	
+		i {
+			color: v.$secundario;
+		}
+	}
+}
+
+

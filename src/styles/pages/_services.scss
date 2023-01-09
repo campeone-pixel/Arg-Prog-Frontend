@@ -1,0 +1,95 @@
+@use "../abstracts/mixins" as a;
+@use "../abstracts/variables" as v;
+@use "../abstracts/typography" as t;
+
+.services {
+	
+
+	.titulo {
+		flex: 1 1 100%;
+		display: flex;
+		font-family: t.$sans-serif;
+		justify-content: center;
+		align-items: center;
+		text-shadow: 5px 5px black;
+		color: v.$primario;
+		h1 {
+			font-size: 50px;
+		}
+	}
+	section {
+		flex: 1 0 100%;
+		@include a.fx-col-all-center;
+		background-color: v.$secundario;
+		border: 2px solid v.$tercero;
+		border-radius: 10px 10px 10px 10px;
+		gap: 0.5em;
+		height: 380px;
+		margin-bottom: 1em;
+		max-width: 300px;
+		padding-top: 2em;
+		flex-shrink: 0;
+
+		.text-container,
+		.imag {
+			flex: 1;
+		}
+
+		.text-container {
+			color: v.$primario;
+
+			padding: 2em 1em 0em 2em;
+
+			h1 {
+				font-weight: 900;
+				font-size: 1.4em;
+			}
+
+			p {
+				font-size: 1.2em;
+			}
+		}
+
+		.imag:before {
+			content: " ";
+			width: 0;
+			height: 0;
+			border-bottom: 30px solid #6c6;
+			border-left: 52px solid transparent;
+			border-right: 52px solid transparent;
+			position: absolute;
+			top: -30px;
+		}
+
+		.imag {
+			margin-top: 30px;
+			width: 105px;
+			height: 50px;
+			background-color: #6c6;
+			position: relative;
+			
+		}
+
+		.imag:after {
+			content: "";
+			width: 0;
+			position: absolute;
+			bottom: -30px;
+			border-top: 30px solid #6c6;
+			border-left: 52px solid transparent;
+			border-right: 52px solid transparent;
+		}
+		.imag {
+			display: flex;
+			flex: 0;
+			margin: 2em;
+			img {
+				flex: 1;
+				width: auto;
+				height: 50px;
+				background-position: center;
+				background-size: cover;
+			}
+		}
+	}
+}

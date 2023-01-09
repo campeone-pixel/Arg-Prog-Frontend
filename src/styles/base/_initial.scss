@@ -1,0 +1,17 @@
+section,nav{
+	max-width: 1400px;
+}
+
+body{
+	background-image: url("../../assets/images/Hexagon.svg");
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+	
+}
+
+main{
+  padding:  1.5em 0em 1.5em 0em;
+  grid-area: main;
+  justify-content: center;
+}
