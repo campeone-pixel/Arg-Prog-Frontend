@@ -4,9 +4,12 @@
 
 .services {
 	
-
+	height: auto;
+	
+	padding: 100px 25px;
+	
 	.titulo {
-		flex: 1 1 100%;
+		flex: 1 0 100%;
 		display: flex;
 		font-family: t.$sans-serif;
 		justify-content: center;
@@ -18,7 +21,6 @@
 		}
 	}
 	section {
-		flex: 1 0 100%;
 		@include a.fx-col-all-center;
 		background-color: v.$secundario;
 		border: 2px solid v.$tercero;

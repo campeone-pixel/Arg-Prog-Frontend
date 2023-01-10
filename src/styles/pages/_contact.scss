@@ -3,16 +3,18 @@
 @use "../abstracts/typography" as t;
 
 .contact {
-	@include a.fx-col-all-center;
 	
-	padding: 1em;
-	padding-bottom: 2em;
+
+	height: auto;
+	
+	padding: 100px 25px;
+	
 	.container {
-		@include a.fx-col-all-center;
+		
 		background-color: v.$secundario;
 		border: 2px solid v.$tercero;
 		border-radius: 10px 10px 10px 10px;
-		align-items: stretch;
+		
 		padding: 1.5em 1em 1.5em 1em;
 		border-radius: 10px 10px 10px 10px;
 		max-width: 500px;

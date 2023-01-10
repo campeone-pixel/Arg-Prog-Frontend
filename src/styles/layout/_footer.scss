@@ -4,77 +4,98 @@
 
 @use "../components/animations";
 
-footer::before{
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	bottom: 0;
-	top: -15px;
-	left: 0;
-	right: 0;
-	background: inherit;
-	transform-origin: top left;
-	transform: skewY(-2deg);
-	z-index: -1;
-	background-color: v.$secundario;
+footer {
+  position: relative;
+  @include a.fx-all-center;
+  font-family: t.$sans-serif, sans-serif;
+  grid-area: footer;
+  font-size: 1.2em;
+
+  background-color: v.$secundario;
+
+  section {
+    @include a.fx-col-all-center;
+  }
+
+  .mail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: v.$tercero;
+  }
+
+  .rounded-social-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.4em;
+    .social-button:hover {
+      background-color: v.$cuarto;
+    }
+    .social-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: v.$tercero;
+      height: 40px;
+      width: 40px;
+      border-radius: 100%;
+      transition: background 0.5s ease-in-out;
+      .fa-brands:hover {
+        transform: rotate(360deg);
+      }
+      .fa-brands {
+        font-size: 100%;
+        position: relative;
+        transition: transform 0.5s ease-in-out;
+      }
+    }
+
+    i {
+      color: v.$secundario;
+    }
+  }
 }
 
 footer {
-	position: relative;
-	@include a.fx-all-center;
-	font-family: t.$sans-serif, sans-serif;
-	grid-area: footer;
-	font-size: 1.2em;
-	padding: 0 20px 0 20px;
-	background-color: v.$secundario;
-	
-	section {
-		@include a.fx-col-all-center;
-		gap: 0.5em;
-	}
+  height: 100px;
+  position: relative;
+  z-index: 1;
 
-	.mail {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		color: v.$tercero;
-	}
+  &:before,
+  &:after {
+    content: "";
+    background: inherit;
 
-	.rounded-social-buttons {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		gap: 0.5em;
-		font-size: 1.4em;
-		.social-button:hover{
-			background-color:v.$cuarto;
-		}
-		.social-button{
-			display:flex;
-			justify-content:center;
-			align-items:center;
-			background-color:v.$tercero;
-			height:40px;
-			width:40px;
-			border-radius:100%;
-			transition: background 0.5s ease-in-out;
-			.fa-brands:hover{
-				transform: rotate(360deg);
-					
-				}
-			.fa-brands{
-				font-size:100%;
-				position: relative;
-				transition: transform 0.5s ease-in-out; 
-			}
-		}
-	
-		i {
-			color: v.$secundario;
-		}
-	}
+    display: block;
+    height: 10%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+  }
+
+  &:before {
+    position: absolute;
+    background-color: v.$secundario ;
+    height: 100px;
+
+    transform: skewY(-2deg);
+    transform-origin: left;
+
+    z-index: -1;
+  }
+  &:after {
+    display: inline-block;
+    transform: rotate(180deg) translateY(-100%);
+
+    top: 0px;
+
+    background-color: v.$secundario ;
+    height: 50px;
+
+    position: absolute;
+  }
 }
-
-

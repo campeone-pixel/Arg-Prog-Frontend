@@ -13,5 +13,11 @@ body{
 main{
   padding:  1.5em 0em 1.5em 0em;
   grid-area: main;
-  justify-content: center;
+  justify-self: stretch;
+	align-self: stretch;
+}
+
+app-services {
+	display: flex;
+	justify-content: center;
 }
