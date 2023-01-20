@@ -10,6 +10,14 @@ import { HomeComponent } from './components/home/home.component';
 import { ServicesComponent } from './components/services/services.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ContactComponent } from './components/contact/contact.component';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {TranslateModule,TranslateLoader, TranslateService} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { ScrollSpyDirective } from './scroll-spy.directive';
+
+export function HttpLoaderFactory(httpClient:HttpClient){
+  return new TranslateHttpLoader(httpClient, '../assets/i18n/','.json')
+}
 
 @NgModule({
   declarations: [
@@ -20,11 +28,23 @@ import { ContactComponent } from './components/contact/contact.component';
     HomeComponent,
     ServicesComponent,
     AboutMeComponent,
-    ContactComponent
+    ContactComponent,
+    ScrollSpyDirective,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader:{
+        provide:TranslateLoader,
+        useFactory:HttpLoaderFactory,
+        deps:[HttpClient]
+        
+      }
+    })
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

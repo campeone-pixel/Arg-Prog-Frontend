@@ -1,7 +1,27 @@
-<app-header></app-header>
-<app-home></app-home>
-<app-about-me></app-about-me>
-<app-projects></app-projects>
-<app-services></app-services>
-<app-contact></app-contact>
-<app-footer></app-footer>
+<div class="container-grid">
+    <app-header [currentSection]='currentSection'></app-header>
+    
+    
+    <main id="parentDiv" scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)"
+        style="overflow-y: scroll;">
+    
+        <div id="home">
+            <app-home></app-home>
+        </div>
+        <div id="aboutme">
+            <app-about-me></app-about-me>
+        </div>
+        <div id="projects">
+            <app-projects></app-projects>
+        </div>
+        <div id="services">
+            <app-services></app-services>
+        </div>
+        <div id="contact">
+            <app-contact></app-contact>
+        </div>
+    </main>
+    
+    
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,17 @@
+@use "../../../styles/abstracts/mixins" as a;
+@use "../../../styles/abstracts/variables" as v;
+@use "../../../styles/abstracts/typography" as t;
+
+
+p {
+  font-family: Lato;
+  
+}
+
+.current-section {
+  background-color: v.$primario;
+  span{
+    color: v.$secundario !important; 
+  }
+ 
+}

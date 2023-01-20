@@ -1,0 +1,77 @@
+{
+  "menu": {
+    "home": "HOME",
+    "aboutme": "ABOUT ME",
+    "projects": "PROJECTS",
+    "services": "SERVICES",
+    "contact": "CONTACT"
+  },
+
+  "home": {
+    "introduction_1": "Hi, my name is",
+    "introduction_2": "Matias Poses",
+    "introduction_3": "I'm a",
+    "introduction_4": "Fullstack Developer",
+    "introduction_5": "based in Argentina.",
+    "index_contact": "CONTACT ME"
+  },
+
+  "aboutme": {
+    "title_aboutme": "ABOUT ME",
+    "about_description": "I started learning Python because i needed to find a better way to do things in my work and since that i didnt stop learning others leanguages. Now i realized that i want to do this for a living. Now, im currently working in a electrical company in my city where i am in charged of a sector responsible of documenting all the electrical wires of the city with AutoCAD. I can work part-time in any project, big or small, and demostrate all my new abilities as programmer.",
+    "titulo_skill": "MY SKILLS",
+    "skills": [
+      { "name": "python", "percentage": 70 },
+      { "name": "python", "percentage": 70 },
+      { "name": "python", "percentage": 70 },
+      { "name": "python", "percentage": 70 }
+    ]
+  },
+
+  "section_projects": {
+    "title_projects": "LAST PROJECTS",
+    "projects": [
+      {
+        "title": "BLOG",
+        "description": "This a blog that i did for a course in Coderhouse. I had to use Django, HTML and CSS. I really like Django for the backend and im going to learn more so i can make bigger projects with this incredible framework.",
+        "path":"../../assets/images/blog.jpg"
+      },
+      {
+        "title": "Calculator",
+        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
+        "path":"../../assets/images/calculadora.png"
+      }
+    ]
+  },
+
+  "services": {
+    "title_services": "SERVICES",
+    "services": [
+      {
+        "title": "BACKEND DEVELOPMENT",
+        "description": "I can desing the Backend with Django and SQL database."
+      },
+      {
+        "title": "FRONTEND DEVELOPMENT",
+        "description": "I can desing your webpage for your business in the way you desire."
+      },
+      {
+        "title": "HOSTING",
+        "description": "No need to worry about a hosting services, because ill provide one for you."
+      },
+      {
+        "title": "TECHNICAL SUPPORT",
+        "description": "Ill give you one month free support for any small change you want to do in the page."
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Any question? Chat with me!",
+    "description": "Wether you have a new project going on or you need a webpage for you bussines you can send me an email and im going to aswner you as soon as possible. Or maybe i can help you in other ways you never know, so feel free to contact me",
+    "name": "Name",
+    "mail": "Email Address",
+    "message": "Message",
+    "submit": "SUBMIT"
+  }
+}

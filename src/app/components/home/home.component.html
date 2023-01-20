@@ -1,4 +1,4 @@
-<article class="index">
+<article id="home" class="index">
 
   <section>
 
@@ -7,17 +7,17 @@
 
     <div class="text-container">
       <div>
-        <h1>Hi, my name is <br>
+        <h1>{{ "home.introduction_1" | translate }} <br>
 
-          <span>Matias Poses</span> <br>
+          <span>{{ "home.introduction_2" | translate }}</span> <br>
 
-          I'm a <span>Fullstack Developer</span><br>
-          based in Argentina.
+          {{ "home.introduction_3" | translate }} <span>{{ "home.introduction_4" | translate }}</span><br>
+          {{ "home.introduction_5" | translate }}
         </h1>
       </div>
 
       <div class="wrapper">
-        <a href="contact.html"><span>Contact me</span></a>
+        <a href="contact.html"><span>{{ "home.index_contact" | translate }}</span></a>
       </div>
     </div>
 

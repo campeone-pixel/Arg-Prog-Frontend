@@ -3,27 +3,26 @@
 @use "../abstracts/typography" as t;
 
 @media only screen and (min-width: 340px) {
-  main {
-    margin: 1em;
-  }
+ 
 
   .projects {
     section {
-      max-width: 500px;
+      max-width: 400px;
+    }
+  }
+	.aboutMe {
+    section {
+      max-width: 400px;
     }
   }
 }
 
 @media only screen and (min-width: 500px) {
-  main {
-    margin: 2em;
-  }
+
 }
 
 @media only screen and (min-width: 767px) {
-  main {
-    margin: 2em;
-  }
+  
 
   .container-grid {
     grid-template-rows: 93.95px auto 100px;
@@ -80,7 +79,7 @@
 
   header {
     height: 50px;
-    position: relative;
+    position: fixed;
     nav {
       .container-fluid {
         .navbar-collapse {
@@ -225,9 +224,7 @@
 }
 
 @media only screen and (min-width: 840px) {
-  main {
-    margin: 3em;
-  }
+
 
   .projects {
     section {
@@ -289,9 +286,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  main {
-    margin: 4em;
-  }
+
 
  
 

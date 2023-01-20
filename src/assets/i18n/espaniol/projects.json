@@ -1,0 +1,14 @@
+[
+  {
+    "titulo": "BLOG",
+    "description": "Este blog lo hice en un curso de CODERHOUSE. Esta hecho en DJANGO , HTML Y CSS. Me gusta mucho DJANGO para el BACKEND y voy seguir aprendiendo para poder crear proyectos mas grandes con esta poderosa herramienta de PYTHON.",
+    "path":"../../assets/images/blog.jpg"
+  },
+
+  {
+
+    "titulo": "CALCULADORA",
+    "description": "Esta calculadora fue un proyecto que realice con el curso de The Odin Project. El curso se llama Foundation y es una muy buena forma de empezar a aprender los basico de desarrollo WEB.",
+    "path":"../../assets/images/calculadora.png"
+  }
+]

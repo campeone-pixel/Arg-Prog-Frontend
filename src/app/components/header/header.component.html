@@ -1,6 +1,6 @@
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-light">
+      <nav class="navbar navbar-expand-md navbar-light ">
         <div class="container-fluid">
           <div class="logo"><img src="../../assets/images/logo-no-background_adobe_express.svg" alt="logo"></div>
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -15,19 +15,19 @@
             <ul class="navbar-nav d-md-flex d-md-flex  flex-md-fill">
               <div class=" menu-principal nav-item d-md-flex flex-grow-1 justify-content-md-center    bd-highlight ">
                 <li class="nav-item">
-                  <a class="nav-link active " aria-current="page" href="index.html"><span>Home</span></a>
+                  <a class="nav-link active " (click)="scrollTo('home')" [ngClass]="{ 'current-section': currentSection === 'home' }" aria-current="page" [routerLink] = "['/']"  fragment="home" ><span>{{ "menu.home" | translate }}</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active " aria-current="page" href="about_me.html"><span>About me</span></a>
+                  <a (click)="scrollTo('aboutme')" [ngClass]="{ 'current-section': currentSection === 'aboutme' }" class="nav-link active " aria-current="page" [routerLink] = "['/']"  fragment="aboutme" ><span>{{ "menu.aboutme" | translate }}</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active " aria-current="page" href="projects.html"><span>Projects</span></a>
+                  <a (click)="scrollTo('projects')" [ngClass]="{ 'current-section': currentSection === 'projects' }" class="nav-link active " aria-current="page" [routerLink] = "['/']"  fragment="projects" ><span>{{ "menu.projects" | translate }}</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active " aria-current="page" href="services.html"><span>Services</span></a>
+                  <a (click)="scrollTo('services')" [ngClass]="{ 'current-section': currentSection === 'services' }" class="nav-link active " aria-current="page" [routerLink] = "['/']"  fragment="services" ><span>{{ "menu.services" | translate }}</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active " aria-current="page" href="contact.html"><span>Contact</span></a>
+                  <a (click)="scrollTo('contact')" [ngClass]="{ 'current-section': currentSection === 'contact' }" class="nav-link active " aria-current="page" [routerLink] = "['/']"  fragment="contact" ><span>{{ "menu.contact" | translate }}</span></a>
                 </li>
               </div>
               <li class="nav-item dropdown">
@@ -36,8 +36,16 @@
                   <i class="fa-solid fa-language"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="./index_es.html">Español</a></li>
-                  <li><a class="dropdown-item" href="./index.html">Ingles</a></li>
+                  <ng-container *ngFor="let language of languageList">
+                    <li role="menuitem">
+                      <a
+                      class="dropdown-item"
+                      (click)="changeSiteLanguage(language.code)">
+                        {{ language.label }}
+                      </a>
+                    </li>
+                  </ng-container>
+                 
 
 
                 </ul>
@@ -48,3 +56,4 @@
       </nav>
 
     </header>
+   
