@@ -21,22 +21,22 @@
     "about_description": "I started learning Python because i needed to find a better way to do things in my work and since that i didnt stop learning others leanguages. Now i realized that i want to do this for a living. Now, im currently working in a electrical company in my city where i am in charged of a sector responsible of documenting all the electrical wires of the city with AutoCAD. I can work part-time in any project, big or small, and demostrate all my new abilities as programmer.",
     "titulo_skill": "MY SKILLS",
     "skills": [
-      { "name": "python", "percentage": 70 },
-      { "name": "python", "percentage": 70 },
-      { "name": "python", "percentage": 70 },
-      { "name": "python", "percentage": 70 }
+      { "id":1,"name": "python", "percentage": 70 },
+      { "id":2, "name": "python", "percentage": 70 },
+      {  "id":3,"name": "python", "percentage": 70 },
+      {  "id":4,"name": "python", "percentage": 70 }
     ]
   },
 
   "section_projects": {
     "title_projects": "LAST PROJECTS",
     "projects": [
-      {
+      {"id":1,
         "title": "BLOG",
         "description": "This a blog that i did for a course in Coderhouse. I had to use Django, HTML and CSS. I really like Django for the backend and im going to learn more so i can make bigger projects with this incredible framework.",
         "path":"../../assets/images/blog.jpg"
       },
-      {
+      {"id":2,
         "title": "Calculator",
         "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
         "path":"../../assets/images/calculadora.png"

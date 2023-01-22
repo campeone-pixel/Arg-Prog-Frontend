@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as v;
+
 section,nav{
 	max-width: 1400px;
 }
@@ -12,7 +14,7 @@ body{
 }
 
 main{
-  
+  width: 100%;
   grid-area: main;
   justify-self: stretch;
 	align-self: stretch;
@@ -21,4 +23,22 @@ main{
 app-services {
 	display: flex;
 	justify-content: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+	
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px v.$primario;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: v.$cuarto;
+  border-radius: 10px;
 }

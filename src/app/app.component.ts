@@ -9,6 +9,8 @@ import { HostListener } from "@angular/core";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  
 private URL = '../assets/i18n/espaniol.json';
 currentSection = 'home';
 title = 'asdfasdf'
