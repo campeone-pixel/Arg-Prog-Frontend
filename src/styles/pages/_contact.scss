@@ -9,7 +9,7 @@
 	align-items: center;
 	
 
-	padding: 100px 25px;
+	
 	margin-bottom: 50px;
 	
 	.container {
@@ -30,7 +30,7 @@
 				width: 160px;
 				height: 40px;
 				line-height: 40px;
-				font-size: 18px;
+				
 				font-family: t.$sans-serif;
 				text-decoration: none;
 				color: v.$tercero;
@@ -47,7 +47,7 @@
 					position: relative;
 					z-index: 2;
 					color: v.$cuarto;
-					font-size: 20px;
+					font-size: 1em;
 					letter-spacing: 0.2em;
 				}
 

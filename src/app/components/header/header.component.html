@@ -1,59 +1,106 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="rounded-social-buttons container-fluid">
+      <a class="social-button whatsapp" href="https://wa.me/5493413594246" target="_blank">
+        <i class="fa-brands fa-whatsapp faa-horizontal "></i>
+      </a>
+      <a class="social-button discord" href="https://discordapp.com/users/340308963557900290" target="_blank">
+        <i class="fa-brands fa-discord faa-horizontal "></i>
+      </a>
+      <a class="social-button linkedin faa-horizontal " href="https://www.linkedin.com/in/matias-poses-4748aa130/"
+        target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a class="social-button github" href="https://github.com/campeone-pixel" target="_blank">
+        <i class="fa-brands fa-github faa-horizontal "></i>
+      </a>
+    </div>
+    <div class="container-fluid navbar">
+      <div class="logo"><img src="../../assets/images/logo-no-background_adobe_express.svg" alt="logo"></div>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="toggler-icon top-bar"></span>
+        <span class="toggler-icon middle-bar"></span>
+        <span class="toggler-icon bottom-bar"></span>
 
-    <header>
-      <nav class="navbar navbar-expand-md navbar-light ">
-        <div class="container-fluid">
-          <div class="logo"><img src="../../assets/images/logo-no-background_adobe_express.svg" alt="logo"></div>
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="toggler-icon top-bar"></span>
-            <span class="toggler-icon middle-bar"></span>
-            <span class="toggler-icon bottom-bar"></span>
-            
-          </button>
-          <div class="collapse navbar-collapse flex-md-row" id="navbarSupportedContent">
-            <ul class="navbar-nav d-md-flex d-md-flex  flex-md-fill">
-              <div class=" menu-principal nav-item d-md-flex flex-grow-1 justify-content-md-center    bd-highlight ">
-                <li class="nav-item">
-                  <a class="nav-link active " (click)="scrollTo('home')" [ngClass]="{ 'current-section': currentSection === 'home' }" aria-current="page" [routerLink] = "['/']"  fragment="home" ><span>{{ "menu.home" | translate }}</span></a>
-                </li>
-                <li class="nav-item">
-                  <a (click)="scrollTo('aboutme')" [ngClass]="{ 'current-section': currentSection === 'aboutme' }" class="nav-link active " aria-current="page" [routerLink] = "['/']"  fragment="aboutme" ><span>{{ "menu.aboutme" | translate }}</span></a>
-                </li>
-                <li class="nav-item">
-                  <a (click)="scrollTo('projects')" [ngClass]="{ 'current-section': currentSection === 'projects' }" class="nav-link active " aria-current="page" [routerLink] = "['/']"  fragment="projects" ><span>{{ "menu.projects" | translate }}</span></a>
-                </li>
-                <li class="nav-item">
-                  <a (click)="scrollTo('services')" [ngClass]="{ 'current-section': currentSection === 'services' }" class="nav-link active " aria-current="page" [routerLink] = "['/']"  fragment="services" ><span>{{ "menu.services" | translate }}</span></a>
-                </li>
-                <li class="nav-item">
-                  <a (click)="scrollTo('contact')" [ngClass]="{ 'current-section': currentSection === 'contact' }" class="nav-link active " aria-current="page" [routerLink] = "['/']"  fragment="contact" ><span>{{ "menu.contact" | translate }}</span></a>
-                </li>
-              </div>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-solid fa-language"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <ng-container *ngFor="let language of languageList">
-                    <li role="menuitem">
-                      <a
-                      class="dropdown-item"
-                      (click)="changeSiteLanguage(language.code)">
-                        {{ language.label }}
-                      </a>
-                    </li>
-                  </ng-container>
-                 
+      </button>
+      <div class="collapse navbar-collapse flex-lg-row" id="navbarSupportedContent">
+        <ul class="navbar-nav d-lg-flex d-lg-flex  flex-lg-fill">
+          <div class=" menu-principal nav-item d-lg-flex flex-grow-1 justify-content-md-center    bd-highlight ">
+            <li class="nav-item">
+              <a class="nav-link active " (click)="scrollTo('home')"
+                [ngClass]="{ 'current-section': currentSection === 'home' }" aria-current="page" [routerLink]="['/']"
+                fragment="home"><span>{{ miPortfolio?.menu?.home }}</span></a>
+            </li>
+            <li class="nav-item">
+              <a (click)="scrollTo('aboutme')" [ngClass]="{ 'current-section': currentSection === 'aboutme' }"
+                class="nav-link active " aria-current="page" [routerLink]="['/']"><span>{{ miPortfolio?.menu?.aboutme
+                  }}</span></a>
+            </li>
+            <li class="nav-item">
+              <a (click)="scrollTo('experience')" [ngClass]="{ 'current-section': currentSection === 'experience' }"
+                class="nav-link active " aria-current="page" [routerLink]="['/']"><span>{{ miPortfolio?.menu?.experience
+                  }}</span></a>
+            </li>
+            <li class="nav-item">
+              <a (click)="scrollTo('education')" [ngClass]="{ 'current-section': currentSection === 'education' }"
+                class="nav-link active " aria-current="page" [routerLink]="['/']"><span>{{ miPortfolio?.menu?.education
+                  }}</span></a>
+            </li>
+            <li class="nav-item">
+              <a (click)="scrollTo('skills')" [ngClass]="{ 'current-section': currentSection === 'skills' }"
+                class="nav-link active " aria-current="page" [routerLink]="['/']"><span>{{ miPortfolio?.menu?.skills
+                  }}</span></a>
+            </li>
+            <li class="nav-item">
+              <a (click)="scrollTo('projects')" [ngClass]="{ 'current-section': currentSection === 'projects' }"
+                class="nav-link active " aria-current="page" [routerLink]="['/']"><span>{{ miPortfolio?.menu?.projects
+                  }}</span></a>
+            </li>
+            <li class="nav-item">
+              <a (click)="scrollTo('contact')" [ngClass]="{ 'current-section': currentSection === 'contact' }"
+                class="nav-link active " aria-current="page" [routerLink]="['/']"><span>{{ miPortfolio?.menu?.contact
+                  }}</span></a>
+            </li>
 
+           
 
-                </ul>
-              </li>
-            </ul>
           </div>
-        </div>
-      </nav>
 
-    </header>
-   
+          <div class="nav-link">
+            <a class="login">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </div>
+
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fa-solid fa-language"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <ng-container *ngFor="let language of languageList">
+
+
+                <li role="menuitem">
+                  <a class="dropdown-item" (click)="changeLang(language.code)">
+                    {{ language.label }}
+                  </a>
+                </li>
+              </ng-container>
+
+
+
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+
+  <app-banner></app-banner>
+
+</header>

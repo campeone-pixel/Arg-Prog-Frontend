@@ -1,0 +1,68 @@
+@use "../abstracts/mixins" as a;
+@use "../abstracts/variables" as v;
+@use "../abstracts/typography" as t;
+
+.experience {
+  @include a.fx-col-all-center;
+
+  h2 {
+    font-weight: 900;
+    font-family: t.$sans-serif;
+    text-shadow: 5px 5px black;
+    font-size: 3em;
+    color: v.$primario;
+  }
+
+  .card-exp {
+    height: auto;
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+   
+
+    
+  
+    section {
+      padding: 1.3em;
+      gap: 10px;
+      display: grid;
+      grid-template-columns: 0.1fr 0.9fr;
+      justify-content: start;
+      justify-items: start;
+      
+      align-items: flex-start;
+      background-color: v.$secundario;
+      border-radius: 10px 10px 10px 10px;
+      border-radius: 5px;
+      border: 2px solid v.$tercero;
+      .line {
+        border-left: 6px solid green;
+        height: 100%;
+        grid-column: 1;
+        grid-row: 1 / 3;
+      }
+
+      .description {
+        color: v.$primario;
+        
+        flex: 1;
+        h3 {
+          font-family: t.$sans-serif;
+          font-size: 50px;
+          text-shadow: 5px 5px black;
+        }
+
+        p {
+          font-family: t.$sans-serif-2;
+          font-style: normal;
+          font-size: 1em;
+        }
+      }
+      .title {
+        flex: 1;
+        padding: 0;
+      }
+    }
+  }
+}

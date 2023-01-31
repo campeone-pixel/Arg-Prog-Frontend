@@ -23,14 +23,14 @@ export class ScrollSpyDirective {
   @HostListener('scroll', ['$event'])
   onScroll(event: any) {
     let currentSection: string = 'home'
-    console.log(currentSection)
+    
     const children = this._el.nativeElement.children;
     
     const scrollTop = event.target.scrollTop;
     const parentOffset = event.target.offsetTop;
     for (let i = 0; i < children.length; i++) {
       const element = children[i];
-      console.log(children[i].tagName.substring(0,3))
+     
       if (this.spiedTags.some((spiedTag) => spiedTag === element.tagName.substring(0,3))) {
         
         if (element.offsetTop - parentOffset <= scrollTop+320) {

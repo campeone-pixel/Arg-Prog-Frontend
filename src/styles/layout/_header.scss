@@ -2,206 +2,192 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/typography" as t;
 
-header {
-	font-family: t.$sans-serif, sans-serif;
-	background-color: v.$secundario ;
-	font-size: 1.3em;
-	grid-area: header;
-	display: flex;
-	justify-content: center;
-	position: fixed;
-	top: 0px;
-	z-index: 2;
-	width: 100%;
+app-header {
+  grid-area: header;
+  background-color: v.$secundario;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
 
-	nav {
-		flex: 1;
-		display: flex;
-		justify-content: space-around;
-		color: v.$secundario;
-		position: relative;
+  header {
+    font-family: t.$sans-serif, sans-serif;
 
-		.container-fluid {
-			
-			padding: 0 20px 0 20px;
+    font-size: 1.3em;
 
-			.navbar-toggler {
-				border: 0;
-				border-color: v.$tercero;
-				background-color: v.$tercero;
-				height: 40px;
-			}
+    width: 100%;
 
-			.navbar-toggler:focus,
-			.navbar-toggler:active,
-			.navbar-toggler-icon:focus {
-				outline: none !important;
-				box-shadow: none !important;
-				border: 0 !important;
-			}
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: space-around;
+      color: v.$secundario;
+      flex-direction: column;
+      
+      .container-fluid.navbar {
+        --bs-gutter-x: 0;
 
-			/* Lines of the Toggler */
-			.toggler-icon {
-				width: 30px;
-				height: 3px;
-				background-color: #e74c3c;
-				display: block;
-				transition: all 0.2s;
-			}
+        .navbar-toggler {
+          border: 0;
+          border-color: v.$tercero;
+          background-color: v.$tercero;
+          height: 40px;
+        }
 
-			/* Adds Space between the lines */
-			.middle-bar {
-				margin: 5px auto;
-			}
+        .navbar-toggler:focus,
+        .navbar-toggler:active,
+        .navbar-toggler-icon:focus {
+          outline: none !important;
+          box-shadow: none !important;
+          border: 0 !important;
+        }
 
-			/* State when navbar is opened (START) */
-			.navbar-toggler .top-bar {
-				transform: rotate(45deg);
-				transform-origin: 10% 10%;
-			}
+        /* Lines of the Toggler */
+        .toggler-icon {
+          width: 30px;
+          height: 3px;
+          background-color: #e74c3c;
+          display: block;
+          transition: all 0.2s;
+        }
 
-			.navbar-toggler .middle-bar {
-				opacity: 0;
-				filter: alpha(opacity=0);
-			}
+        /* Adds Space between the lines */
+        .middle-bar {
+          margin: 5px auto;
+        }
 
-			.navbar-toggler .bottom-bar {
-				transform: rotate(-45deg);
-				transform-origin: 10% 90%;
-			}
-			/* State when navbar is opened (END) */
+        /* State when navbar is opened (START) */
+        .navbar-toggler .top-bar {
+          transform: rotate(45deg);
+          transform-origin: 10% 10%;
+        }
 
-			/* State when navbar is collapsed (START) */
-			.navbar-toggler.collapsed .top-bar {
-				transform: rotate(0);
-			}
+        .navbar-toggler .middle-bar {
+          opacity: 0;
+          filter: alpha(opacity=0);
+        }
 
-			.navbar-toggler.collapsed .middle-bar {
-				opacity: 1;
-				filter: alpha(opacity=100);
-			}
+        .navbar-toggler .bottom-bar {
+          transform: rotate(-45deg);
+          transform-origin: 10% 90%;
+        }
+        /* State when navbar is opened (END) */
 
-			.navbar-toggler.collapsed .bottom-bar {
-				transform: rotate(0);
-			}
-			/* State when navbar is collapsed (END) */
+        /* State when navbar is collapsed (START) */
+        .navbar-toggler.collapsed .top-bar {
+          transform: rotate(0);
+        }
 
-			/* Color of Toggler when collapsed */
-			.navbar-toggler.collapsed .toggler-icon {
-				background-color: #777777;
-				
-			}
+        .navbar-toggler.collapsed .middle-bar {
+          opacity: 1;
+          filter: alpha(opacity=100);
+        }
 
+        .navbar-toggler.collapsed .bottom-bar {
+          transform: rotate(0);
+        }
+        /* State when navbar is collapsed (END) */
 
+        /* Color of Toggler when collapsed */
+        .navbar-toggler.collapsed .toggler-icon {
+          background-color: #777777;
+        }
 
+        .navbar-collapse {
+          .menu-principal {
+            
+            .nav-item .nav-link.active {
+              margin-right: 10px;
+              text-align: left;
+              color: v.$secundario;
+              letter-spacing: 0.05em;
+              transform: scaleY(1.1);
+            }
 
-			.navbar-collapse {
-				.menu-principal {
-					.nav-item .nav-link.active {
-						width: 100px;
-						text-align: left;
-						color: v.$secundario;
-						letter-spacing: 0.05em;
-						transform: scaleY(1.1);
-					}
+            .nav-item a {
+              text-decoration: none;
 
-					.nav-item a {
-						text-decoration: none;
+              letter-spacing: 2px;
+              text-align: center;
+              position: relative;
+              transition: all 0.35s;
+            }
 
-						letter-spacing: 2px;
-						text-align: center;
-						position: relative;
-						transition: all 0.35s;
-					}
+            .nav-item a span {
+              color: v.$tercero;
+              position: relative;
+              z-index: 2;
+            }
 
-					.nav-item a span {
-						color: v.$tercero;
-						position: relative;
-						z-index: 2;
-					}
+            .nav-item a:after {
+              position: absolute;
+              content: "";
+              top: 0;
+              left: 0;
+              width: 0;
+              height: 100%;
+              background: v.$primario;
 
-					.nav-item a:after {
-						position: absolute;
-						content: "";
-						top: 0;
-						left: 0;
-						width: 0;
-						height: 100%;
-						background: v.$primario;
-						
-						transition: all 0.35s;
-						
-					}
+              transition: all 0.35s;
+            }
 
-					.nav-item a:hover {
-						color: #fff;
-					}
+            .nav-item a:hover {
+              color: #fff;
+            }
 
-					.nav-item a:hover:after {
-						width: 100%;
-						
-						
-						
-					}
-				}
+            .nav-item a:hover:after {
+              width: 100%;
+            }
+          }
 
-				.nav-item.dropdown .nav-link {
-					font-size: 1em;
-					
-					color: v.$tercero;
-				}
-			}
-		}
-	}
+          
 
-	.logo img {
-		width: 7em;
-	}
+          .nav-item.dropdown .nav-link,.login {
+            font-size: 1em;
+         
+            color: v.$tercero;
+          }
+        }
+      }
+
+      .rounded-social-buttons.container-fluid {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 1em;
+        .social-button:hover {
+          background-color: v.$cuarto;
+        }
+        .social-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: v.$tercero;
+          height: 30px;
+          width: 30px;
+          border-radius: 100%;
+          transition: background 0.5s ease-in-out;
+          .fa-brands:hover {
+            transform: rotate(360deg);
+          }
+          .fa-brands {
+            font-size: 100%;
+            position: relative;
+            transition: transform 0.5s ease-in-out;
+          }
+        }
+
+        i {
+          color: v.$secundario;
+        }
+      }
+    }
+
+    .logo img {
+      width: 7em;
+    }
+  }
 }
 
 
-
-nav {
-	
-	position: relative;
-	z-index: 1;
-
-	&:before,
-	&:after {
-		background: inherit;
-		content: "";
-		display: block;
-		height: 10%;
-		left: 0;
-		position: absolute;
-		right: 0;
-		z-index: -1;
-	}
-
-	&:after {
-		
-		position: absolute;
-		background-color: v.$secundario ;
-		height: 100px;
-		top: 0px;
-		transform: skewY(-1deg);
-		transform-origin: right;
-
-		
-		z-index: -1;
-	}
-	&:before {
-	
-		display: inline-block;
-		position: absolute;
-	 
-		height: 50px;
-		
-		bottom: 0px;
-		background-color: v.$secundario ;
-		
-		
-
-		
-	}
-}

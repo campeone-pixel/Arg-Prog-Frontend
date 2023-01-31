@@ -1,23 +1,37 @@
-<article id="home" class="index">
+<article class="index">
 
   <section>
 
-    <div class="imag"><img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="index photo">
-    </div>
+
 
     <div class="text-container">
       <div>
-        <h1>{{ "home.introduction_1" | translate }} <br>
-
-          <span>{{ "home.introduction_2" | translate }}</span> <br>
-
-          {{ "home.introduction_3" | translate }} <span>{{ "home.introduction_4" | translate }}</span><br>
-          {{ "home.introduction_5" | translate }}
-        </h1>
+        <h1 [innerHTML]= 'miPortfolio?.section_home?.introduction'> </h1>
       </div>
 
+
+    </div>
+
+    <div class="social">
+
       <div class="wrapper">
-        <a href="contact.html"><span>{{ "home.index_contact" | translate }}</span></a>
+        <a href="contact.html"><span>{{ miPortfolio?.section_home?.contact }}</span></a>
+      </div>
+
+      <div class="rounded-social-buttons container-fluid">
+        <a class="social-button whatsapp" href="https://wa.me/5493413594246" target="_blank">
+          <i class="fa-brands fa-whatsapp faa-horizontal "></i>
+        </a>
+        <a class="social-button discord" href="https://discordapp.com/users/340308963557900290" target="_blank">
+          <i class="fa-brands fa-discord faa-horizontal "></i>
+        </a>
+        <a class="social-button linkedin faa-horizontal " href="https://www.linkedin.com/in/matias-poses-4748aa130/"
+          target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a class="social-button github" href="https://github.com/campeone-pixel" target="_blank">
+          <i class="fa-brands fa-github faa-horizontal "></i>
+        </a>
       </div>
     </div>
 

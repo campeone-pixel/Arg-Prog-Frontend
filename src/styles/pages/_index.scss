@@ -3,51 +3,61 @@
 @use "../abstracts/typography" as t;
 
 .index {
-	@include a.fx-col-all-center;
-	height: 100vh;
-	
-	padding: 0 25px;
-	section {
-		@include a.fx-col-all-center;
-		
-		gap: 1em;
-		
-		
-		background-color: v.$secundario;
-		border: 2px solid v.$tercero;
-		border-radius:10px 10px 10px 10px;
-		max-width: 400px;
+  @include a.fx-col-all-center;
 
-		.text-container {
-			color: v.$primario;
-			max-width: 400px;
-			font-family: t.$sans-serif-2;
-			font-style: normal;
-			padding: 1em;
+  section {
+    @include a.fx-col-all-center;
+
+    gap: 1em;
+
+    background-color: v.$secundario;
+    border: 2px solid v.$tercero;
+    border-radius: 10px 10px 10px 10px;
+		height: 350px;
+    padding: 1em;
+
+    
+
+    .text-container {
+			flex: 1 ;
+			@include a.fx-all-center;
+      color: v.$primario;
+
+      font-family: t.$sans-serif-2;
+      font-style: normal;
+      
+
+      h1 {
+        font-weight: 500;
+        font-size: 2em;
+      }
+
+      span {
+        color: v.$tercero;
+        font-style: italic;
+        font-weight: 900;
+      }
+    }
+
+		.social{
+			flex: 0 1;
+			width: 100%;
+			display: flex;
+			justify-content: right;
+			align-items: center;
+      flex-direction: column;
 			
-
-			h1 {
-				
-				font-weight: 500;
-			}
-
-			span {
-				color: v.$tercero;
-				font-style: italic;
-				font-weight: 900;
-
-			}
-
-			
-			
-
+      gap: 20px;
+      
+      
 			.wrapper{
+				width: 100%;
 				a{
 					display: block;
 					width: 160px;
 					height: 40px;
 					line-height: 40px;
-					font-size: 18px;
+					
 					font-family: t.$sans-serif;
 					text-decoration: none;
 					color: v.$tercero;
@@ -90,41 +100,60 @@
 	
 				
 			}
+
 			
-	
+      .rounded-social-buttons.container-fluid {
+        padding: 0;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 0.5em;
+        
+        .social-button:hover {
+          background-color: v.$cuarto;
+        }
+        .social-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: v.$tercero;
+          height: 30px;
+          width: 30px;
+          border-radius: 100%;
+          transition: background 0.5s ease-in-out;
+          .fa-brands:hover {
+            transform: rotate(360deg);
+          }
+          .fa-brands {
+            font-size: 100%;
+            position: relative;
+            transition: transform 0.5s ease-in-out;
+          }
+        }
+
+        i {
+          color: v.$secundario;
+        }
+      }
 			
-		}
-		.imag {
-			flex: 1;
-			overflow:hidden;
-			border-radius:10px 10px 0px 0px;
-			img {
-				
-				height: auto;
-				width: 100%;
-				background-position: center;
-				background-size: cover;
-				scale: 110%;
-				
-			}
 		}
 
-		@keyframes pulse {
-			0% {
-				transform: scale(1);
-			}
-			25% {
-				transform: scale(1.1);
-			}
-			50% {
-				transform: scale(1);
-			}
-			75% {
-				transform: scale(1.1);
-			}
-			100% {
-				transform: scale(1);
-			}
-		}
-	}
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.1);
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
 }

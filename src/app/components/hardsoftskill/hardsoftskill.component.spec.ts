@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServicesComponent } from './services.component';
+import { HardsoftskillComponent } from './hardsoftskill.component';
 
-describe('ServicesComponent', () => {
-  let component: ServicesComponent;
-  let fixture: ComponentFixture<ServicesComponent>;
+describe('HardsoftskillComponent', () => {
+  let component: HardsoftskillComponent;
+  let fixture: ComponentFixture<HardsoftskillComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ServicesComponent ]
+      declarations: [ HardsoftskillComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ServicesComponent);
+    fixture = TestBed.createComponent(HardsoftskillComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

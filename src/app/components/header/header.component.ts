@@ -1,5 +1,6 @@
-import { Component, VERSION,Input } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, VERSION, Input } from '@angular/core';
+
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-header',
@@ -13,31 +14,20 @@ export class HeaderComponent {
     { code: 'english', label: 'English' },
     { code: 'espaniol', label: 'Español' },
   ];
-    
 
-  constructor(private translate: TranslateService) {}
-  changeSiteLanguage(localeCode: string): void {
-    const selectedLanguage = this.languageList
-      .find((language) => language.code === localeCode)
-      ?.label.toString();
-    if (selectedLanguage) {
-      this.siteLanguage = selectedLanguage;
-      this.translate.use(localeCode);
-    }
-    const currentLanguage = this.translate.currentLang;
+  constructor(private datosPortfolio: PortfolioService) {}
+  miPortfolio: any;
+  ngOnInit(): void {
+    this.datosPortfolio.obtenerDatos().subscribe((data) => {
+      this.miPortfolio = data;
+    });
   }
 
-
-  scrollTo(section:string) {
-    document.querySelector('#' + section)!
-    .scrollIntoView();
+  changeLang(localeCode: string) {
+    this.datosPortfolio.changeLang(localeCode);
   }
 
-
- 
-
-
-
-
-
+  scrollTo(section: string) {
+    document.querySelector('#' + section)!.scrollIntoView();
+  }
 }

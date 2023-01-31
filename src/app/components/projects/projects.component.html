@@ -1,19 +1,19 @@
-<article id="projects" class="projects">
+<article  class="projects">
 
-  <h1>Last Projects</h1>
+  <h2>{{miPortfolio?.section_projects?.title_projects}}</h2>
 
-  <section class="" *ngFor="let project of ('section_projects.projects' | translate)">
+ <section class="" *ngFor="let project of miPortfolio?.section_projects?.projects">
 
-    <div class="imag"><img src="{{ project.path }}" alt="photo blog">
+    <div class="imag"><img src= {{project.path}} alt="photo blog">
     </div>
 
     <div class="text-container">
 
-      <h2>{{  project.title }}</h2>
+      <h2>{{project.title}}</h2>
 
-      <p> {{ project.description }}</p>
+      <p> {{project.description}}</p>
     </div>
-  </section>
+  </section> 
 
 
 

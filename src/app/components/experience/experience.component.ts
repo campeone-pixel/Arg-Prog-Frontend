@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { PortfolioService } from '../../services/portfolio.service';
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  selector: 'app-experience',
+  templateUrl: './experience.component.html',
+  styleUrls: ['./experience.component.scss']
 })
-export class FooterComponent {
+export class ExperienceComponent {
   miPortfolio: any;
   constructor(private datosPortfolio: PortfolioService){}
   ngOnInit(): void {

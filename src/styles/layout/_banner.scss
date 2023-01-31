@@ -1,0 +1,47 @@
+@use "../abstracts/mixins" as a;
+@use "../abstracts/variables" as v;
+@use "../abstracts/typography" as t;
+
+.banner {
+  height: 60px;
+
+  position: relative;
+
+  .imagen-banner {
+    overflow: hidden;
+    height: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .container{
+    width: 100%;
+    align-items: center;
+   display: flex;
+   justify-content: center;
+  .imagen-perfil {
+    position: absolute;
+    
+ 
+  
+  
+  
+    box-shadow: #000 0 2px 18px;
+    z-index: 1;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    @include a.fx-col-all-center;
+    border: solid 2px red;
+
+    img {
+      position: absolute;
+      background-image: contain;
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+}

@@ -5,11 +5,15 @@
 @use "./layout/grid";
 @use "./layout/header";
 @use "./layout/footer";
+@use "./layout/banner";
 
 @use "./pages/index";
 @use "./pages/about_me";
 @use "./pages/contact";
+
+@use "./pages/experience";
+@use "./pages/education";
 @use "./pages/projects";
-@use "./pages/services";
+
 
 @use "./abstracts/media";

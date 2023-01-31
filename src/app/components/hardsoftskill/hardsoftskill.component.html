@@ -1,0 +1,17 @@
+<article  class="skill">
+  <h2>{{title}}</h2>
+  <section class="skills">
+    
+    <div class="skill-bars"  *ngFor="let skill of skills">
+      <div class="container">
+        <div class="circular-progress" [style]="'background: conic-gradient(#7d2ae8 '+ 360*(skill.percentage/100)+'deg, #ededed 0deg)'">
+          <span class="progress-value">{{ skill.percentage}}</span>
+        </div>
+
+        <span class="text">{{ skill.name}}</span>
+      </div>
+      
+    </div>
+  </section>
+
+</article>

@@ -2,76 +2,106 @@
   "menu": {
     "home": "HOME",
     "aboutme": "ABOUT ME",
+    "experience": "EXPERIENCE",
+    "education": "EDUCATION",
+    "skills": "SKILLS",
     "projects": "PROJECTS",
-    "services": "SERVICES",
     "contact": "CONTACT"
   },
 
-  "home": {
-    "introduction_1": "Hi, my name is",
-    "introduction_2": "Matias Poses",
-    "introduction_3": "I'm a",
-    "introduction_4": "Fullstack Developer",
-    "introduction_5": "based in Argentina.",
-    "index_contact": "CONTACT ME"
+  "section_home": {
+    "introduction": "Hi, my name is <br><span>Matias Poses</span> I'm a <span> Fullstack Developer<span> based in Argentina.",
+    "contact": "CONTACT"
   },
 
-  "aboutme": {
+  "section_aboutme": {
     "title_aboutme": "ABOUT ME",
     "about_description": "I started learning Python because i needed to find a better way to do things in my work and since that i didnt stop learning others leanguages. Now i realized that i want to do this for a living. Now, im currently working in a electrical company in my city where i am in charged of a sector responsible of documenting all the electrical wires of the city with AutoCAD. I can work part-time in any project, big or small, and demostrate all my new abilities as programmer.",
-    "titulo_skill": "MY SKILLS",
+    "titulo_skill": "MY SKILLS"
+  },
+
+  "section_skills": {
+    "title": "HABILIDADES",
     "skills": [
-      { "id":1,"name": "python", "percentage": 70 },
-      { "id":2, "name": "python", "percentage": 70 },
-      {  "id":3,"name": "python", "percentage": 70 },
-      {  "id":4,"name": "python", "percentage": 70 }
+      { "id": 1, "name": "python", "percentage": 70 },
+      { "id": 2, "name": "python", "percentage": 90 },
+      { "id": 3, "name": "python", "percentage": 50 },
+      { "id": 4, "name": "python", "percentage": 75 }
     ]
   },
 
   "section_projects": {
-    "title_projects": "LAST PROJECTS",
+    "title_projects": "PROYECTOS",
     "projects": [
-      {"id":1,
+      {
+        "id": 1,
         "title": "BLOG",
         "description": "This a blog that i did for a course in Coderhouse. I had to use Django, HTML and CSS. I really like Django for the backend and im going to learn more so i can make bigger projects with this incredible framework.",
-        "path":"../../assets/images/blog.jpg"
+        "path": "../../assets/images/blog.jpg"
       },
-      {"id":2,
+      {
+        "id": 2,
         "title": "Calculator",
         "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
-        "path":"../../assets/images/calculadora.png"
+        "path": "../../assets/images/calculadora.png"
       }
     ]
   },
 
-  "services": {
-    "title_services": "SERVICES",
-    "services": [
+  "section_exp": {
+    "title": "EXPERIENCES",
+    "experiences": [
       {
-        "title": "BACKEND DEVELOPMENT",
-        "description": "I can desing the Backend with Django and SQL database."
+        "id": 1,
+        "title": "BLOG",
+        "position": "asfdsadfasdf",
+        "date_from": "12/12/1223",
+        "date_to": "12/12/1223",
+        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
+        "path": "../../assets/images/blog.jpg"
       },
       {
-        "title": "FRONTEND DEVELOPMENT",
-        "description": "I can desing your webpage for your business in the way you desire."
-      },
-      {
-        "title": "HOSTING",
-        "description": "No need to worry about a hosting services, because ill provide one for you."
-      },
-      {
-        "title": "TECHNICAL SUPPORT",
-        "description": "Ill give you one month free support for any small change you want to do in the page."
+        "id": 2,
+        "title": "BLOG",
+        "position": "asfdsadfasdf",
+        "date_from": "12/12/1223",
+        "date_to": "12/12/1223",
+        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
+        "path": "../../assets/images/blog.jpg"
       }
     ]
   },
 
-  "contact": {
-    "title": "Any question? Chat with me!",
-    "description": "Wether you have a new project going on or you need a webpage for you bussines you can send me an email and im going to aswner you as soon as possible. Or maybe i can help you in other ways you never know, so feel free to contact me",
-    "name": "Name",
-    "mail": "Email Address",
-    "message": "Message",
-    "submit": "SUBMIT"
+  "section_edu": {
+    "title": "EDUCATION",
+    "educations": [
+      {
+        "id": 1,
+        "title": "BLOG",
+        "position": "asfdsadfasdf",
+        "date_from": "12/12/1223",
+        "date_to": "12/12/1223",
+        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
+        "path": "../../assets/images/blog.jpg"
+      },
+      {
+        "id": 2,
+        "title": "BLOG",
+        "position": "asfdsadfasdf",
+        "date_from": "12/12/1223",
+        "date_to": "12/12/1223",
+        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
+        "path": "../../assets/images/blog.jpg"
+      }
+    ]
+  },
+
+  "section_contact": {
+    "title": "Alguna duda? Mejor lo hablamos!",
+
+    "name": "Nombre",
+    "mail": "Email",
+    "message": "Mensaje",
+    "submit": "Enviar"
   }
 }

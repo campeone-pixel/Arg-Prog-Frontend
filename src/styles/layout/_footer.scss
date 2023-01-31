@@ -5,11 +5,12 @@
 @use "../components/animations";
 
 footer {
-  position: relative;
+  
   @include a.fx-all-center;
   font-family: t.$sans-serif, sans-serif;
-  
+  height: 100px;
   font-size: 1.2em;
+  width: 100%;
 
   background-color: v.$secundario;
 
@@ -25,77 +26,6 @@ footer {
     color: v.$tercero;
   }
 
-  .rounded-social-buttons {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.5em;
-    font-size: 1.4em;
-    .social-button:hover {
-      background-color: v.$cuarto;
-    }
-    .social-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: v.$tercero;
-      height: 40px;
-      width: 40px;
-      border-radius: 100%;
-      transition: background 0.5s ease-in-out;
-      .fa-brands:hover {
-        transform: rotate(360deg);
-      }
-      .fa-brands {
-        font-size: 100%;
-        position: relative;
-        transition: transform 0.5s ease-in-out;
-      }
-    }
-
-    i {
-      color: v.$secundario;
-    }
-  }
+  
 }
 
-footer {
-  height: 100px;
-  position: relative;
-  z-index: 1;
-
-  &:before,
-  &:after {
-    content: "";
-    background: inherit;
-
-    display: block;
-    height: 10%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-  }
-
-  &:before {
-    position: absolute;
-    background-color: v.$secundario ;
-    height: 100px;
-
-    transform: skewY(-1deg);
-    transform-origin: left;
-
-    z-index: -1;
-  }
-  &:after {
-    display: inline-block;
-    transform: rotate(180deg) translateY(-100%);
-
-    top: 0px;
-
-    background-color: v.$secundario ;
-    height: 50px;
-
-    position: absolute;
-  }
-}

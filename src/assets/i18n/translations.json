@@ -1,0 +1,162 @@
+{
+
+
+  "en":{
+    
+      "menu": {
+        "home": "HOME",
+        "aboutme": "ABOUT ME",
+        "projects": "PROJECTS",
+        "services": "SERVICES",
+        "contact": "CONTACT"
+      },
+    
+      "home": {
+        "introduction_1": "Hi, my name is",
+        "introduction_2": "Matias Poses",
+        "introduction_3": "I'm a",
+        "introduction_4": "Fullstack Developer",
+        "introduction_5": "based in Argentina.",
+        "index_contact": "CONTACT ME"
+      },
+    
+      "aboutme": {
+        "title_aboutme": "ABOUT ME",
+        "about_description": "I started learning Python because i needed to find a better way to do things in my work and since that i didnt stop learning others leanguages. Now i realized that i want to do this for a living. Now, im currently working in a electrical company in my city where i am in charged of a sector responsible of documenting all the electrical wires of the city with AutoCAD. I can work part-time in any project, big or small, and demostrate all my new abilities as programmer.",
+        "titulo_skill": "MY SKILLS",
+        "skills": [
+          { "id":1,"name": "python", "percentage": 70 },
+          { "id":2, "name": "python", "percentage": 70 },
+          {  "id":3,"name": "python", "percentage": 70 },
+          {  "id":4,"name": "python", "percentage": 70 }
+        ]
+      },
+    
+      "section_projects": {
+        "title_projects": "LAST PROJECTS",
+        "projects": [
+          {"id":1,
+            "title": "BLOG",
+            "description": "This a blog that i did for a course in Coderhouse. I had to use Django, HTML and CSS. I really like Django for the backend and im going to learn more so i can make bigger projects with this incredible framework.",
+            "path":"../../assets/images/blog.jpg"
+          },
+          {"id":2,
+            "title": "Calculator",
+            "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
+            "path":"../../assets/images/calculadora.png"
+          }
+        ]
+      },
+    
+      "services": {
+        "title_services": "SERVICES",
+        "services": [
+          {
+            "title": "BACKEND DEVELOPMENT",
+            "description": "I can desing the Backend with Django and SQL database."
+          },
+          {
+            "title": "FRONTEND DEVELOPMENT",
+            "description": "I can desing your webpage for your business in the way you desire."
+          },
+          {
+            "title": "HOSTING",
+            "description": "No need to worry about a hosting services, because ill provide one for you."
+          },
+          {
+            "title": "TECHNICAL SUPPORT",
+            "description": "Ill give you one month free support for any small change you want to do in the page."
+          }
+        ]
+      },
+    
+      "contact": {
+        "title": "Any question? Chat with me!",
+        "description": "Wether you have a new project going on or you need a webpage for you bussines you can send me an email and im going to aswner you as soon as possible. Or maybe i can help you in other ways you never know, so feel free to contact me",
+        "name": "Name",
+        "mail": "Email Address",
+        "message": "Message",
+        "submit": "SUBMIT"
+      }
+    
+    
+  },
+
+  "es":{
+    "menu": {
+      "home": "INICIO",
+      "aboutme": "SOBRE MI",
+      "projects": "PROYECTOS",
+      "services": "SERVICIOS",
+      "contact": "CONTACTO"
+    },
+  
+    "home": {
+      "introduction_1": "Hola, mi nombre es",
+      "introduction_2": "Matias Poses",
+      "introduction_3": "Soy un ",
+      "introduction_4": "Desarrollador Fullstack",
+      "introduction_5": "viviendo en Argentina.",
+      "index_contact": "CONTACTAME"
+    },
+  
+    "aboutme": {
+      "title_aboutme": "SOBRE MI",
+      "about_description": "Empeze aprendiendo python porque necesitaba buscar una mejor manera de hacer mi trabajo y desde ahi no pare de aprender otros lenguajes. Ahora me di cuenta que la programacion es lo que me quiero dedicar. <br>Ahora, estoy trabajando en una empresa electrica de la ciudad en donde vivo, donde soy el encargado del sector responsable de documentar los cables de mi ciudad con Autocad. <br>Puedo trabajar de forma parcial en cualquier tipo de proyecto, grande o chico. Quiero demostrar mis nuevas habilidades como programado y desarrollador Web.",
+      "titulo_skill": "MIS HABILIDADES",
+      "skills": [
+        { "name": "python", "percentage": 70 },
+        { "name": "python", "percentage": 70 },
+        { "name": "python", "percentage": 70 },
+        { "name": "python", "percentage": 70 }
+      ]
+    },
+  
+    "section_projects": {
+      "title_projects": "ULTIMOS PROYECTOS",
+      "projects": [
+        {
+          "title": "BLOG",
+          "description": "Este blog lo hice en un curso de CODERHOUSE. Esta hecho en DJANGO , HTML Y CSS. Me gusta mucho DJANGO para el BACKEND y voy seguir aprendiendo para poder crear proyectos mas grandes con esta poderosa herramienta de PYTHON.",
+          "path":"../../assets/images/blog.jpg"
+        },
+        {
+          "title": "CALCULADORA",
+          "description": "Esta calculadora fue un proyecto que realice con el curso de The Odin Project. El curso se llama Foundation y es una muy buena forma de empezar a aprender los basico de desarrollo WEB.",
+          "path":"../../assets/images/calculadora.png"
+        }
+      ]
+    },
+  
+    "services": {
+      "title_services": "Servicios",
+      "services": [
+        {
+          "title": "DESARROLLO DE BACKEND",
+          "description": "Puedo desarrollar tus applicacion web con el DJANGO de PYTHON."
+        },
+        {
+          "title": "DESARROLLO DE FRONTEND",
+          "description": "Desarrollo a medida tu pagina web."
+        },
+        {
+          "title": "SERVICIO DE HOSTING",
+          "description": "El servicio de hosting viene incluido con el disenio de la pagina."
+        },
+        {
+          "title": "SOPORTE",
+          "description": "Tenes un mes de soporte por cualquier inconveniente en la pagina o por algun cambio menor."
+        }
+      ]
+    },
+  
+    "contact": {
+      "title": "Alguna duda? Mejor lo hablamos!",
+      "description": "Si quieres charlar sobre algun proyectos o necesitas una pagina web para tu negocio, no dudes en enviarme un mensaje que te voy a contestar lo mas rapido posible.",
+      "name": "Nombre",
+      "mail": "Email",
+      "message": "Mensaje",
+      "submit": "Enviar"
+    }
+  }
+}

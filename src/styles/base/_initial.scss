@@ -1,6 +1,6 @@
 @use "../abstracts/variables" as v;
 
-section,nav{
+header{
 	max-width: 1400px;
 }
 
@@ -13,17 +13,51 @@ body{
 	
 }
 
+
+
+.index {
+	
+	min-height: 70vh;
+	
+}
+
+article{
+	max-width: 321px;
+	padding: 20px;
+}
+
 main{
   width: 100%;
   grid-area: main;
-  justify-self: stretch;
-	align-self: stretch;
-}
-
-app-services {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 75px;
+	
+	& >*{
+	flex: 1;
+	width: 100%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	max-width: 1400px;
+
+		& >article{
+	
+		}
+	}
 }
+
+header, footer{
+	padding: 0 15px 0 15px;
+}
+
+app-footer{
+	align-self: stretch;
+	max-width: 100%;
+}
+
+
 
 /* width */
 ::-webkit-scrollbar {

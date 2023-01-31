@@ -6,9 +6,9 @@
 	@include a.fx-col-all-center;
 	height: auto;
 	gap: 1em;
-	padding: 100px 25px;
+	
 
-	h1 {
+	h2 {
 		font-weight: 900;
 		font-family: t.$sans-serif;
 		text-shadow: 5px 5px black;
@@ -22,7 +22,11 @@
 		border: 2px solid v.$tercero;
 		border-radius:10px 10px 10px 10px;
 		gap: 1em;
+		height: 500px;
 		
+		.imag, .text-container{
+      flex: 1;
+    }
 
 		
 
@@ -45,9 +49,13 @@
 		.imag {
 			border-radius:10px 10px 0px 0px;
 			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			img {
 				
-				width:100%;
+				width:125%;
+				height: auto;
 				background-position: center;
 				background-size: cover;
 			}
