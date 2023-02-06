@@ -10,13 +10,14 @@
   },
 
   "section_home": {
-    "introduction": "Hi, my name is <span>Matias Poses</span>  I'm a <span> Fullstack Developer<span> based in Argentina.",
+    "introduction": "Hi, my name is <span>Matias Poses</span><br> I'm a <span> Fullstack Developer</span> <br> based in Argentina.",
     "contact": "CONTACTAME"
   },
 
   "section_aboutme": {
     "title_aboutme": "SOBRE MI",
-    "about_description": "Empeze aprendiendo python porque necesitaba buscar una mejor manera de hacer mi trabajo y desde ahi no pare de aprender otros lenguajes. Ahora me di cuenta que la programacion es lo que me quiero dedicar. <br>Ahora, estoy trabajando en una empresa electrica de la ciudad en donde vivo, donde soy el encargado del sector responsable de documentar los cables de mi ciudad con Autocad. <br>Puedo trabajar de forma parcial en cualquier tipo de proyecto, grande o chico. Quiero demostrar mis nuevas habilidades como programado y desarrollador Web."
+    "about_description": "Empeze aprendiendo python porque necesitaba buscar una mejor manera de hacer mi trabajo y desde ahi no pare de aprender otros lenguajes. Ahora me di cuenta que la programacion es lo que me quiero dedicar. ",
+    "cv":"DOWNLOAD MY CV"
   },
 
   "section_skills": {

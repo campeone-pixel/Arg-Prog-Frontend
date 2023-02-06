@@ -5,179 +5,126 @@
 @media only screen and (min-width: 340px) {
   .banner {
     height: 100px;
-    .container{
-     
-    .imagen-perfil {
-     
-
-      width: 100px;
-      height: 100px;
+    .container {
+      .imagen-perfil {
+        width: 100px;
+        height: 100px;
+      }
     }
   }
-  }
-  main{
-    font-size: 18px;
-  }
+
 }
 
 @media only screen and (min-width: 500px) {
   .banner {
     height: 120px;
-    .container{
-     
+    .container {
       .imagen-perfil {
-       
-  
         width: 130px;
         height: 130px;
       }
     }
   }
-  main{
-    font-size: 20px;
+
+  .index {
+    section {
+      .social {
+        flex-direction: row;
+        justify-content: space-around;
+        
+          .rounded-social-buttons.container-fluid{
+            justify-content: flex-end;
+          }
+          
+        
+      }
+    }
   }
+
+
 }
 
 @media only screen and (min-width: 768px) {
-
-  main{
-    font-size: 24px;
+ 
+  main {
     gap: 100px;
   }
+
   .banner {
     height: 150px;
 
-    .container{
+    .container {
       justify-content: left;
       .imagen-perfil {
-       
-  
         width: 130px;
         height: 130px;
       }
     }
   }
-  article {
-    min-width: 100%;
-    height: 100%;
-  }
-
-  section {
-    overflow: hidden;
-  }
-  
 
   .aboutme section,
   .projects section {
     flex-direction: row;
-    height: 300px;
-    width: 100%;
+
+    height: 530px;
+    overflow: hidden;
+
+    .imag {
+      flex: 1 1 50%;
+      max-height:500px;
+      .container-img {
+        
+        img {
+          width: auto;
+          height: 1000px;
+          object-position: -100px -100px;
+        }
+      }
+    }
   }
 
   .index section {
-    height: 300px;
     width: 100%;
   }
 
-  .projects {
-    section {
-      .imag {
-        height: 100%;
 
-        img {
-          height: 100%;
-          object-fit: cover;
-          object-position: 50% 50%;
-        }
-      }
-    }
-  }
 
-  .aboutme {
-    section {
-      .imag {
-        height: 100%;
-        position: relative;
-        img {
-          height: 100%;
-          object-fit: cover;
-          object-position: 50% 50%;
-          position: absolute;
-          right: 1%;
-        }
-      }
-    }
-  }
-
-  .experience .card-exp section,
-  .education .card-edu section {
-    height: 250px;
-    .title {
-    }
-  }
-
-  .contact{
-
-    .container{
+  .contact {
+    .container {
       max-width: 100%;
     }
   }
 }
 
 @media only screen and (min-width: 840px) {
-
-  main{
-    font-size: 26px;
+  main {
     gap: 100px;
   }
-  .aboutme section,
-  .projects section {
-    flex-direction: row;
-
-    height: 350px;
-  }
+ 
 
   .index section {
-    height: 450px;
     width: 100%;
   }
 
-  .experience .card-exp section,
-  .education .card-edu section {
-    grid-template-columns: 0.01fr 0.3fr 0.6fr;
-    .description {
-      grid-row: span 2;
-      font-size: 25px;
-    }
-  }
+ 
+
+ 
 }
 
 @media only screen and (min-width: 992px) {
-  main{
-    font-size: 30px;
+  main {
     gap: 100px;
   }
 
-  .aboutme section,
-  .projects section {
-    flex-direction: row;
 
-    height: 450px;
-  }
 }
 
 @media only screen and (min-width: 1400px) {
-
-  main{
-    font-size: 30px;
+  main {
     gap: 100px;
   }
 
-  article {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
+
 }
 
-@media only screen and (min-width: 1800px) {
-}
+

@@ -8,12 +8,12 @@ app-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: center;
+ 
 
   header {
     font-family: t.$sans-serif, sans-serif;
 
-    font-size: 1.3em;
+    font-size: 0.9em;
 
     width: 100%;
 
@@ -97,7 +97,7 @@ app-header {
           .menu-principal {
             
             .nav-item .nav-link.active {
-              margin-right: 10px;
+              
               text-align: left;
               color: v.$secundario;
               letter-spacing: 0.05em;

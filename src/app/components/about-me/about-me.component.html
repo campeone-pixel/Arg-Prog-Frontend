@@ -2,23 +2,36 @@
 
   <h2>About Me</h2>
 
-  <section >
+  <section>
+
+
 
 
 
     <div class="imag">
-      <img src="../../assets/images/106_1852.JPG" alt="personal photo">
+      <div class="container-img"><img src="../../assets/images/106_1852.JPG" alt="personal photo"></div>
     </div>
 
     <div class="text-container">
+      <div class="title">
+        <h4> Trabajo</h4>
+        <h6 class="font-weight-bolder">
+          User Experience Designer
+          
+        </h6>
+      </div>
+      <p>
 
-      {{miPortfolio?.section_aboutme?.about_description}}
+        {{miPortfolio?.section_aboutme?.about_description}}
+      </p>
+      <div class="wrapper">
+        <a href="contact.html"><span>{{ miPortfolio?.section_aboutme?.cv }}</span></a>
+      </div>
 
-      
     </div>
 
   </section>
 
-  
+
 
 </article>

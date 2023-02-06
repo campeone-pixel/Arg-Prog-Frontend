@@ -1,6 +1,6 @@
 @use "./base/reset";
 @use "./base/initial";
-
+@use "./components/animations";
 
 @use "./layout/grid";
 @use "./layout/header";
@@ -16,4 +16,6 @@
 @use "./pages/projects";
 
 
+
 @use "./abstracts/media";
+@use "./abstracts/typography";

@@ -3,33 +3,35 @@
 @use "../abstracts/typography" as t;
 
 .index {
-  @include a.fx-col-all-center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  background-color: v.$secundario;
 
   section {
     @include a.fx-col-all-center;
-
+    flex: 1;
     gap: 1em;
 
-    background-color: v.$secundario;
-    border: 2px solid v.$tercero;
-    border-radius: 10px 10px 10px 10px;
-		height: 350px;
     padding: 1em;
 
-    
-
     .text-container {
-			flex: 1 ;
-			@include a.fx-all-center;
+      flex: 1;
+      @include a.fx-all-center;
       color: v.$primario;
-
+      width: 100%;
       font-family: t.$sans-serif-2;
       font-style: normal;
-      
 
-      h1 {
-        font-weight: 500;
-        font-size: 2em;
+      div {
+        width: 100%;
+        h1 {
+          line-height: 2em;
+          font-weight: 400;
+        }
       }
 
       span {
@@ -39,121 +41,15 @@
       }
     }
 
-		.social{
-			flex: 0 1;
-			width: 100%;
-			display: flex;
-			justify-content: right;
-			align-items: center;
+    .social {
+      flex: 0 1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
-			
+
       gap: 20px;
-      
-      
-			.wrapper{
-				width: 100%;
-				a{
-					display: block;
-					width: 160px;
-					height: 40px;
-					line-height: 40px;
-					
-					font-family: t.$sans-serif;
-					text-decoration: none;
-					color: v.$tercero;
-					border: 2px solid v.$tercero;
-					letter-spacing: 2px;
-					text-align: center;
-					position: relative;
-					transition: all .35s;
-					z-index: 0;
-				}
-				
-				span{
-					font-style: normal;
-					position: relative;
-					z-index: 0;
-					color: v.$cuarto;
-					font-size: 20px;
-					letter-spacing: 0.2em;
-				}
-				
-				a:after{
-					position: absolute;
-					content: "";
-					top: 0;
-					left: 0;
-					width: 0;
-					height: 100%;
-					background: v.$primario;
-					transition: all .35s;
-					z-index: -1;
-				}
-				
-				a:hover{
-					color: #fff;
-				}
-				
-				a:hover:after{
-					width: 100%;
-				}
-	
-				
-			}
-
-			
-      .rounded-social-buttons.container-fluid {
-        padding: 0;
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        gap: 0.5em;
-        
-        .social-button:hover {
-          background-color: v.$cuarto;
-        }
-        .social-button {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: v.$tercero;
-          height: 30px;
-          width: 30px;
-          border-radius: 100%;
-          transition: background 0.5s ease-in-out;
-          .fa-brands:hover {
-            transform: rotate(360deg);
-          }
-          .fa-brands {
-            font-size: 100%;
-            position: relative;
-            transition: transform 0.5s ease-in-out;
-          }
-        }
-
-        i {
-          color: v.$secundario;
-        }
-      }
-			
-		}
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      25% {
-        transform: scale(1.1);
-      }
-      50% {
-        transform: scale(1);
-      }
-      75% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
     }
   }
 }

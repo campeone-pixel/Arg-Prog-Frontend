@@ -1,80 +1,83 @@
-@-webkit-keyframes horizontal {
-  0% {
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0);
+@use "../abstracts/mixins" as a;
+@use "../abstracts/variables" as v;
+@use "../abstracts/typography" as t;
+
+
+.wrapper {
+  a {
+    display: block;
+
+    padding: 0.5em 1em 0.5em 1em;
+    font-family: t.$sans-serif;
+    text-decoration: none;
+    color: v.$tercero;
+    border: 2px solid v.$tercero;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
+    z-index: 0;
   }
 
-  6% {
-    -webkit-transform: translate(5px,0);
-    transform: translate(5px,0);
+  span {
+    position: relative;
+    z-index: 0;
+    color: v.$cuarto;
+
+    letter-spacing: 0.3em;
   }
 
-  12% {
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0);
+  a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: v.$primario;
+    transition: all 0.35s;
+    z-index: -1;
   }
 
-  18% {
-    -webkit-transform: translate(5px,0);
-    transform: translate(5px,0);
+  a:hover {
+    color: #fff;
   }
 
-  24% {
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0);
-  }
-
-  30% {
-    -webkit-transform: translate(5px,0);
-    transform: translate(5px,0);
-  }
-
-  36% {
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0);
+  a:hover:after {
+    width: 100%;
   }
 }
 
-@keyframes horizontal {
-  0% {
-    -webkit-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    transform: translate(0,0);
+.rounded-social-buttons.container-fluid {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  .social-button:hover {
+    background-color: v.$cuarto;
+  }
+  .social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$tercero;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    transition: background 0.5s ease-in-out;
+    .fa-brands:hover {
+      transform: rotate(360deg);
+    }
+    .fa-brands {
+      font-size: 100%;
+      position: relative;
+      transition: transform 0.5s ease-in-out;
+    }
   }
 
-  6% {
-    -webkit-transform: translate(5px,0);
-    -ms-transform: translate(5px,0);
-    transform: translate(5px,0);
-  }
-
-  12% {
-    -webkit-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    transform: translate(0,0);
-  }
-
-  18% {
-    -webkit-transform: translate(5px,0);
-    -ms-transform: translate(5px,0);
-    transform: translate(5px,0);
-  }
-
-  24% {
-    -webkit-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    transform: translate(0,0);
-  }
-
-  30% {
-    -webkit-transform: translate(5px,0);
-    -ms-transform: translate(5px,0);
-    transform: translate(5px,0);
-  }
-
-  36% {
-    -webkit-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    transform: translate(0,0);
+  i {
+    color: v.$secundario;
   }
 }

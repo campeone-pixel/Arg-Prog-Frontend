@@ -10,14 +10,15 @@
   },
 
   "section_home": {
-    "introduction": "Hi, my name is <br><span>Matias Poses</span> I'm a <span> Fullstack Developer<span> based in Argentina.",
+    "introduction": "Hi, my name is <span>Matias Poses</span><br> I'm a <span> Fullstack Developer</span> <br> based in Argentina.",
     "contact": "CONTACT"
   },
 
   "section_aboutme": {
     "title_aboutme": "ABOUT ME",
     "about_description": "I started learning Python because i needed to find a better way to do things in my work and since that i didnt stop learning others leanguages. Now i realized that i want to do this for a living. Now, im currently working in a electrical company in my city where i am in charged of a sector responsible of documenting all the electrical wires of the city with AutoCAD. I can work part-time in any project, big or small, and demostrate all my new abilities as programmer.",
-    "titulo_skill": "MY SKILLS"
+    "titulo_skill": "MY SKILLS",
+    "cv":"DOWNLOAD MY CV"
   },
 
   "section_skills": {

@@ -1,68 +1,79 @@
 @use "../abstracts/variables" as v;
 
-header{
-	max-width: 1400px;
+header,
+article {
+  max-width: 1400px;
 }
 
-body{
-	background-image: url("../../assets/images/Hexagon.svg");
-	background-attachment: fixed;
-	background-size: cover;
-	position: relative;
-	overflow-x: hidden;
-	
+header {
+  margin-right: 10px;
+}
+app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
 
-
+body {
+}
 
 .index {
-	
-	min-height: 70vh;
-	
+  min-height: 70vh;
 }
 
-article{
-	max-width: 321px;
-	padding: 20px;
+article {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
-main{
-  width: 100%;
+main {
+  width: 100vw;
   grid-area: main;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 75px;
-	
-	& >*{
-	flex: 1;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 75px;
 
-		& >article{
-	
-		}
-	}
+  background-image: url("../../assets/images/Hexagon.svg");
+
+  /* Create the parallax scrolling effect */
+
+  background-repeat: repeat;
+  background-size: contain;
+  overflow-x: hidden;
+
+  & > * {
+    background-color: v.$secundario;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    & > article {
+    }
+  }
 }
 
-header, footer{
-	padding: 0 15px 0 15px;
+header,
+footer {
+  padding: 0 15px 0 15px;
 }
 
-app-footer{
-	align-self: stretch;
-	max-width: 100%;
+app-footer {
+  align-self: stretch;
+  max-width: 100%;
 }
-
-
 
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-	
 }
 
 /* Track */

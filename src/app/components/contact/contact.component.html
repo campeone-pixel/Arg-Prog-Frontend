@@ -1,32 +1,39 @@
-<article  class="contact">
+<article class="contact">
 
-  <div class="container  p-md-5">
+  <div class="container-fluid  ">
 
     <div class="row">
-      <h1>Any question? Chat with me!</h1>
+      <h3>Any question? Chat with me!</h3>
     </div>
- 
+
 
 
     <form id="contactForm">
 
 
-      <div class="row">
-        <div class="mb-3 col-md-6 ">
-          <label class="form-label" for="name">Name</label>
-          <input class="form-control" id="name" type="text" placeholder="Name" />
+      <div class=" row">
+        <div class="input mb-3 col-md-6 ">
+        
+          <input class="input__field input-name form-control" id="name" type="text" />
+
+          <label class="input__label form-label" for="name">Name</label>
         </div>
-        <div class="mb-3 col-md-6 ">
-          <label class="form-label" for="emailAddress">Email Address</label>
-          <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" />
+        <div class="input mb-3 col-md-6 ">
+         
+          <input class="input__field form-control" id="emailAddress" type="email"  />
+
+          <label class="input__label form-label" for="emailAddress">Email Address</label>
+
         </div>
       </div>
 
 
-      <div class="mb-3">
-        <label class="form-label" for="message">Message</label>
-        <textarea class="form-control" id="message" type="text" placeholder="Message"
-          style="height: 10rem;"></textarea>
+      <div class="input message mb-3">
+        
+        <label class="input__label form-label" for="message">Message</label>
+        
+        <textarea class="input__field form-control" id="message" type="text"  style="height: 10rem;"></textarea>
+
       </div>
 
 

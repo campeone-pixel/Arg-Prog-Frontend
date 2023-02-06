@@ -3,34 +3,37 @@
 @use "../abstracts/typography" as t;
 
 .experience {
-  @include a.fx-col-all-center;
+  display: flex;
+
+  flex-direction: column;
+  width: 100%;
 
   h2 {
     font-weight: 900;
     font-family: t.$sans-serif;
-    text-shadow: 5px 5px black;
-    font-size: 3em;
+    
+
     color: v.$primario;
   }
 
   .card-exp {
-    height: auto;
-    
+    flex: 1;
+
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1em;
-   
 
-    
-  
     section {
+      max-width: 420px;
       padding: 1.3em;
       gap: 10px;
       display: grid;
       grid-template-columns: 0.1fr 0.9fr;
       justify-content: start;
       justify-items: start;
-      
+
       align-items: flex-start;
       background-color: v.$secundario;
       border-radius: 10px 10px 10px 10px;
@@ -44,24 +47,27 @@
       }
 
       .description {
-        color: v.$primario;
-        
+        color: v.$tercero;
         flex: 1;
-        h3 {
-          font-family: t.$sans-serif;
-          font-size: 50px;
-          text-shadow: 5px 5px black;
-        }
 
         p {
+          color: v.$tercero;
           font-family: t.$sans-serif-2;
           font-style: normal;
-          font-size: 1em;
         }
       }
       .title {
         flex: 1;
         padding: 0;
+
+        h4 {color: v.$tercero;
+          font-family: t.$sans-serif;
+
+          
+        }
+
+        h6 {color: v.$tercero;
+        }
       }
     }
   }
