@@ -5,35 +5,31 @@
 .skill {
   @include a.fx-col-all-center;
   width: 100%;
-  background-color: v.$secundario;
-
-  h2 {
-    font-family: t.$sans-serif;
-
-    color: v.$primario;
-  }
+  
+  position: relative;
+  
   .skills {
     width: 100%;
-    background-color: v.$secundario;
-
+    
+    position: relative;
     padding: 1em;
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
     justify-content: center;
     .skill-bars {
-      background-color: v.$secundario;
-      color: v.$primario;
+      background-color: v.$dark-primary;
+      color: v.$text-icon;
       border-radius: 10px;
-
+      position: relative;
       .container {
         border-radius: 10px 10px 10px 10px;
-        border: 2px solid v.$tercero;
+        border: 2px solid v.$divider-color;
         display: flex;
         width: 200px;
         padding: 50px 0;
         border-radius: 8px;
-
+        
         row-gap: 30px;
         flex-direction: column;
         align-items: center;
@@ -54,18 +50,19 @@
           height: 60px;
           width: 60px;
           border-radius: 50%;
-          background-color: v.$secundario;
+          background-color: v.$light-primary;
         }
         .progress-value {
           position: relative;
           font-size: 1.2rem;
           font-weight: 600;
-          color: v.$tercero;
+          color: v.$text-icon;
         }
         .text {
           font-size: 15px;
           font-weight: 500;
-          color: v.$tercero;
+          color: v.$text-icon;
+          font-family: t.$title;
         }
       }
     }

@@ -3,6 +3,8 @@
 header,
 article {
   max-width: 1400px;
+  background-color: v.$primary;
+  border-radius: 1em;
 }
 
 header {
@@ -36,18 +38,13 @@ main {
   flex-direction: column;
   align-items: stretch;
   justify-content: stretch;
-  gap: 75px;
-
-  background-image: url("../../assets/images/Hexagon.svg");
-
-  /* Create the parallax scrolling effect */
-
-  background-repeat: repeat;
-  background-size: contain;
-  overflow-x: hidden;
+  gap: 4em;
+  background-image: url('../../assets/images/hollowed-boxes.svg');
+  
 
   & > * {
-    background-color: v.$secundario;
+    
+    
     flex: 1;
     width: 100%;
     display: flex;
@@ -78,12 +75,62 @@ app-footer {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px v.$primario;
+  box-shadow: inset 0 0 5px v.$dark-primary;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-color: v.$cuarto;
+  background-color: v.$accent;
   border-radius: 10px;
+}
+
+.modificaciones{
+  height: 100%;
+  width: 100%;
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0.5em;
+  .container-modificaciones{
+    min-width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-size: 1.5em;
+    gap: 0.5em;
+  }
+}
+
+.agregar{
+  height: 100%;
+  width: 100%;
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  
+  .container-agregar{
+    min-width: 2em;
+    height: 2em;
+    display: flex;
+    padding-right: 2.5em;
+    padding-top: 1em;
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-size: 2em;
+    
+  }
 }

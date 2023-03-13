@@ -1,8 +1,21 @@
 <article  class="skill">
+
+  <div class="agregar">
+    <div class="container-agregar">
+      <div class="boton-agregar"><i class="fa-solid fa-square-plus"></i></div>
+    
+    </div>
+  </div>
   <h2>{{title}}</h2>
   <section class="skills">
     
     <div class="skill-bars"  *ngFor="let skill of skills">
+      <div class="modificaciones">
+        <div class="container-modificaciones">
+          <div class="boton-editar"><i class="fa-regular fa-pen-to-square"></i></div>
+          <div class="boton-editar"><i class="fa-sharp fa-solid fa-trash-can"></i></div>
+        </div>
+      </div>
       <div class="container">
         <div class="circular-progress" [style]="'background: conic-gradient(#7d2ae8 '+ 360*(skill.percentage/100)+'deg, #ededed 0deg)'">
           <span class="progress-value">{{ skill.percentage}}</span>

@@ -8,8 +8,8 @@
   justify-content: center;
   align-items: center;
 
-  border-radius: 5px;
-  background-color: v.$secundario;
+  border-radius: 0 0 20px 20px;
+  background-color: v.$primary;
 
   section {
     @include a.fx-col-all-center;
@@ -21,23 +21,21 @@
     .text-container {
       flex: 1;
       @include a.fx-all-center;
-      color: v.$primario;
+      color: v.$text-icon;
       width: 100%;
       font-family: t.$sans-serif-2;
       font-style: normal;
 
       div {
         width: 100%;
-        h1 {
-          line-height: 2em;
-          font-weight: 400;
-        }
+      
       }
 
       span {
-        color: v.$tercero;
+        color: v.$accent;
         font-style: italic;
         font-weight: 900;
+        text-transform: uppercase;
       }
     }
 

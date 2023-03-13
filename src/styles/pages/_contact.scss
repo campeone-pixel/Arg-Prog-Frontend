@@ -7,17 +7,18 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: v.$secundario;
+  background-color: v.$primary;
 
   margin-bottom: 50px;
 
   .container-fluid {
     width: 100%;
-    color: v.$tercero;
-    background-color: v.$secundario;
-    border: 2px solid v.$tercero;
+    color: v.$text-icon;
+    
+    
+    border: 2px solid v.$divider-color;
     border-radius: 10px 10px 10px 10px;
-
+    background-color: v.$dark-primary;
     padding: 1.5em 1em 1.5em 1em;
     border-radius: 10px 10px 10px 10px;
 
@@ -134,8 +135,8 @@
 
         font-family: t.$sans-serif;
         text-decoration: none;
-        color: v.$tercero;
-        border: 2px solid v.$tercero;
+        color: v.$text-icon;
+        border: 2px solid v.$divider-color;
         letter-spacing: 2px;
         text-align: center;
         position: relative;
@@ -147,14 +148,14 @@
         span {
           position: relative;
           z-index: 2;
-          color: v.$cuarto;
+          color: v.$accent;
           font-size: 1em;
           letter-spacing: 0.2em;
         }
 
         &:before,
         &:after {
-          background: v.$primario;
+          background: v.$accent;
           transition: 0.3s ease;
           content: "";
           position: absolute;

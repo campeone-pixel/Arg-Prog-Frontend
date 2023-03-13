@@ -1,4 +1,0 @@
-{
-  "/api/translations/*": "/$1",
-  "/api/translations?lang=:lang": "/api/translations/:lang"
-}

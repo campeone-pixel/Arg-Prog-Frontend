@@ -1,9 +1,24 @@
 <article  class="experience">
 
+  <div class="agregar">
+    <div class="container-agregar">
+      <div class="boton-agregar"><i class="fa-solid fa-square-plus"></i></div>
+    
+    </div>
+  </div>
+
   <h2>{{ miPortfolio?.section_exp?.title}}</h2>
+  
 <section class="card-exp">
   
   <section   *ngFor="let experience of miPortfolio?.section_exp?.experiences">
+
+    <div class="modificaciones">
+      <div class="container-modificaciones">
+        <div class="boton-editar"><i class="fa-regular fa-pen-to-square"></i></div>
+        <div class="boton-editar"><i class="fa-sharp fa-solid fa-trash-can"></i></div>
+      </div>
+    </div>
     <div class="line"></div>
     <div class="title">
       <h4> Trabajo</h4>

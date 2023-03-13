@@ -21,31 +21,13 @@
   },
 
   "section_skills": {
-    "title": "HABILIDADES",
-    "skills": [
-      { "id": 1, "name": "python", "percentage": 70 },
-      { "id": 2, "name": "python", "percentage": 90 },
-      { "id": 3, "name": "python", "percentage": 50 },
-      { "id": 4, "name": "python", "percentage": 75 }
-    ]
+    "title": "HABILIDADES"
+    
   },
 
   "section_projects": {
-    "title_projects": "PROYECTOS",
-    "projects": [
-      {
-        "id": 1,
-        "title": "BLOG",
-        "description": "This a blog that i did for a course in Coderhouse. I had to use Django, HTML and CSS. I really like Django for the backend and im going to learn more so i can make bigger projects with this incredible framework.",
-        "path": "../../assets/images/blog.jpg"
-      },
-      {
-        "id": 2,
-        "title": "Calculator",
-        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
-        "path": "../../assets/images/calculadora.png"
-      }
-    ]
+    "title_projects": "PROYECTOS"
+    
   },
 
   "section_exp": {

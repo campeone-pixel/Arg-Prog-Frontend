@@ -7,14 +7,8 @@
 
   flex-direction: column;
   width: 100%;
+  position: relative;
 
-  h2 {
-    font-weight: 900;
-    font-family: t.$sans-serif;
-    
-
-    color: v.$primario;
-  }
 
   .card-exp {
     flex: 1;
@@ -35,10 +29,11 @@
       justify-items: start;
 
       align-items: flex-start;
-      background-color: v.$secundario;
+      background-color: v.$dark-primary;
       border-radius: 10px 10px 10px 10px;
       border-radius: 5px;
-      border: 2px solid v.$tercero;
+      border: 2px solid v.$divider-color;
+      position: relative;
       .line {
         border-left: 6px solid green;
         height: 100%;
@@ -47,27 +42,16 @@
       }
 
       .description {
-        color: v.$tercero;
+        
         flex: 1;
 
-        p {
-          color: v.$tercero;
-          font-family: t.$sans-serif-2;
-          font-style: normal;
-        }
+      
       }
       .title {
         flex: 1;
         padding: 0;
+        
 
-        h4 {color: v.$tercero;
-          font-family: t.$sans-serif;
-
-          
-        }
-
-        h6 {color: v.$tercero;
-        }
       }
     }
   }

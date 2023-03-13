@@ -35,7 +35,7 @@ export class ScrollSpyDirective {
         
         if (element.offsetTop - parentOffset <= scrollTop+320) {
           currentSection = element.id;
-          
+          console.log(currentSection)
         }
       }
     }

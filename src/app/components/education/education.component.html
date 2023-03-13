@@ -1,10 +1,24 @@
 <article class="education">
 
+  <div class="agregar">
+    <div class="container-agregar">
+      <div class="boton-agregar"><i class="fa-solid fa-square-plus"></i></div>
+    
+    </div>
+  </div>
+
+  
+
   <h2>{{miPortfolio?.section_edu?.title}}</h2>
   <section class="card-edu">
 
     <section *ngFor="let education of miPortfolio?.section_edu?.educations">
-      
+      <div class="modificaciones">
+        <div class="container-modificaciones">
+          <div class="boton-editar"><i class="fa-regular fa-pen-to-square"></i></div>
+          <div class="boton-editar"><i class="fa-sharp fa-solid fa-trash-can"></i></div>
+        </div>
+      </div>
       <div class="line"></div>
 
       <div class="title">

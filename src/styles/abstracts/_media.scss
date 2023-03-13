@@ -46,9 +46,7 @@
 
 @media only screen and (min-width: 768px) {
  
-  main {
-    gap: 100px;
-  }
+ 
 
   .banner {
     height: 150px;
@@ -97,13 +95,15 @@
 }
 
 @media only screen and (min-width: 840px) {
-  main {
-    gap: 100px;
-  }
+ 
  
 
   .index section {
     width: 100%;
+  }
+
+  article {
+    padding: 3em;
   }
 
  
@@ -112,18 +112,18 @@
 }
 
 @media only screen and (min-width: 992px) {
-  main {
-    gap: 100px;
+  article {
+    padding: 4em;
   }
 
 
 }
 
 @media only screen and (min-width: 1400px) {
-  main {
-    gap: 100px;
-  }
 
+  article {
+    padding: 5em;
+  }
 
 }
 

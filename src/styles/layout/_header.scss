@@ -4,7 +4,7 @@
 
 app-header {
   grid-area: header;
-  background-color: v.$secundario;
+  background-color: v.$primary;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@ app-header {
       flex: 1;
       display: flex;
       justify-content: space-around;
-      color: v.$secundario;
+      color: v.$text-icon;
       flex-direction: column;
       
       .container-fluid.navbar {
@@ -29,8 +29,8 @@ app-header {
 
         .navbar-toggler {
           border: 0;
-          border-color: v.$tercero;
-          background-color: v.$tercero;
+          border-color: v.$divider-color;
+          background-color: v.$text-icon;
           height: 40px;
         }
 
@@ -95,13 +95,17 @@ app-header {
 
         .navbar-collapse {
           .menu-principal {
+
+           
             
             .nav-item .nav-link.active {
               
               text-align: left;
-              color: v.$secundario;
+              color: v.$accent;
               letter-spacing: 0.05em;
               transform: scaleY(1.1);
+
+              
             }
 
             .nav-item a {
@@ -114,7 +118,7 @@ app-header {
             }
 
             .nav-item a span {
-              color: v.$tercero;
+              color: v.$text-icon;
               position: relative;
               z-index: 2;
             }
@@ -126,7 +130,7 @@ app-header {
               left: 0;
               width: 0;
               height: 100%;
-              background: v.$primario;
+              background: v.$accent;
 
               transition: all 0.35s;
             }
@@ -138,6 +142,15 @@ app-header {
             .nav-item a:hover:after {
               width: 100%;
             }
+
+            .current-section {
+                
+              
+              background: v.$accent;
+
+              
+            
+          }
           }
 
           
@@ -145,7 +158,7 @@ app-header {
           .nav-item.dropdown .nav-link,.login {
             font-size: 1em;
          
-            color: v.$tercero;
+            color: v.$dark-primary;
           }
         }
       }
@@ -156,31 +169,7 @@ app-header {
         align-items: center;
         gap: 0.5em;
         font-size: 1em;
-        .social-button:hover {
-          background-color: v.$cuarto;
-        }
-        .social-button {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: v.$tercero;
-          height: 30px;
-          width: 30px;
-          border-radius: 100%;
-          transition: background 0.5s ease-in-out;
-          .fa-brands:hover {
-            transform: rotate(360deg);
-          }
-          .fa-brands {
-            font-size: 100%;
-            position: relative;
-            transition: transform 0.5s ease-in-out;
-          }
-        }
-
-        i {
-          color: v.$secundario;
-        }
+     
       }
     }
 

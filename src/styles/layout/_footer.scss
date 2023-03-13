@@ -12,7 +12,7 @@ footer {
   font-size: 1.2em;
   width: 100%;
 
-  background-color: v.$secundario;
+  background-color: v.$dark-primary;
 
   section {
     @include a.fx-col-all-center;
@@ -23,7 +23,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    color: v.$tercero;
+    color: v.$light-primary;
   }
 
   
