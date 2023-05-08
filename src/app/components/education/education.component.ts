@@ -1,16 +1,33 @@
 import { Component } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
+
+import { Educacion } from 'src/app/models';
+import { EducacionService } from 'src/app/services/educacion.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AgregarComponent } from './abm/agregar/agregar.component';
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss']
 })
 export class EducationComponent {
-  miPortfolio: any;
-  constructor(private datosPortfolio: PortfolioService){}
-  ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe((data) => {
-      this.miPortfolio = data;
+ educacion:Educacion[] = [];
+  constructor(
+    private datosEducacion: EducacionService,
+    public dialog: MatDialog
+  ) {
+    this.datosEducacion.traerEducations().subscribe((data) => {
+     
+      this.educacion = data;
+     
     });
   }
+
+  ngOnInit(): void {
+    
+  }
+
+  agregarExp(): void {
+    const dialog = this.dialog.open(AgregarComponent);
+  }
+
 }

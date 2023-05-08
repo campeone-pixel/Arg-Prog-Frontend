@@ -1,90 +1,114 @@
 {
-  "menu": {
-    "home": "INICIO",
-    "aboutme": "SOBRE MI",
-    "experience": "EXPERIENCIA",
-    "education": "EDUCACION",
-    "projects": "PROYECTOS",
-    "skills": "HABILIDADES",
-    "contact": "CONTACTO"
-  },
-
-  "section_home": {
-    "introduction": "Hi, my name is <span>Matias Poses</span><br> I'm a <span> Fullstack Developer</span> <br> based in Argentina.",
-    "contact": "CONTACTAME"
-  },
-
-  "section_aboutme": {
-    "title_aboutme": "SOBRE MI",
-    "about_description": "Empeze aprendiendo python porque necesitaba buscar una mejor manera de hacer mi trabajo y desde ahi no pare de aprender otros lenguajes. Ahora me di cuenta que la programacion es lo que me quiero dedicar. ",
-    "cv":"DOWNLOAD MY CV"
-  },
-
-  "section_skills": {
-    "title": "HABILIDADES"
-    
-  },
-
-  "section_projects": {
-    "title_projects": "PROYECTOS"
-    
-  },
-
-  "section_exp": {
-    "title": "EXPERIENCES",
-    "experiences": [
-      {
-        "id": 1,
-        "title": "BLOG",
-        "position": "asfdsadfasdf",
-        "date_from": "12/12/1223",
-        "date_to": "12/12/1223",
-        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
-        "path": "../../assets/images/blog.jpg"
-      },
-      {
-        "id": 2,
-        "title": "BLOG",
-        "position": "asfdsadfasdf",
-        "date_from": "12/12/1223",
-        "date_to": "12/12/1223",
-        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
-        "path": "../../assets/images/blog.jpg"
-      }
-    ]
-  },
-
-  "section_edu": {
-    "title": "EDUCATION",
-    "educations": [
-      {
-        "id": 1,
-        "title": "BLOG",
-        "position": "asfdsadfasdf",
-        "date_from": "12/12/1223",
-        "date_to": "12/12/1223",
-        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
-        "path": "../../assets/images/blog.jpg"
-      },
-      {
-        "id": 2,
-        "title": "BLOG",
-        "position": "asfdsadfasdf",
-        "date_from": "12/12/1223",
-        "date_to": "12/12/1223",
-        "description": "This calculator was a project from The Odin Project. I did all the Foundation course and i learned JAVASCRIPT, CSS and HTML. ",
-        "path": "../../assets/images/blog.jpg"
-      }
-    ]
-  },
-
-
-  "section_contact": {
-    "title": "Alguna duda? Mejor lo hablamos!",
-
-    "name": "Nombre",
-    "mail": "Email",
-    "message": "Mensaje",
-    "submit": "Enviar"
-  }
+  "persona": [
+    {
+      "id": 1,
+      "nombres": "matias",
+      "apellido": "poses",
+      "nacionalidad": "argentino",
+      "email": "map_rc@hotmail.com",
+      "sobre_mi": "sdfgdsgsdgfsdfg gsdfgdsf gsd gdg seargsd g sergsgh dfer teg ge g sdrgdh  ersh rgrg ser gh hrth yh eh tjrhj rteh rhjrt ha hj g hh sg reer ger ge ge hrjrt hjry rt yrthj rteh rtdhdfgj gf jty jtyer jty jtyjk tyj tyrj",
+      "ocupacion": "programador",
+      "image_background_header": "",
+      "image_perfil": ""
+    },
+    {
+      "id": 2,
+      "nombres": "matias2",
+      "apellido": "poses2",
+      "nacionalidad": "argentino2",
+      "email": "map_rc@hotmail.com",
+      "sobre_mi": "sdfgdsgsdgfsdfg gsdfgdsf gsd gdg seargsd g sergsgh dfer teg ge g sdrgdh  ersh rgrg ser gh hrth yh eh tjrhj rteh rhjrt ha hj g hh sg reer ger ge ge hrjrt hjry rt yrthj rteh rtdhdfgj gf jty jtyer jty jtyjk tyj tyrj",
+      "ocupacion": "programador",
+      "image_background_header": "",
+      "image_perfil": ""
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "nombre": "javascript",
+      "porcentaje": "40"
+    },
+    {
+      "id": 2,
+      "nombre": "python",
+      "porcentaje": "80"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "nombre": "blog",
+      "descripcion": "asdfas asdfafsdf fsdf sdf werf ewfwe f fwe ef wef wef wfe ewf",
+      "link": "asfsadfsdf"
+    },
+    {
+      "id": 2,
+      "nombre": "blog2",
+      "descripcion": "asdfas asdfafsdf fsdf sdf werf ewfwe f fwe ef wef wef wfe ewf",
+      "link": "asfsadfsdf"
+    }
+  ],
+  "experiences": [
+    {
+      "id": 1,
+      "puesto": "programador",
+      "lugar": "empresa",
+      "desde": "13/12/2023",
+      "hasta": "12/12/3099",
+      "empresa": "empresa"
+    },
+    {
+      "id": 2,
+      "puesto": "programador2",
+      "lugar": "empresa2",
+      "desde": "13/12/2023",
+      "hasta": "12/12/3099",
+      "empresa": "empresa2"
+    },
+    {
+      "id": 3,
+      "puesto": "sdfsdfsdfsdf",
+      "lugar": "dffgsafsdf",
+      "desde": "17/05/2023",
+      "hasta": "11/05/2023",
+      "empresa": "asdfsadfsdfsdf"
+    },
+    {
+      "puesto": "ghghgh",
+      "lugar": "hdfghgh",
+      "desde": "04/05/2023",
+      "hasta": "12/05/2023",
+      "empresa": "dfghdfghfgh",
+      "id": 4
+    },
+    {
+      "puesto": "fgsdfgsdfg",
+      "lugar": "fghsdgdfg",
+      "desde": "19/05/2023",
+      "hasta": "17/05/2023",
+      "empresa": "sdfgsdfgdsfg",
+      "id": 5
+    }
+  ],
+  "educations": [
+    {
+      "id": 1,
+      "escuela": "grognet",
+      "titulo": "programador",
+      "imagen": "String",
+      "carrera": "String",
+      "inicio": "String",
+      "fin": "String"
+    },
+    {
+      "id": 2,
+      "escuela": "grognet2",
+      "titulo": "programador2",
+      "imagen": "String",
+      "carrera": "String",
+      "inicio": "String",
+      "fin": "String"
+    }
+  ]
 }

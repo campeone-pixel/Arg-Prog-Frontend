@@ -23,9 +23,9 @@ export class HeaderComponent {
     });
   }
 
-  changeLang(localeCode: string) {
-    this.datosPortfolio.changeLang(localeCode);
-  }
+  // changeLang(localeCode: string) {
+  //   this.datosPortfolio.changeLang(localeCode);
+  // }
 
   scrollTo(section: string) {
     document.querySelector('#' + section)!.scrollIntoView();

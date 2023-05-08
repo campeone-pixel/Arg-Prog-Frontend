@@ -1,47 +1,32 @@
-<article  class="projects">
-
+<article class="projects">
   <div class="agregar">
     <div class="container-agregar">
       <div class="boton-agregar"><i class="fa-solid fa-square-plus"></i></div>
-    
     </div>
   </div>
 
-  <h2>{{miPortfolio?.section_projects?.title_projects}}</h2>
+  <h2>PROYECTOS</h2>
 
- <section class="" *ngFor="let project of miPortfolio?.section_projects?.projects">
-
-    <div class="imag">
-     
-      <div class="container-img">
-      
-        <img src= {{project.path}} alt="photo blog"></div>
-    </div>
-
+  <section class="" *ngFor="let project of proyectos">
     <div class="text-container">
       <div class="modificaciones">
         <div class="container-modificaciones">
-          <div class="boton-editar"><i class="fa-regular fa-pen-to-square"></i></div>
-          <div class="boton-editar"><i class="fa-sharp fa-solid fa-trash-can"></i></div>
+          <div class="boton-editar">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </div>
+          <div class="boton-editar">
+            <i class="fa-sharp fa-solid fa-trash-can"></i>
+          </div>
         </div>
       </div>
 
-      <h3>{{project.title}}</h3>
+      <h3>{{ project.nombre }}</h3>
 
-      <p> {{project.description}}</p>
+      <p>{{ project.descripcion }}</p>
 
       <div class="wrapper">
         <a href="contact.html"><span>GITHUB</span></a>
       </div>
-
     </div>
-  </section> 
-
-
-
-
- 
-
-  
-
+  </section>
 </article>

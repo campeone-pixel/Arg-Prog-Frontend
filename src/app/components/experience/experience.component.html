@@ -2,16 +2,18 @@
 
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar"><i class="fa-solid fa-square-plus"></i></div>
+      <div class="boton-agregar" (click)="agregarExp()"><i class="fa-solid fa-square-plus"></i></div>
     
     </div>
   </div>
 
-  <h2>{{ miPortfolio?.section_exp?.title}}</h2>
+  <h2>EXPERIENCES</h2>
   
 <section class="card-exp">
   
-  <section   *ngFor="let experience of miPortfolio?.section_exp?.experiences">
+  <section 
+    *ngFor="let experience of experiences"
+    >
 
     <div class="modificaciones">
       <div class="container-modificaciones">
@@ -21,7 +23,7 @@
     </div>
     <div class="line"></div>
     <div class="title">
-      <h4> Trabajo</h4>
+      <h4> {{experience.puesto}}</h4>
       <h6 class="font-weight-bolder">
         User Experience Designer
         <span class="font-weight-light"

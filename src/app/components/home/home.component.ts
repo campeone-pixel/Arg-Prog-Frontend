@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
-import { interval } from 'rxjs';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

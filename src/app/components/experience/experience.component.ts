@@ -1,16 +1,38 @@
-import { Component } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
+import { Component, OnInit } from '@angular/core';
+
+import { Experiences } from 'src/app/models/experiencia.model';
+import { AgregarComponent } from './abm/agregar/agregar.component';
+
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+} from '@angular/material/dialog';
+import { ExperienciaService } from 'src/app/services/experiencia.service';
+
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.scss']
+  styleUrls: ['./experience.component.scss'],
 })
-export class ExperienceComponent {
-  miPortfolio: any;
-  constructor(private datosPortfolio: PortfolioService){}
-  ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe((data) => {
-      this.miPortfolio = data;
+export class ExperienceComponent implements OnInit {
+  experiences: Experiences[] = [];
+  constructor(
+    private datosExperiencias: ExperienciaService,
+    public dialog: MatDialog
+  ) {
+    this.datosExperiencias.traerExperiencias().subscribe((data) => {
+     
+      this.experiences = data;
+     
     });
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  agregarExp(): void {
+    const dialog = this.dialog.open(AgregarComponent);
   }
 }

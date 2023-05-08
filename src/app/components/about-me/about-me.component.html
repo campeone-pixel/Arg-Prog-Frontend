@@ -1,47 +1,33 @@
 <article class="aboutme">
-
-  <h2>About Me</h2>
+  <h2>SOBRE MI</h2>
 
   <section>
-
-
-  
-
-
     <div class="imag">
-      
-      <div class="container-img"><img src="../../assets/images/106_1852.JPG" alt="personal photo"></div>
+      <div class="container-img">
+        <img src="../../assets/images/106_1852.JPG" alt="personal photo" />
+      </div>
     </div>
 
     <div class="text-container">
-
       <div class="modificaciones">
         <div class="container-modificaciones">
-          <div class="boton-editar"><a href=""><i class="fa-regular fa-pen-to-square"></i></a></div>
+          <div class="boton-editar">
+            <a href=""><i class="fa-regular fa-pen-to-square"></i></a>
+          </div>
         </div>
       </div>
       <div class="title">
-        <h4> Trabajo</h4>
-        <h6 class="font-weight-bolder">
-          User Experience Designer
-
-        </h6>
+        <h4>{{persona?.nombres + " " + persona?.apellido }}</h4>
+        <h6 class="font-weight-bolder">{{persona?.ocupacion}}</h6>
       </div>
       <p>
-
-        {{miPortfolio?.section_aboutme?.about_description}}
+     {{persona?.sobre_mi}}
       </p>
       <div class="wrapper">
-        <a href="contact.html"><span>{{ miPortfolio?.section_aboutme?.cv }}</span></a>
+        <a href="contact.html"
+          ><span>DESCARGA MI CV</span></a
+        >
       </div>
-
-
-
-
     </div>
-
   </section>
-
-
-
 </article>

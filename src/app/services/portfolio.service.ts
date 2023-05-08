@@ -16,9 +16,9 @@ export class PortfolioService {
      )
   }
 
- changeLang(value: string) {
-   // update the value of this BehaviorSubject, and all 
-   // subscribers notify about it 
-   this.language.next(value);
- }
+//  changeLang(value: string) {
+//    // update the value of this BehaviorSubject, and all 
+//    // subscribers notify about it 
+//    this.language.next(value);
+//  }
 }
