@@ -14,9 +14,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
+import { EditarComponent } from './editar/editar.component';
+import { EliminarComponent } from './eliminar/eliminar.component';
 
 @NgModule({
-  declarations: [AgregarComponent],
+  declarations: [AgregarComponent, EditarComponent, EliminarComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

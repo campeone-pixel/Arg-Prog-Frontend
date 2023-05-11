@@ -2,6 +2,15 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/typography" as t;
 
+
+.mat-toolbar.mat-primary{
+  background-color: v.$primary !important;
+  display: flex;
+  gap: 1em;
+
+  
+}
+
 app-header {
   grid-area: header;
   background-color: v.$primary;
@@ -10,6 +19,7 @@ app-header {
   align-items: center;
  
 
+ 
   header {
     font-family: t.$sans-serif, sans-serif;
 
@@ -95,7 +105,11 @@ app-header {
 
         .navbar-collapse {
           .menu-principal {
-
+            li.nav-item{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
            
             
             .nav-item .nav-link.active {

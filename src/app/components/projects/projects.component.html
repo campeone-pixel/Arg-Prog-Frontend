@@ -1,7 +1,7 @@
 <article class="projects">
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar"><i class="fa-solid fa-square-plus"></i></div>
+      <div class="boton-agregar" (click)="agregar()"><i class="fa-solid fa-square-plus"></i></div>
     </div>
   </div>
 
@@ -11,10 +11,10 @@
     <div class="text-container">
       <div class="modificaciones">
         <div class="container-modificaciones">
-          <div class="boton-editar">
+          <div class="boton-editar" (click)="editar(project)">
             <i class="fa-regular fa-pen-to-square"></i>
           </div>
-          <div class="boton-editar">
+          <div class="boton-eliminar" (click)="delete(project)">
             <i class="fa-sharp fa-solid fa-trash-can"></i>
           </div>
         </div>

@@ -1,12 +1,23 @@
-<h1 mat-dialog-title>Hi </h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field appearance="fill">
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput >
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
+<h1 mat-dialog-title>Agregar educación</h1>
+<div mat-dialog-content> 
 
-  <button mat-button  cdkFocusInitial>Ok</button>
+  
+  <form [formGroup]="skillForm" >
+
+    
+  <mat-form-field class="mb-3 w-100">
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre">
+  </mat-form-field>
+  
+  <mat-form-field class="mb-3 w-100">
+    <mat-label>Porcentaje</mat-label>
+    <input matInput type="number" formControlName="porcentaje">
+  </mat-form-field>
+  
+  <div mat-dialog-action >
+    <button mat-button (click)="add()">Submit</button>
+    <button mat-button (click)="onNoClick($event)">Cancelar</button>
+  </div>
+</form>
 </div>

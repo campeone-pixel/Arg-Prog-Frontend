@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AgregarComponent } from './agregar/agregar.component';
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,9 +13,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { EditarComponent } from './editar/editar.component';
+
 
 @NgModule({
-  declarations: [AgregarComponent],
+  declarations: [EditarComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -32,6 +34,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  exports: [AgregarComponent],
+  exports: [EditarComponent],
 })
 export class AbmAboutMeModule {}

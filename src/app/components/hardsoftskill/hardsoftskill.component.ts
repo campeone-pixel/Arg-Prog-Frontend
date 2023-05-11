@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from '../../services/portfolio.service';
-import { Skill } from 'src/app/models';
+import { Educacion, Skill } from 'src/app/models';
 import { SkillService } from 'src/app/services/skill.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AgregarComponent } from './abm/agregar/agregar.component';
+import { EditarComponent } from './abm/editar/editar.component';
+import { EliminarComponent } from './abm/eliminar/eliminar.component';
 
 
 @Component({
@@ -29,7 +31,36 @@ export class HardsoftskillComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  agregarExp(): void {
+  agregar(): void {
     const dialog = this.dialog.open(AgregarComponent);
+    dialog.afterClosed().subscribe(() => {
+      this.datosSkill.traerSkills().subscribe((data) => {
+        this.skills = data;
+      });
+    });
+  }
+
+  editar(skills: Skill): void {
+  
+    const dialog = this.dialog.open(EditarComponent, { data: skills });
+
+    dialog.afterClosed().subscribe(() => {
+      this.datosSkill.traerSkills().subscribe((data) => {
+        this.skills = data;
+      });
+    });
+  }
+
+  delete(objetoAEliminar: Skill): void {
+    const dialogRef = this.dialog.open(EliminarComponent, {
+      width: '250px',
+      data: objetoAEliminar,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.datosSkill.traerSkills().subscribe((data) => {
+        this.skills = data;
+      });
+    });
   }
 }

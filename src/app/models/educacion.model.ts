@@ -1,14 +1,9 @@
 export interface Educacion {
-  id: number;
-
-  escuela: String;
-
-  titulo: String;
-
-  imagen: String;
-
-  carrera: String;
-
-  inicio: String;
-  fin: String;
+  id?: number;
+  escuela: string;
+  titulo: string;
+  imagen: string;
+  carrera: string;
+  inicio: string;
+  fin: string;
 }

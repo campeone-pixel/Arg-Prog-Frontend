@@ -1,0 +1,23 @@
+<nav >
+  <mat-toolbar color="primary" >
+    <mat-icon
+      *ngIf="!isAuthenticated"
+      (click)="openLoginDialog()"
+      fontIcon="login"
+    >
+    </mat-icon>
+    <mat-icon
+      *ngIf="!isAuthenticated"
+      (click)="openRegisterDialog()"
+      fontIcon="person_add"
+    >
+    </mat-icon>
+
+    <mat-icon
+      *ngIf="isAuthenticated"
+      (click)="openLogoutDialog()"
+      fontIcon="logout"
+    >
+    </mat-icon>
+  </mat-toolbar>
+</nav>

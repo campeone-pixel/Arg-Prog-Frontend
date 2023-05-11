@@ -1,4 +1,5 @@
 export interface Experiences {
+    
     id?: number;
     puesto: string;
     lugar: string;

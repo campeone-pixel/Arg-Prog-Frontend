@@ -57,16 +57,9 @@ export class AgregarComponent {
       const nuevoExp: Experiences = {
         puesto: this.registerForm.value.puesto,
         lugar: this.registerForm.value.lugar,
-        desde: this.registerForm.value.desde.toLocaleDateString('en-GB', {
-          day: '2-digit',
-          month: '2-digit',
-          year: 'numeric',
-        }),
-        hasta: this.registerForm.value.hasta.toLocaleDateString('en-GB', {
-          day: '2-digit',
-          month: '2-digit',
-          year: 'numeric',
-        }),
+        desde: this.registerForm.value.desde.toDateString(
+        ),
+        hasta: this.registerForm.value.hasta.toDateString(),
         empresa: this.registerForm.value.empresa,
       };
 

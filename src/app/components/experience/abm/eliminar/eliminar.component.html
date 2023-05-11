@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Eliminar objeto</h2>
+<div mat-dialog-content>
+  <p>¿Está seguro que desea eliminar el objeto?</p>
+  <p><strong>Puesto:</strong> {{data.puesto}}</p>
+  <p><strong>Lugar:</strong> {{data.lugar}}</p>
+  <p><strong>Desde:</strong> {{data.desde | date}}</p>
+  <p><strong>Hasta:</strong> {{data.hasta | date}}</p>
+  <p><strong>Empresa:</strong> {{data.empresa}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="eliminar()" cdkFocusInitial>Eliminar</button>
+</div>

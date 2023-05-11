@@ -6,7 +6,7 @@
       "apellido": "poses",
       "nacionalidad": "argentino",
       "email": "map_rc@hotmail.com",
-      "sobre_mi": "sdfgdsgsdgfsdfg gsdfgdsf gsd gdg seargsd g sergsgh dfer teg ge g sdrgdh  ersh rgrg ser gh hrth yh eh tjrhj rteh rhjrt ha hj g hh sg reer ger ge ge hrjrt hjry rt yrthj rteh rtdhdfgj gf jty jtyer jty jtyjk tyj tyrj",
+      "sobre_mi": "11111sdfgdsgsdgfsdfg gsdfgdsf gsd gdg seargsd g sergsgh dfer teg ge g sdrgdh  ersh rgrg ser gh hrth yh eh tjrhj rteh rhjrt ha hj g hh sg reer ger ge ge hrjrt hjry rt yrthj rteh rtdhdfgj gf jty jtyer jty jtyjk tyj tyrj",
       "ocupacion": "programador",
       "image_background_header": "",
       "image_perfil": ""
@@ -33,82 +33,70 @@
       "id": 2,
       "nombre": "python",
       "porcentaje": "80"
+    },
+    {
+      "nombre": "java",
+      "porcentaje": 40,
+      "id": 3
+    },
+    {
+      "nombre": "java2",
+      "porcentaje": 40,
+      "id": 4
     }
   ],
   "projects": [
     {
-      "id": 1,
-      "nombre": "blog",
-      "descripcion": "asdfas asdfafsdf fsdf sdf werf ewfwe f fwe ef wef wef wfe ewf",
-      "link": "asfsadfsdf"
+      "nombre": "fasdfsdfsdf",
+      "descripcion": "sdfasdfasdfasdf",
+      "link": "asdfasdfasdfas",
+      "id": 1
     },
     {
-      "id": 2,
-      "nombre": "blog2",
-      "descripcion": "asdfas asdfafsdf fsdf sdf werf ewfwe f fwe ef wef wef wfe ewf",
-      "link": "asfsadfsdf"
+      "nombre": "fasdfsdfsdf111",
+      "descripcion": "sdfasdfasdfasdf",
+      "link": "asdfasdfasdfas",
+      "id": 2
+    },
+    {
+      "nombre": "fasdfsdfsdf11111",
+      "descripcion": "sdfasdfasdfasdf",
+      "link": "asdfasdfasdfas",
+      "id": 3
+    },
+    {
+      "nombre": "fasdfsdfsdf",
+      "descripcion": "sdfasdfasdfasdf",
+      "link": "asdfasdfasdfas",
+      "id": 4
     }
   ],
   "experiences": [
     {
-      "id": 1,
-      "puesto": "programador",
-      "lugar": "empresa",
-      "desde": "13/12/2023",
-      "hasta": "12/12/3099",
-      "empresa": "empresa"
-    },
-    {
-      "id": 2,
-      "puesto": "programador2",
-      "lugar": "empresa2",
-      "desde": "13/12/2023",
-      "hasta": "12/12/3099",
-      "empresa": "empresa2"
-    },
-    {
-      "id": 3,
-      "puesto": "sdfsdfsdfsdf",
-      "lugar": "dffgsafsdf",
-      "desde": "17/05/2023",
-      "hasta": "11/05/2023",
-      "empresa": "asdfsadfsdfsdf"
-    },
-    {
-      "puesto": "ghghgh",
-      "lugar": "hdfghgh",
-      "desde": "04/05/2023",
-      "hasta": "12/05/2023",
-      "empresa": "dfghdfghfgh",
-      "id": 4
-    },
-    {
-      "puesto": "fgsdfgsdfg",
-      "lugar": "fghsdgdfg",
-      "desde": "19/05/2023",
-      "hasta": "17/05/2023",
-      "empresa": "sdfgsdfgdsfg",
-      "id": 5
+      "puesto": "111111",
+      "lugar": "11111",
+      "desde": "Thu May 04 2023",
+      "hasta": "Thu May 18 2023",
+      "empresa": "11111111",
+      "id": 1
     }
   ],
   "educations": [
     {
-      "id": 1,
-      "escuela": "grognet",
-      "titulo": "programador",
-      "imagen": "String",
-      "carrera": "String",
-      "inicio": "String",
-      "fin": "String"
-    },
+      "escuela": "dsfgsdfghsdfg",
+      "titulo": "dfgsdfgsdfg",
+      "imagen": "sdfgsdfgsdfg",
+      "carrera": "sdfgsdfgsdfg",
+      "inicio": "Thu May 18 2023",
+      "fin": "Thu May 18 2023",
+      "id": 1
+    }
+  ],
+  "users": [
     {
-      "id": 2,
-      "escuela": "grognet2",
-      "titulo": "programador2",
-      "imagen": "String",
-      "carrera": "String",
-      "inicio": "String",
-      "fin": "String"
+      "email": "admin@admin.com",
+      "password": "$2a$10$t2t2CnFOd/1Qzt6ehg6l9ennZ6WQpw5HjP09JAR6S5Wlo0HtPnOZi",
+      "id": 1
     }
   ]
 }
