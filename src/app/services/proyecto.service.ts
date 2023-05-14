@@ -9,30 +9,27 @@ import { Proyecto } from '../models';
 })
 export class ProyectoService {
   private readonly apiUrl = environment.apiUrl;
-  private readonly endpoint = 'projects';
+  private readonly endpoint = 'proyecto';
 
   constructor(private http: HttpClient) {}
 
   traerProyectos(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(`${this.apiUrl}/${this.endpoint}`);
+    return this.http.get<Proyecto[]>(`${this.apiUrl}/get/${this.endpoint}`);
   }
 
-  traerProyectosPorID(id: number): Observable<Proyecto> {
-    return this.http.get<Proyecto>(`${this.apiUrl}/${this.endpoint}/${id}`);
-  }
 
   crearProy(proy: Proyecto): Observable<Proyecto> {
-    return this.http.post<Proyecto>(`${this.apiUrl}/${this.endpoint}`, proy);
+    return this.http.post<Proyecto>(`${this.apiUrl}/crear/${this.endpoint}`, proy);
   }
 
   actualizarProy(proy: Proyecto): Observable<Proyecto> {
-    return this.http.put<Proyecto>(
-      `${this.apiUrl}/${this.endpoint}/${proy.id}`,
+    return this.http.patch<Proyecto>(
+      `${this.apiUrl}/editar/${this.endpoint}`,
       proy
     );
   }
 
   eliminarProy(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${this.endpoint}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/borrar/${this.endpoint}/${id}`);
   }
 }

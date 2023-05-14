@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Persona } from 'src/app/models';
+import { PersonaService } from 'src/app/services/persona.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 
@@ -8,12 +10,14 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  constructor(private datosPortfolio: PortfolioService) {}
-  miPortfolio: any;
+datos:Persona|null = null
 
-  ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe((data) => {
-      this.miPortfolio = data;
-    });
-  }
+  constructor(private aboutMeService: PersonaService){
+    this.aboutMeService.traerPersonas().subscribe((datos)=>{
+      this.datos = datos
+ 
+    })
+    }
+
+ 
 }

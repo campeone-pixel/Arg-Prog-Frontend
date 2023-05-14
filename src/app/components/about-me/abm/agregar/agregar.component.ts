@@ -1,45 +1,36 @@
-import { Component } from '@angular/core';
-
-import { Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
 import {
   FormGroup,
-  FormBuilder,
-  Validators,
   FormControl,
+  Validators,
+  FormBuilder,
 } from '@angular/forms';
-import { Experiences, Persona } from 'src/app/models';
-import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Persona } from 'src/app/models';
+
 import { PersonaService } from 'src/app/services/persona.service';
+import { EditarComponent } from '../editar/editar.component';
 
 @Component({
-  selector: 'app-editar',
-  templateUrl: './editar.component.html',
+  selector: 'app-agregar',
+  templateUrl: './agregar.component.html',
   styles: [],
 })
-export class EditarComponent {
+export class AgregarComponent {
   personaForm: FormGroup;
-  nombresControl = new FormControl(this.data.nombres, Validators.required);
-  apellidoControl = new FormControl(this.data.apellido, Validators.required);
-  nacionalidadControl = new FormControl(
-    this.data.nacionalidad,
-    Validators.required
-  );
-  emailControl = new FormControl(this.data.email, [
-    Validators.required,
-    Validators.email,
-  ]);
-  sobreMiControl = new FormControl(this.data.sobre_mi);
-  ocupacionControl = new FormControl(this.data.ocupacion);
-  imagenFondoEncabezadoControl = new FormControl(
-    this.data.image_background_header
-  );
-  imagenPerfilControl = new FormControl(this.data.image_perfil);
-  image_sobre_miControl = new FormControl(this.data.image_sobre_mi);
+  nombresControl = new FormControl('', Validators.required);
+  apellidoControl = new FormControl('', Validators.required);
+  nacionalidadControl = new FormControl('', Validators.required);
+  emailControl = new FormControl('', [Validators.required, Validators.email]);
+  sobreMiControl = new FormControl('');
+  ocupacionControl = new FormControl('');
+  imagenFondoEncabezadoControl = new FormControl('');
+  imagenPerfilControl = new FormControl('');
+  image_sobre_miControl = new FormControl('');
   constructor(
     public dialogRef: MatDialogRef<EditarComponent>,
     private formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: Persona,
+
     private personaService: PersonaService
   ) {
     this.personaForm = this.formBuilder.group({
@@ -63,8 +54,7 @@ export class EditarComponent {
 
   onSaveClick(): void {
     if (this.personaForm.valid) {
-      const updatedPersona = {
-        id: this.data.id,
+      const nueva = {
         nombres: this.personaForm.value.nombres,
         apellido: this.personaForm.value.apellido,
         nacionalidad: this.personaForm.value.nacionalidad,
@@ -75,10 +65,11 @@ export class EditarComponent {
         image_perfil: this.personaForm.value.image_perfil,
         image_sobre_mi:this.personaForm.value.image_sobre_mi
       };
-   
-      this.personaService.actualizarPer(updatedPersona).subscribe();
-     
-      this.dialogRef.close(updatedPersona);
+
+      console.log(nueva)
+
+      this.personaService.crearPer(nueva).subscribe();
+      this.dialogRef.close();
     } else {
     }
   }

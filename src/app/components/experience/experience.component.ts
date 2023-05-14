@@ -23,7 +23,9 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {
     this.datosExperiencias.traerExperiencias().subscribe((data) => {
       this.experiences = data;
+      
     });
+
   }
 
   agregarExp(): void {

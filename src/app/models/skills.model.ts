@@ -1,7 +1,7 @@
 export interface Skill {
   id?: number;
 
-  nombre: String;
+  nombre: string;
 
   porcentaje: number;
 }

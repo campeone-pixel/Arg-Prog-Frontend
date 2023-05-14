@@ -14,10 +14,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EditarComponent } from './editar/editar.component';
+import { AgregarComponent } from './agregar/agregar.component';
 
 
 @NgModule({
-  declarations: [EditarComponent],
+  declarations: [EditarComponent,AgregarComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -30,7 +31,7 @@ import { EditarComponent } from './editar/editar.component';
     MatIconModule,
     MatTableModule,
     MatCheckboxModule,
-
+    
     MatDatepickerModule,
     MatNativeDateModule,
   ],

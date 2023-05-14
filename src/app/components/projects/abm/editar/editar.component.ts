@@ -21,14 +21,15 @@ export class EditarComponent {
 
   nombreControl = new FormControl(this.data.nombre, [
     Validators.required,
-    Validators.minLength(5),
+    
   ]);
 
   descripcionControl = new FormControl(this.data.descripcion, [
     Validators.required,
-    Validators.minLength(5),
+    
   ]);
   linkControl = new FormControl(this.data.link, [Validators.required]);
+  link_fotoControl = new FormControl(this.data.link_foto, [Validators.required]);
 
   constructor(
     public formBuilder: FormBuilder,
@@ -40,18 +41,21 @@ export class EditarComponent {
       nombre: this.nombreControl,
       descripcion: this.descripcionControl,
       link: this.linkControl,
+      link_foto: this.link_fotoControl,
     });
   }
 
   add(): void {
     if (this.myForm.valid) {
       const newData: Proyecto = {
+        id:this.data.id,
         nombre: this.myForm.value.nombre,
         descripcion: this.myForm.value.descripcion,
         link: this.myForm.value.link,
+        link_foto: this.myForm.value.link_foto,
       };
 
-      this.proyectoService.crearProy(newData).subscribe(() => {});
+      this.proyectoService.actualizarProy(newData).subscribe(() => {});
 
       this.dialogRef.close();
     } else {

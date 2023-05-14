@@ -19,7 +19,7 @@ export class EditarComponent {
 
   registerForm: FormGroup = new FormGroup({});
 
-  puestoControl = new FormControl(this.data.puesto, [
+  PuestoControl = new FormControl(this.data.Puesto, [
     Validators.required,
     Validators.minLength(5),
   ]);
@@ -34,6 +34,10 @@ export class EditarComponent {
     Validators.required,
     Validators.minLength(5),
   ]);
+  descripcionControl = new FormControl(this.data.descripcion, [
+    Validators.required,
+    Validators.minLength(5),
+  ]);
 
 
   constructor(
@@ -44,14 +48,15 @@ export class EditarComponent {
   ) {
 
     this.form = this.fb.group({
-      puesto: this.puestoControl,
+      Puesto: this.PuestoControl,
       lugar:this.lugarControl,
       desde: this.desdeControl,
       hasta: this.hastaControl,
       empresa: this.empresaControl,
+      descripcion: this.descripcionControl,
     });
 
-    console.log(typeof(data.desde))
+  
   }
 
   onGuardarClick(): void {
@@ -59,11 +64,12 @@ export class EditarComponent {
     if (this.form.valid) {
       const editedObject = {
         id: this.data.id,
-        puesto: this.form.value.puesto,
+        Puesto: this.form.value.puesto,
         lugar: this.form.value.lugar,
         desde: this.form.value.desde.toLocaleDateString(),
         hasta: this.form.value.hasta.toLocaleDateString(),
-        empresa: this.form.value.empresa
+        empresa: this.form.value.empresa,
+        descripcion: this.form.value.descripcion
       };
       this.experienciaService.actualizarExp(editedObject).subscribe(()=>{
       })

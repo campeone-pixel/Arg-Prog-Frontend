@@ -42,12 +42,13 @@ export class EditarComponent {
 
   editar(): void {
     if (this.skillForm.valid) {
-      const nuevo: Skill = {
+      const actualizado: Skill = {
+        id:this.data.id,
         nombre: this.skillForm.value.nombre,
         porcentaje: this.skillForm.value.porcentaje
       };
 
-      this.skillService.actualizarSkill(nuevo).subscribe(() => {
+      this.skillService.actualizarSkill(actualizado).subscribe(() => {
        
       });
 

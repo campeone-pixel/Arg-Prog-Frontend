@@ -1,50 +1,41 @@
 <article class="education">
-
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar" (click)="agregar()"><i class="fa-solid fa-square-plus"></i></div>
-    
+      <div class="boton-agregar" (click)="agregar()">
+        <i class="fa-solid fa-square-plus"></i>
+      </div>
     </div>
   </div>
 
-  
-
   <h2>EDUCATION</h2>
   <section class="card-edu">
-
     <section *ngFor="let education of educacion">
       <div class="modificaciones">
         <div class="container-modificaciones">
-          <div class="boton-editar" (click)="editar(education)"><i class="fa-regular fa-pen-to-square"></i></div>
-          <div class="boton-editar" (click)="delete(education)"><i class="fa-sharp fa-solid fa-trash-can"></i></div>
+          <div class="boton-editar" (click)="editar(education)">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </div>
+          <div class="boton-editar" (click)="delete(education)">
+            <i class="fa-sharp fa-solid fa-trash-can"></i>
+          </div>
         </div>
       </div>
       <div class="line"></div>
 
+   
+
       <div class="title">
-        <h4> Trabajo</h4>
+        <h4>{{ education.carrera }}</h4>
         <h6 class="font-weight-bolder">
-          User Experience Designer
-          <span class="font-weight-light">&nbsp;|&nbsp;July 2015 &ndash; Present
+          {{ education.escuela }}
+          <span class="font-weight-light"
+            >&nbsp;|&nbsp;{{ education.inicio }} &ndash; {{ education.fin }}
           </span>
         </h6>
-      </div>
-
-      <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sed quia adipisci ipsam
-        nam est asperiores alias obcaecati et provident, doloribus earum labore voluptates dolorum amet sapiente esse
-        nihil assumenda.
+        <div class="container-img">
+          <img src={{education?.imagen}} alt="personal photo" />
+        </div>
       </div>
     </section>
-
-
-
-
   </section>
-
-
-
-
-
-
-
 </article>

@@ -4,21 +4,11 @@
     <mat-form-field class="mb-3 w-100">
       <mat-label class="form-label">Lugar</mat-label>
       <input matInput formControlName="lugar" />
-      <!-- <app-form-error [typeError]="mailControl.errors"></app-form-error> -->
-
-      <!-- <mat-error *ngFor="let error of mailControl.errors | keyvalue">
-        {{ error | controlErrorsMessage }}
-      </mat-error> -->
     </mat-form-field>
 
     <mat-form-field class="mb-3 w-100">
       <mat-label class="form-label">Puesto</mat-label>
-      <input matInput formControlName="puesto" type="text" />
-      <!-- <app-form-error [typeError]="nombreControl.errors"></app-form-error> -->
-
-      <!-- <mat-error *ngFor="let error of nombreControl.errors | keyvalue">
-        {{ error | controlErrorsMessage }}
-      </mat-error> -->
+      <input matInput formControlName="Puesto"  />
     </mat-form-field>
 
     <mat-form-field class="mb-3 w-100">
@@ -28,11 +18,6 @@
         [for]="pickerDesde"
       ></mat-datepicker-toggle>
       <mat-datepicker #pickerDesde></mat-datepicker>
-      <!-- <app-form-error [typeError]="apellidoControl.errors"></app-form-error> -->
-
-      <!-- <mat-error *ngFor="let error of apellidoControl.errors | keyvalue">
-        {{ error | controlErrorsMessage }}
-      </mat-error> -->
     </mat-form-field>
 
     <mat-form-field class="mb-3 w-100">
@@ -43,24 +28,19 @@
         [for]="pickerHasta"
       ></mat-datepicker-toggle>
       <mat-datepicker #pickerHasta></mat-datepicker>
-      <!-- <app-form-error [typeError]="mailControl.errors"></app-form-error> -->
-
-      <!-- <mat-error *ngFor="let error of mailControl.errors | keyvalue">
-      {{ error | controlErrorsMessage }}
-    </mat-error> -->
     </mat-form-field>
 
     <mat-form-field class="mb-3 w-100">
-      <mat-label for="exampleInputEmail1" class="form-label">Empresa</mat-label>
+      <mat-label class="form-label">Empresa</mat-label>
       <input matInput formControlName="empresa" />
-      <!-- <app-form-error [typeError]="mailControl.errors"></app-form-error> -->
-
-      <!-- <mat-error *ngFor="let error of mailControl.errors | keyvalue">
-      {{ error | controlErrorsMessage }}
-    </mat-error> -->
     </mat-form-field>
 
-    <div mat-dialog-action >
+    <mat-form-field class="mb-3 w-100">
+      <mat-label class="form-label">descripcion</mat-label>
+      <input matInput formControlName="descripcion" />
+    </mat-form-field>
+
+    <div mat-dialog-action>
       <button mat-button (click)="add()">Submit</button>
       <button mat-button (click)="onNoClick($event)">Cancelar</button>
     </div>

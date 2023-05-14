@@ -4,12 +4,12 @@
       "id": 1,
       "nombres": "matias",
       "apellido": "poses",
-      "nacionalidad": "argentino",
+      "nacionalidad": "argentina",
       "email": "map_rc@hotmail.com",
-      "sobre_mi": "11111sdfgdsgsdgfsdfg gsdfgdsf gsd gdg seargsd g sergsgh dfer teg ge g sdrgdh  ersh rgrg ser gh hrth yh eh tjrhj rteh rhjrt ha hj g hh sg reer ger ge ge hrjrt hjry rt yrthj rteh rtdhdfgj gf jty jtyer jty jtyjk tyj tyrj",
-      "ocupacion": "programador",
-      "image_background_header": "",
-      "image_perfil": ""
+      "sobre_mi": "Empeze aprendiendo python porque necesitaba buscar una mejor manera de hacer mi trabajo y desde ahi no pare de aprender otros lenguajes. Ahora me di cuenta que la programacion es lo que me quiero dedicar. ",
+      "ocupacion": "programador fullstack",
+      "image_background_header": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
+      "image_perfil": "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg"
     },
     {
       "id": 2,
@@ -47,49 +47,31 @@
   ],
   "projects": [
     {
-      "nombre": "fasdfsdfsdf",
-      "descripcion": "sdfasdfasdfasdf",
-      "link": "asdfasdfasdfas",
-      "id": 1
-    },
-    {
-      "nombre": "fasdfsdfsdf111",
-      "descripcion": "sdfasdfasdfasdf",
-      "link": "asdfasdfasdfas",
-      "id": 2
-    },
-    {
-      "nombre": "fasdfsdfsdf11111",
-      "descripcion": "sdfasdfasdfasdf",
-      "link": "asdfasdfasdfas",
-      "id": 3
-    },
-    {
-      "nombre": "fasdfsdfsdf",
-      "descripcion": "sdfasdfasdfasdf",
-      "link": "asdfasdfasdfas",
-      "id": 4
+      "id": 1,
+      "nombre": "blog",
+      "descripcion": "Un Blog que hice para el curso de Python en CoderHouse",
+      "link": "https://github.com/campeone-pixel/blog"
     }
   ],
   "experiences": [
     {
+      "id": 1,
       "puesto": "111111",
       "lugar": "11111",
-      "desde": "Thu May 04 2023",
-      "hasta": "Thu May 18 2023",
-      "empresa": "11111111",
-      "id": 1
+      "desde": "5/4/2023",
+      "hasta": "5/18/2023",
+      "empresa": "empresa provincial de la energia"
     }
   ],
   "educations": [
     {
-      "escuela": "dsfgsdfghsdfg",
-      "titulo": "dfgsdfgsdfg",
-      "imagen": "sdfgsdfgsdfg",
-      "carrera": "sdfgsdfgsdfg",
+      "id": 2,
+      "escuela": "coderhouse",
+      "titulo": "javascript",
+      "imagen": "https://drive.google.com/file/d/1P0JI0v0POO2FUKD_cz4V0_zb6fja3qjo/view?usp=share_link",
+      "carrera": "desarrollo webbbb",
       "inicio": "Thu May 18 2023",
-      "fin": "Thu May 18 2023",
-      "id": 1
+      "fin": "Thu May 18 2023"
     }
   ],
   "users": [

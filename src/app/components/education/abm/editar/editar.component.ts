@@ -48,6 +48,7 @@ console.log(data)
    if (this.educationForm.valid) {
     console.log(this.educationForm)
       const nuevo: Educacion = {
+        id: this.data.id,
         escuela: this.educationForm.value.escuela,
         titulo: this.educationForm.value.titulo,
         imagen: this.educationForm.value.imagen,
@@ -56,7 +57,7 @@ console.log(data)
         fin: this.educationForm.value.fin.toDateString()
       };
 
-      this.educacionService.crearEdu(nuevo).subscribe(() => {
+      this.educacionService.actualizarEdu(nuevo).subscribe(() => {
        
   
       });

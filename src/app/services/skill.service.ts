@@ -12,30 +12,28 @@ import { Skill } from '../models';
 })
 export class SkillService {
   private readonly apiUrl = environment.apiUrl;
-  private readonly endpoint = 'skills';
+  private readonly endpoint = 'skill';
 
   constructor(private http: HttpClient) {}
 
   traerSkills(): Observable<Skill[]> {
-    return this.http.get<Skill[]>(`${this.apiUrl}/${this.endpoint}`);
+    return this.http.get<Skill[]>(`${this.apiUrl}/get/${this.endpoint}`);
   }
 
-  traerSkillsPorID(id: number): Observable<Skill> {
-    return this.http.get<Skill>(`${this.apiUrl}/${this.endpoint}/${id}`);
-  }
+
 
   crearSkill(skill: Skill): Observable<Skill> {
-    return this.http.post<Skill>(`${this.apiUrl}/${this.endpoint}`, skill);
+    return this.http.post<Skill>(`${this.apiUrl}/crear/${this.endpoint}`, skill);
   }
 
   actualizarSkill(skill: Skill): Observable<Skill> {
-    return this.http.put<Skill>(
-      `${this.apiUrl}/${this.endpoint}/${skill.id}`,
+    return this.http.patch<Skill>(
+      `${this.apiUrl}/editar/${this.endpoint}`,
       skill
     );
   }
 
   eliminarSkill(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${this.endpoint}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/borrar/${this.endpoint}/${id}`);
   }
 }

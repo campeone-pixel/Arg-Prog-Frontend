@@ -23,15 +23,15 @@
     </div>
     <div class="line"></div>
     <div class="title">
-      <h4> {{experience.puesto}}</h4>
+      <h4> {{experience.empresa}}</h4>
       <h6 class="font-weight-bolder">
-        User Experience Designer
+        {{ experience.Puesto}}
         <span class="font-weight-light"
-          >&nbsp;|&nbsp;July 2015 &ndash; Present
+          >&nbsp;|&nbsp;{{experience.desde}} &ndash; {{experience.hasta}}
         </span>
       </h6>
     </div>
-    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam doloribus ullam numquam saepe ex assumenda delectus, autem repudiandae iure maiores quam voluptates mollitia recusandae, fugit atque nostrum earum. Aperiam, animi!</div>
+    <div class="description">{{experience.descripcion}}</div>
   </section>
 
   

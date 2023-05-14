@@ -1,36 +1,25 @@
 <h1 mat-dialog-title>Agregar educación</h1>
 <div mat-dialog-content>
   <form [formGroup]="educationForm">
+
     <mat-form-field appearance="fill" class="mb-3 w-100">
       <mat-label>Escuela</mat-label>
-      <input matInput formControlName="escuela">
-      <mat-error *ngIf="educationForm.controls['escuela'].invalid">
-        La escuela es requerida.
-      </mat-error>
+      <input matInput formControlName="escuela" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
       <mat-label>Título</mat-label>
-      <input matInput formControlName="titulo">
-      <mat-error *ngIf="educationForm.controls['titulo'].invalid">
-        El título es requerido.
-      </mat-error>
+      <input matInput formControlName="titulo" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
       <mat-label>Imagen</mat-label>
-      <input matInput formControlName="imagen">
-      <mat-error *ngIf="educationForm.controls['imagen'].invalid">
-        La imagen es requerida.
-      </mat-error>
+      <input matInput formControlName="imagen" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
       <mat-label>Carrera</mat-label>
-      <input matInput formControlName="carrera">
-      <mat-error *ngIf="educationForm.controls['carrera'].invalid">
-        La carrera es requerida.
-      </mat-error>
+      <input matInput formControlName="carrera" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
@@ -41,9 +30,6 @@
         [for]="pickerInicio"
       ></mat-datepicker-toggle>
       <mat-datepicker #pickerInicio></mat-datepicker>
-      <mat-error *ngIf="educationForm.controls['inicio'].invalid">
-        La fecha de inicio es requerida.
-      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
@@ -54,13 +40,18 @@
         [for]="pickerFin"
       ></mat-datepicker-toggle>
       <mat-datepicker #pickerFin></mat-datepicker>
-      <mat-error *ngIf="educationForm.controls['fin'].invalid">
-        La fecha de fin es requerida.
-      </mat-error>
     </mat-form-field>
+
   </form>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancel()">Cancelar</button>
-  <button mat-button color="primary" (click)="onSubmit()" [disabled]="!educationForm.valid">Guardar</button>
+  <button
+    mat-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="!educationForm.valid"
+  >
+    Guardar
+  </button>
 </div>

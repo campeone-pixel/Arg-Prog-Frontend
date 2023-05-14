@@ -1,10 +1,17 @@
 <article class="aboutme">
+
+  <div class="agregar">
+    <div class="container-agregar">
+      <div class="boton-agregar" (click)="agregar()"><i class="fa-solid fa-square-plus"></i></div>
+    
+    </div>
+  </div>
   <h2>SOBRE MI</h2>
 
   <section>
     <div class="imag">
       <div class="container-img">
-        <img src="../../assets/images/106_1852.JPG" alt="personal photo" />
+        <img src={{persona?.image_perfil}} alt="personal photo" />
       </div>
     </div>
 
@@ -13,6 +20,7 @@
         <div class="container-modificaciones">
           <div class="boton-editar" >
             <a (click)="editar()"><i class="fa-regular fa-pen-to-square"></i></a>
+            <a (click)="delete(persona)"><i class="fa-sharp fa-solid fa-trash-can"></i></a>
           </div>
         </div>
       </div>
@@ -23,11 +31,11 @@
       <p>
      {{persona?.sobre_mi}}
       </p>
-      <div class="wrapper">
+      <!-- <div class="wrapper">
         <a href="contact.html"
           ><span>DESCARGA MI CV</span></a
         >
-      </div>
+      </div> -->
     </div>
   </section>
 </article>

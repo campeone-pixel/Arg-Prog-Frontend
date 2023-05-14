@@ -1,10 +1,10 @@
 export interface Experiences {
     
     id?: number;
-    puesto: string;
+    Puesto: string;
     lugar: string;
     desde: string;
     hasta: string;
     empresa: string;
-    
+    descripcion?: string
   }

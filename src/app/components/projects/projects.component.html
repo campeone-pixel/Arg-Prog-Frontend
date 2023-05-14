@@ -1,13 +1,18 @@
 <article class="projects">
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar" (click)="agregar()"><i class="fa-solid fa-square-plus"></i></div>
+      <div class="boton-agregar" (click)="agregar()">
+        <i class="fa-solid fa-square-plus"></i>
+      </div>
     </div>
   </div>
 
   <h2>PROYECTOS</h2>
 
   <section class="" *ngFor="let project of proyectos">
+    <div class="container-img">
+      <img src="{{ project?.link_foto }}" alt="personal photo" />
+    </div>
     <div class="text-container">
       <div class="modificaciones">
         <div class="container-modificaciones">
@@ -25,7 +30,7 @@
       <p>{{ project.descripcion }}</p>
 
       <div class="wrapper">
-        <a href="contact.html"><span>GITHUB</span></a>
+        <a href="{{ project.link }}"><span>GITHUB</span></a>
       </div>
     </div>
   </section>

@@ -9,8 +9,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Experiences } from 'src/app/models';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
-
-
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
@@ -19,23 +17,14 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 export class AgregarComponent {
   registerForm: FormGroup = new FormGroup({});
 
-  puestoControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5),
-  ]);
+  PuestoControl = new FormControl('', [Validators.required]);
 
-  lugarControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5),
-  ]);
+  lugarControl = new FormControl('', [Validators.required]);
   desdeControl = new FormControl('', [Validators.required]);
   hastaControl = new FormControl('', [Validators.required]);
-  empresaControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5),
-  ]);
+  empresaControl = new FormControl('', [Validators.required]);
 
-  mejorAlumnoControl = new FormControl(false);
+  descripcionControl = new FormControl('', [Validators.required]);
 
   constructor(
     public formBuilder: FormBuilder,
@@ -44,23 +33,24 @@ export class AgregarComponent {
     private experienciaService: ExperienciaService
   ) {
     this.registerForm = this.formBuilder.group({
-      puesto: this.puestoControl,
+      Puesto: this.PuestoControl,
       lugar: this.lugarControl,
       desde: this.desdeControl,
       hasta: this.hastaControl,
       empresa: this.empresaControl,
+      descripcion: this.descripcionControl,
     });
   }
 
   add(): void {
     if (this.registerForm.valid) {
       const nuevoExp: Experiences = {
-        puesto: this.registerForm.value.puesto,
+        Puesto: this.registerForm.value.Puesto,
         lugar: this.registerForm.value.lugar,
-        desde: this.registerForm.value.desde.toDateString(
-        ),
+        desde: this.registerForm.value.desde.toDateString(),
         hasta: this.registerForm.value.hasta.toDateString(),
         empresa: this.registerForm.value.empresa,
+        descripcion: this.registerForm.value.descripcion,
       };
 
       this.experienciaService.crearExp(nuevoExp).subscribe((response) => {

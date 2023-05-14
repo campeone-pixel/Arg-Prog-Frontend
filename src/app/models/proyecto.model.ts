@@ -1,9 +1,10 @@
 export interface Proyecto {
   id?: number;
 
-  nombre: String;
+  nombre: string;
 
-  descripcion: String;
+  descripcion: string;
 
-  link: String;
+  link: string;
+  link_foto:string
 }

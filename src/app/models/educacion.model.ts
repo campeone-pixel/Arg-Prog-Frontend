@@ -6,4 +6,5 @@ export interface Educacion {
   carrera: string;
   inicio: string;
   fin: string;
+  
 }

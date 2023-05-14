@@ -28,6 +28,7 @@ export class AgregarComponent {
     Validators.minLength(5),
   ]);
   linkControl = new FormControl('', [Validators.required]);
+  link_fotoControl = new FormControl('', [Validators.required]);
 
   constructor(
     public formBuilder: FormBuilder,
@@ -38,7 +39,7 @@ export class AgregarComponent {
     this.myForm = this.formBuilder.group({
       nombre: this.nombreControl,
       descripcion: this.descripcionControl,
-      link: this.linkControl,
+      link_foto: this.link_fotoControl,
     });
   }
 
@@ -48,6 +49,7 @@ export class AgregarComponent {
         nombre: this.myForm.value.nombre,
         descripcion: this.myForm.value.descripcion,
         link: this.myForm.value.link,
+        link_foto: this.myForm.value.link_foto,
       };
 
       this.proyectoService.crearProy(newData).subscribe(() => {});

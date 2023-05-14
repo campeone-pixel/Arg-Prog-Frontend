@@ -1,19 +1,20 @@
 export interface Persona {
-  id: number;
+  id?: number;
 
-  nombres: String;
+  nombres: string;
 
-  apellido: String;
+  apellido: string;
 
-  nacionalidad: String;
+  nacionalidad: string;
 
-  email: String;
+  email: string;
 
-  sobre_mi: String;
+  sobre_mi: string;
 
-  ocupacion: String;
+  ocupacion: string;
 
-  image_background_header: String;
+  image_background_header: string;
 
-  image_perfil: String;
+  image_perfil: string;
+  image_sobre_mi?: string;
 }

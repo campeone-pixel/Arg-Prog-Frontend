@@ -5,6 +5,8 @@ import { PersonaService } from 'src/app/services/persona.service';
 import { MatDialog } from '@angular/material/dialog';
 
 import { EditarComponent } from './abm/editar/editar.component';
+import { AgregarComponent } from './abm/agregar/agregar.component';
+import { EliminarComponent } from './abm/eliminar/eliminar.component';
 
 @Component({
   selector: 'app-about-me',
@@ -12,45 +14,42 @@ import { EditarComponent } from './abm/editar/editar.component';
   styleUrls: ['./about-me.component.scss'],
 })
 export class AboutMeComponent {
-  persona?: Persona;
+  persona?: Persona | null;
   constructor(private datosPersona: PersonaService, public dialog: MatDialog) {
     this.datosPersona.traerPersonas().subscribe((data) => {
-      this.persona = data[0];
+      this.persona = data;
     });
   }
 
   ngOnInit(): void {}
 
-  // agregar(): void {
-  //   const dialog = this.dialog.open(AgregarComponent);
-  //   dialog.afterClosed().subscribe(() => {
-  //     this.datosPersona.traerPersonas().subscribe((data) => {
-  //       this.persona = data[0];
-  //     });
-  //   });
-  // }
+  agregar(): void {
+    const dialog = this.dialog.open(AgregarComponent);
+    dialog.afterClosed().subscribe((data) => {
+      this.persona = data;
+    });
+  }
 
   editar(): void {
     const data = { ...this.persona };
     const dialog = this.dialog.open(EditarComponent, { data: data });
 
-    dialog.afterClosed().subscribe(() => {
-      this.datosPersona.traerPersonas().subscribe((data) => {
-        this.persona = data[0];
-      });
+    dialog.afterClosed().subscribe((data) => {
+      this.persona = data;
     });
   }
 
-  // delete(objetoAEliminar: Persona): void {
-  //   const dialogRef = this.dialog.open(EliminarComponent, {
-  //     width: '250px',
-  //     data: objetoAEliminar,
-  //   });
+  delete(objetoAEliminar: Persona | null | undefined): void {
+    console.log(objetoAEliminar);
+    const dialogRef = this.dialog.open(EliminarComponent, {
+      width: '250px',
+      data: objetoAEliminar,
+    });
 
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     this.datosPersona.traerPersonas().subscribe((data) => {
-  //       this.persona = data[0];
-  //     });
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe((result) => {
+      this.datosPersona.traerPersonas().subscribe((data) => {
+        this.persona = data;
+      });
+    });
+  }
 }
