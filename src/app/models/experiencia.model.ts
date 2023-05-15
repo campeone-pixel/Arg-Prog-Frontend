@@ -1,7 +1,7 @@
 export interface Experiences {
     
     id?: number;
-    Puesto: string;
+    puesto?: string;
     lugar: string;
     desde: string;
     hasta: string;

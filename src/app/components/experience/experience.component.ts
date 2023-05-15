@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Experiences } from 'src/app/models/experiencia.model';
-import { AgregarComponent } from './abm/agregar/agregar.component';
+
+
 
 import { MatDialog } from '@angular/material/dialog';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
-import { EditarComponent } from './abm/editar/editar.component';
-import { EliminarComponent } from './abm/eliminar/eliminar.component';
+
 import { AuthService } from 'src/app/services/auth.service';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+
+import { AgregarComponent } from './abm/agregar/agregar.component';
+import { EditarComponent } from './abm/editar/editar.component';
+import { EliminarComponent } from './abm/eliminar/eliminar.component';
+import { Experiences } from 'src/app/models/experiencia.model';
+
 registerLocaleData(localeEs);
 @Component({
   selector: 'app-experience',
@@ -30,6 +35,8 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {
     this.datosExperiencias.traerExperiencias().subscribe((data) => {
       this.experiences = data;
+   
+      
     });
 
     this.authService.usuarioLogueado.subscribe((dato) => {
@@ -48,6 +55,7 @@ export class ExperienceComponent implements OnInit {
 
   editarExp(exp: Experiences): void {
     const data = { ...exp };
+
     const dialog = this.dialog.open(EditarComponent, { data: data });
 
     dialog.afterClosed().subscribe(() => {
