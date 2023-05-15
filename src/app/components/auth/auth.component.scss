@@ -1,7 +1,2 @@
-@use "../../../styles/abstracts/mixins" as a;
-@use "../../../styles/abstracts/variables" as v;
-@use "../../../styles/abstracts/typography" as t;
-
-*{
-    background-color: v.$primary;
-}
+@use "../../../styles/abstracts/variables" as v;*{
+background-color: v.$primary;}

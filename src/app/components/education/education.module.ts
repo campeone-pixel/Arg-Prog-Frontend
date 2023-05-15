@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EducationComponent } from './education.component';
 import { AbmEducationModule } from './abm/abm-education.module';
 
+
+
 @NgModule({
   declarations: [EducationComponent],
   imports: [
