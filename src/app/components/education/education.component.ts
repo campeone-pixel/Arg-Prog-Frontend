@@ -10,34 +10,41 @@ import { AuthService } from 'src/app/services/auth.service';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { Subscription } from 'rxjs';
 registerLocaleData(localeEs);
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
-  styleUrls: ['./education.component.scss']
+  styleUrls: ['./education.component.scss'],
 })
-export class EducationComponent implements OnInit{
- educacion:Educacion[] = [];
- isAuthenticated: boolean = false;
-
+export class EducationComponent implements OnInit {
+  educacion: Educacion[] = [];
+  isAuthenticated: boolean = false;
+  private dataUpdateSubscription: Subscription =
+    this.datosEducacion.dataUpdated.subscribe();
   constructor(
     private datosEducacion: EducacionService,
     public dialog: MatDialog,
     private authService: AuthService
   ) {
     this.datosEducacion.traerEducations().subscribe((data) => {
-     
       this.educacion = data;
-     
     });
   }
   ngOnInit(): void {
+    this.dataUpdateSubscription = this.datosEducacion.dataUpdated.subscribe(
+      () => {
+        this.datosEducacion.traerEducations().subscribe((datos) => {
+          this.educacion = datos;
+        });
+      }
+    );
+
     this.authService.usuarioLogueado.subscribe((dato) => {
       this.isAuthenticated = !!dato;
     });
   }
-
 
   agregar(): void {
     const dialog = this.dialog.open(AgregarComponent);
@@ -49,7 +56,6 @@ export class EducationComponent implements OnInit{
   }
 
   editar(edu: Educacion): void {
-  
     const dialog = this.dialog.open(EditarComponent, { data: edu });
 
     dialog.afterClosed().subscribe(() => {
@@ -71,5 +77,4 @@ export class EducationComponent implements OnInit{
       });
     });
   }
-
 }

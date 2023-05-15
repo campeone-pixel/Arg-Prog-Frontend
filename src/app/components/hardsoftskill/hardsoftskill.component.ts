@@ -7,6 +7,7 @@ import { AgregarComponent } from './abm/agregar/agregar.component';
 import { EditarComponent } from './abm/editar/editar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-hardsoftskill',
@@ -16,7 +17,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HardsoftskillComponent implements OnInit {
   skills: Skill[] = [];
   isAuthenticated: boolean = false;
-
+  
   constructor(
     private datosSkill: SkillService,
     public dialog: MatDialog,
@@ -34,6 +35,12 @@ export class HardsoftskillComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.datosSkill.dataUpdated.subscribe(() => {
+      this.datosSkill.traerSkills().subscribe((datos) => {
+        this.skills = datos;
+      });
+    });
+
     this.authService.usuarioLogueado.subscribe((dato) => {
       this.isAuthenticated = !!dato;
     });

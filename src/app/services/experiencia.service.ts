@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Experiences } from '../models/experiencia.model';
-
+import { EventEmitter } from '@angular/core';
 
 
 
@@ -13,7 +13,8 @@ import { Experiences } from '../models/experiencia.model';
 export class ExperienciaService {
   private readonly apiUrl = environment.apiUrl;
   private readonly endpoint = 'experiencia';
-  private dataSubject = new Subject<any>();
+
+  dataUpdated = new EventEmitter<void>();
 
   constructor(private http: HttpClient) {}
 
@@ -24,7 +25,8 @@ export class ExperienciaService {
   }
 
   crearExp(exp: Experiences): Observable<Experiences> {
-    console.log(exp)
+    this.dataUpdated.emit();
+  
     return this.http.post<Experiences>(
       `${this.apiUrl}/crear/${this.endpoint}`,
       exp
@@ -32,6 +34,7 @@ export class ExperienciaService {
   }
 
   actualizarExp(exp: Experiences): Observable<Experiences> {
+    this.dataUpdated.emit();
     return this.http.patch<Experiences>(
       `${this.apiUrl}/editar/${this.endpoint}`,
       exp
@@ -39,6 +42,7 @@ export class ExperienciaService {
   }
 
   eliminarExp(id: number | undefined): Observable<void> {
+    this.dataUpdated.emit();
     return this.http.delete<void>(
       `${this.apiUrl}/borrar/${this.endpoint}/${id}`
     );

@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+
 import {
   FormGroup,
   FormControl,
@@ -17,6 +18,9 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
   styles: [],
 })
 export class AgregarComponent {
+
+
+
   registerForm: FormGroup = new FormGroup({});
 
   puestoControl = new FormControl('', [Validators.required]);
@@ -57,7 +61,7 @@ export class AgregarComponent {
       console.log(nuevoExp);
 
       this.experienciaService.crearExp(nuevoExp).subscribe(() => {});
-
+     
       this.dialogRef.close();
     } else {
       alert('no es valido');

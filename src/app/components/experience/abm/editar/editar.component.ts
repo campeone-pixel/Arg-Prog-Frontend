@@ -20,9 +20,7 @@ export class EditarComponent {
   form: FormGroup;
 
   registerForm: FormGroup = new FormGroup({});
-
   puestoControl = new FormControl(this.data.puesto, [Validators.required]);
-
   lugarControl = new FormControl(this.data.lugar, [Validators.required]);
   desdeControl = new FormControl(new Date(this.data.desde), [
     Validators.required,
@@ -64,7 +62,6 @@ export class EditarComponent {
         empresa: this.form.value.empresa,
         descripcion: this.form.value.descripcion,
       };
-      
 
       this.experienciaService.actualizarExp(editedObject).subscribe(() => {});
       this.dialogRef.close();

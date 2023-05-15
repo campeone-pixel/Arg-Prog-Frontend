@@ -28,6 +28,12 @@ export class ProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.datosProyecto.dataUpdated.subscribe(() => {
+      this.datosProyecto.traerProyectos().subscribe((datos) => {
+        this.proyectos = datos;
+      });
+    });
+
     this.authService.usuarioLogueado.subscribe((dato) => {
       this.isAuthenticated = !!dato;
     });

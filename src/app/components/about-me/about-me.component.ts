@@ -18,7 +18,7 @@ export class AboutMeComponent implements OnInit {
   persona?: Persona | null;
 
   isAuthenticated: boolean = false;
-  
+
   constructor(
     private datosPersona: PersonaService,
     public dialog: MatDialog,
@@ -30,6 +30,12 @@ export class AboutMeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.datosPersona.dataUpdated.subscribe(() => {
+      this.datosPersona.traerPersonas().subscribe((datos) => {
+        this.persona = datos;
+      });
+    });
+
     this.authService.usuarioLogueado.subscribe((dato) => {
       this.isAuthenticated = !!dato;
     });
@@ -37,8 +43,10 @@ export class AboutMeComponent implements OnInit {
 
   agregar(): void {
     const dialog = this.dialog.open(AgregarComponent);
-    dialog.afterClosed().subscribe((data) => {
-      this.persona = data;
+    dialog.afterClosed().subscribe(() => {
+      this.datosPersona.traerPersonas().subscribe((data) => {
+        this.persona = data;
+      });
     });
   }
 
@@ -46,19 +54,21 @@ export class AboutMeComponent implements OnInit {
     const data = { ...this.persona };
     const dialog = this.dialog.open(EditarComponent, { data: data });
 
-    dialog.afterClosed().subscribe((data) => {
-      this.persona = data;
+    dialog.afterClosed().subscribe(() => {
+      this.datosPersona.traerPersonas().subscribe((data) => {
+        this.persona = data;
+      });
     });
   }
 
   delete(objetoAEliminar: Persona | null | undefined): void {
     console.log(objetoAEliminar);
-    const dialogRef = this.dialog.open(EliminarComponent, {
+    const dialog = this.dialog.open(EliminarComponent, {
       width: '250px',
       data: objetoAEliminar,
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialog.afterClosed().subscribe(() => {
       this.datosPersona.traerPersonas().subscribe((data) => {
         this.persona = data;
       });

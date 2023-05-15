@@ -9,6 +9,10 @@
   position: relative;
   overflow: hidden;
 
+  .agregar {
+    color: v.$text-icon;
+  }
+
   section {
     @include a.fx-col-all-center;
     border-radius: 5px;
@@ -21,11 +25,13 @@
     position: relative;
     overflow: hidden;
 
+    .modificaciones {
+      color: v.$text-icon;
+    }
+
     .container-img {
       flex: 1 1 50%;
-     
-      
-      
+
       img {
         width: 100%;
         height: auto;
@@ -40,18 +46,19 @@
       display: flex;
       flex-direction: column;
       gap: 2em;
-      
+
+      h3 {
+        font-family: t.$title;
+        font-weight: 900;
+        color: v.$text-icon;
+      }
 
       .wrapper {
         align-self: flex-end;
       }
     }
-   
   }
-
-
 }
-
 
 @media (min-width: 768px) {
   section {

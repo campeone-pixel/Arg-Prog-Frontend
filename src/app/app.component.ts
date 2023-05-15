@@ -1,8 +1,5 @@
 import { Component, VERSION } from '@angular/core';
 
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,10 +11,7 @@ export class AppComponent {
   miPortfolio: any;
   constructor() {}
 
-  ngOnInit(): void {
- 
-    
-  }
+  ngOnInit(): void {}
 
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;

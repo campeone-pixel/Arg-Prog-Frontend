@@ -2,7 +2,7 @@
 
 
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable,EventEmitter  } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Skill } from '../models';
@@ -13,6 +13,7 @@ import { Skill } from '../models';
 export class SkillService {
   private readonly apiUrl = environment.apiUrl;
   private readonly endpoint = 'skill';
+  dataUpdated = new EventEmitter<void>();
 
   constructor(private http: HttpClient) {}
 
@@ -23,10 +24,12 @@ export class SkillService {
 
 
   crearSkill(skill: Skill): Observable<Skill> {
+    this.dataUpdated.emit();
     return this.http.post<Skill>(`${this.apiUrl}/crear/${this.endpoint}`, skill);
   }
 
   actualizarSkill(skill: Skill): Observable<Skill> {
+    this.dataUpdated.emit();
     return this.http.patch<Skill>(
       `${this.apiUrl}/editar/${this.endpoint}`,
       skill
@@ -34,6 +37,7 @@ export class SkillService {
   }
 
   eliminarSkill(id: number): Observable<void> {
+    this.dataUpdated.emit();
     return this.http.delete<void>(`${this.apiUrl}/borrar/${this.endpoint}/${id}`);
   }
 }

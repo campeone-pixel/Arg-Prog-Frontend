@@ -9,6 +9,10 @@
   width: 100%;
   position: relative;
 
+  .agregar{
+
+    color:v.$text-icon;
+  }
 
   .card-exp {
     flex: 1;
@@ -34,6 +38,10 @@
       border-radius: 5px;
       border: 2px solid v.$divider-color;
       position: relative;
+
+      .modificaciones{
+        color:v.$text-icon;
+      }
       .line {
         border-left: 6px solid green;
         height: 100%;
@@ -42,9 +50,13 @@
       }
 
       .description {
-        
+        font-family: t.$p;
+        font-weight: 200;
+        font-size: 0.95em;
         flex: 1;
-
+        h4{
+          font-family: t.$title;
+        }
       
       }
       .title {

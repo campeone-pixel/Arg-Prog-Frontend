@@ -23,7 +23,7 @@ export class AuthService {
 
     this.http
       .post<any>(`${this.apiUrl}/login`, loginData)
-      .subscribe((response) => {
+      .subscribe((response: { token: string; }) => {
         if (response) {
           this.usuarioLogueado.next(loginData);
           localStorage.setItem('token', response.token);

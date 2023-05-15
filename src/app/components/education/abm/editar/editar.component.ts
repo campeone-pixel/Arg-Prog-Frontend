@@ -33,7 +33,7 @@ export class EditarComponent {
     @Inject(MAT_DIALOG_DATA) public data: Educacion,
     private educacionService: EducacionService,public formBuilder: FormBuilder,
   ) { 
-console.log(data)
+
     this.educationForm = this.formBuilder.group({
       escuela: this.escuelaControl,
       titulo: this.tituloControl,
