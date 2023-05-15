@@ -21,22 +21,22 @@ export class EditarComponent {
 
   PuestoControl = new FormControl(this.data.Puesto, [
     Validators.required,
-    Validators.minLength(5),
+    
   ]);
 
   lugarControl = new FormControl(this.data.lugar, [
     Validators.required,
-    Validators.minLength(5),
+    
   ]);
   desdeControl = new FormControl(new Date(this.data.desde), [Validators.required]);
   hastaControl = new FormControl(new Date(this.data.hasta), [Validators.required]);
   empresaControl = new FormControl(this.data.empresa, [
     Validators.required,
-    Validators.minLength(5),
+    
   ]);
   descripcionControl = new FormControl(this.data.descripcion, [
     Validators.required,
-    Validators.minLength(5),
+   
   ]);
 
 
@@ -64,7 +64,7 @@ export class EditarComponent {
     if (this.form.valid) {
       const editedObject = {
         id: this.data.id,
-        Puesto: this.form.value.puesto,
+        Puesto: this.form.value.Puesto,
         lugar: this.form.value.lugar,
         desde: this.form.value.desde.toLocaleDateString(),
         hasta: this.form.value.hasta.toLocaleDateString(),
