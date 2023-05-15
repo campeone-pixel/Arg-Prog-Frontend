@@ -12,7 +12,6 @@
       }
     }
   }
-
 }
 
 @media only screen and (min-width: 500px) {
@@ -31,23 +30,16 @@
       .social {
         flex-direction: row;
         justify-content: space-around;
-        
-          .rounded-social-buttons.container-fluid{
-            justify-content: flex-end;
-          }
-          
-        
+
+        .rounded-social-buttons.container-fluid {
+          justify-content: flex-end;
+        }
       }
     }
   }
-
-
 }
 
 @media only screen and (min-width: 768px) {
- 
- 
-
   .banner {
     height: 150px;
 
@@ -60,22 +52,28 @@
     }
   }
 
-  .aboutme section,
   .projects section {
+    flex-direction: row;
+
+    overflow: hidden;
+  }
+
+  .aboutme section {
     flex-direction: row;
 
     height: 530px;
     overflow: hidden;
 
     .imag {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       flex: 1 1 50%;
-      max-height:500px;
+      max-height: 500px;
       .container-img {
-        
         img {
           width: auto;
-          height: 1000px;
-          object-position: -100px -100px;
+          height: 100%;
         }
       }
     }
@@ -85,8 +83,6 @@
     width: 100%;
   }
 
-
-
   .contact {
     .container {
       max-width: 100%;
@@ -95,9 +91,6 @@
 }
 
 @media only screen and (min-width: 840px) {
- 
- 
-
   .index section {
     width: 100%;
   }
@@ -105,26 +98,16 @@
   article {
     padding: 3em;
   }
-
- 
-
- 
 }
 
 @media only screen and (min-width: 992px) {
   article {
     padding: 4em;
   }
-
-
 }
 
 @media only screen and (min-width: 1400px) {
-
   article {
     padding: 5em;
   }
-
 }
-
-

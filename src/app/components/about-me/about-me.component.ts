@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Persona } from 'src/app/models';
 import { PersonaService } from 'src/app/services/persona.service';
@@ -7,21 +7,33 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditarComponent } from './abm/editar/editar.component';
 import { AgregarComponent } from './abm/agregar/agregar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss'],
 })
-export class AboutMeComponent {
+export class AboutMeComponent implements OnInit {
   persona?: Persona | null;
-  constructor(private datosPersona: PersonaService, public dialog: MatDialog) {
+
+  isAuthenticated: boolean = false;
+  
+  constructor(
+    private datosPersona: PersonaService,
+    public dialog: MatDialog,
+    private authService: AuthService
+  ) {
     this.datosPersona.traerPersonas().subscribe((data) => {
       this.persona = data;
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.usuarioLogueado.subscribe((dato) => {
+      this.isAuthenticated = !!dato;
+    });
+  }
 
   agregar(): void {
     const dialog = this.dialog.open(AgregarComponent);

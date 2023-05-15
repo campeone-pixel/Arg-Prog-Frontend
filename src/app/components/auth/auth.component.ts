@@ -16,7 +16,9 @@ export class AuthComponent {
   constructor(private authService: AuthService, private dialog: MatDialog) {}
 
   ngOnInit() {
-    this.isAuthenticated = this.authService.isAuthenticated();
+    this.authService.usuarioLogueado.subscribe((dato) => {
+      this.isAuthenticated = !!dato;
+    });
   }
 
   openLoginDialog() {

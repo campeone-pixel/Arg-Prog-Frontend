@@ -2,7 +2,7 @@
 
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar" (click)="agregar()"><i class="fa-solid fa-square-plus"></i></div>
+      <div class="boton-agregar" (click)="agregar()" *ngIf="isAuthenticated"><i class="fa-solid fa-square-plus"></i></div>
     
     </div>
   </div>
@@ -11,14 +11,14 @@
   <section>
     <div class="imag">
       <div class="container-img">
-        <img src={{persona?.image_perfil}} alt="personal photo" />
+        <img src={{persona?.image_sobre_mi}} alt="personal photo" />
       </div>
     </div>
 
     <div class="text-container">
       <div class="modificaciones">
         <div class="container-modificaciones">
-          <div class="boton-editar" >
+          <div class="boton-editar" *ngIf="isAuthenticated">
             <a (click)="editar()"><i class="fa-regular fa-pen-to-square"></i></a>
             <a (click)="delete(persona)"><i class="fa-sharp fa-solid fa-trash-can"></i></a>
           </div>

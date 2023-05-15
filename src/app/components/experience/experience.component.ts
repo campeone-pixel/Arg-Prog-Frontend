@@ -7,7 +7,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { EditarComponent } from './abm/editar/editar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
+import { AuthService } from 'src/app/services/auth.service';
 
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+registerLocaleData(localeEs);
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
@@ -15,17 +19,22 @@ import { EliminarComponent } from './abm/eliminar/eliminar.component';
 })
 export class ExperienceComponent implements OnInit {
   experiences: Experiences[] = [];
+  isAuthenticated: boolean = false;
+  
   constructor(
     private datosExperiencias: ExperienciaService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.datosExperiencias.traerExperiencias().subscribe((data) => {
       this.experiences = data;
-      
     });
 
+    this.authService.usuarioLogueado.subscribe((dato) => {
+      this.isAuthenticated = !!dato;
+    });
   }
 
   agregarExp(): void {

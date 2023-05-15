@@ -80,10 +80,10 @@
         align-items: center;
 
         img {
-          
-          width: 900px;
-          height: auto;
-          object-position: -70px -100px;
+          object-fit: cover;
+          width: auto;
+          height: 100%;
+       
         }
       }
     }

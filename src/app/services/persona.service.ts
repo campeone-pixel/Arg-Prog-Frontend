@@ -20,7 +20,9 @@ export class PersonaService {
 
   traerPersonas(): Observable<Persona | null> {
     return this.http.get<Persona[]>(`${this.apiUrl}/get/${this.endpoint}`).pipe(
-      map(personas => personas.length > 0 ? personas[0] : null)
+      map((personas) =>{ 
+       
+        return personas.length > 0 ? personas[0] : null})
     );
   }
 

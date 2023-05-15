@@ -2,7 +2,7 @@
 
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar" (click)="agregar()"><i class="fa-solid fa-square-plus"></i></div>
+      <div class="boton-agregar" *ngIf="isAuthenticated" (click)="agregar()"><i class="fa-solid fa-square-plus"></i></div>
     
     </div>
   </div>
@@ -11,7 +11,7 @@
     
     <div class="skill-bars"  *ngFor="let skill of skills">
       <div class="modificaciones">
-        <div class="container-modificaciones">
+        <div class="container-modificaciones" *ngIf="isAuthenticated">
           <div class="boton-editar" (click)="editar(skill)"><i class="fa-regular fa-pen-to-square"></i></div>
           <div class="boton-editar" (click)="delete(skill)"><i class="fa-sharp fa-solid fa-trash-can"></i></div>
         </div>

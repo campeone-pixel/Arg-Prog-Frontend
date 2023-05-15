@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -10,14 +10,18 @@ import { Persona } from 'src/app/models';
 
 import { PersonaService } from 'src/app/services/persona.service';
 import { EditarComponent } from '../editar/editar.component';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
   styles: [],
 })
-export class AgregarComponent {
+export class AgregarComponent implements OnInit, OnDestroy {
+  private unsubscribe$ = new Subject<void>();
+
   personaForm: FormGroup;
+
   nombresControl = new FormControl('', Validators.required);
   apellidoControl = new FormControl('', Validators.required);
   nacionalidadControl = new FormControl('', Validators.required);
@@ -27,10 +31,10 @@ export class AgregarComponent {
   imagenFondoEncabezadoControl = new FormControl('');
   imagenPerfilControl = new FormControl('');
   image_sobre_miControl = new FormControl('');
+
   constructor(
     public dialogRef: MatDialogRef<EditarComponent>,
     private formBuilder: FormBuilder,
-
     private personaService: PersonaService
   ) {
     this.personaForm = this.formBuilder.group({
@@ -44,6 +48,11 @@ export class AgregarComponent {
       image_perfil: this.imagenPerfilControl,
       image_sobre_mi: this.image_sobre_miControl,
     });
+  }
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+    console.log('se destruyó el agregar de aboutme');
   }
 
   ngOnInit(): void {}
@@ -63,13 +72,15 @@ export class AgregarComponent {
         ocupacion: this.personaForm.value.ocupacion,
         image_background_header: this.personaForm.value.image_background_header,
         image_perfil: this.personaForm.value.image_perfil,
-        image_sobre_mi:this.personaForm.value.image_sobre_mi
+        image_sobre_mi: this.personaForm.value.image_sobre_mi,
       };
 
-      console.log(nueva)
-
-      this.personaService.crearPer(nueva).subscribe();
-      this.dialogRef.close();
+      const peticionCrear = this.personaService
+        .crearPer(nueva)
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe(() => {
+          this.dialogRef.close();
+        });
     } else {
     }
   }

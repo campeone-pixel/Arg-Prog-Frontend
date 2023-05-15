@@ -29,7 +29,7 @@ export class LoginComponent {
       this.authService.login(
         this.loginForm.value.email,
         this.loginForm.value.password
-      ).subscribe()
+      )
 
       this.dialogRef.close();
     } else{

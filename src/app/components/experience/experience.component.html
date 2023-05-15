@@ -2,7 +2,7 @@
 
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar" (click)="agregarExp()"><i class="fa-solid fa-square-plus"></i></div>
+      <div class="boton-agregar" *ngIf="isAuthenticated" (click)="agregarExp()"><i class="fa-solid fa-square-plus"></i></div>
     
     </div>
   </div>
@@ -15,7 +15,7 @@
     *ngFor="let experience of experiences"
     >
 
-    <div class="modificaciones">
+    <div class="modificaciones" *ngIf="isAuthenticated">
       <div class="container-modificaciones">
         <div class="boton-editar" (click)="editarExp(experience)"><i class="fa-regular fa-pen-to-square"></i></div>
         <div class="boton-editar" (click)="openDeleteDialog(experience)"><i class="fa-sharp fa-solid fa-trash-can"></i></div>
@@ -27,7 +27,7 @@
       <h6 class="font-weight-bolder">
         {{ experience.Puesto}}
         <span class="font-weight-light"
-          >&nbsp;|&nbsp;{{experience.desde}} &ndash; {{experience.hasta}}
+          >&nbsp;|&nbsp;{{experience.desde | date:'dd MMMM yyyy':'':'es' }} &ndash; {{experience.hasta | date:'dd MMMM yyyy':'':'es'}}
         </span>
       </h6>
     </div>

@@ -6,7 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AgregarComponent } from './abm/agregar/agregar.component';
 import { EditarComponent } from './abm/editar/editar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
-
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-hardsoftskill',
@@ -15,8 +15,13 @@ import { EliminarComponent } from './abm/eliminar/eliminar.component';
 })
 export class HardsoftskillComponent implements OnInit {
   skills: Skill[] = [];
+  isAuthenticated: boolean = false;
 
-  constructor(private datosSkill: SkillService, public dialog: MatDialog) {
+  constructor(
+    private datosSkill: SkillService,
+    public dialog: MatDialog,
+    private authService: AuthService
+  ) {
     this.datosSkill.traerSkills().subscribe((datos) => {
       this.skills = datos.map((dato) => {
         return {
@@ -29,6 +34,9 @@ export class HardsoftskillComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authService.usuarioLogueado.subscribe((dato) => {
+      this.isAuthenticated = !!dato;
+    });
   }
 
   agregar(): void {
@@ -41,7 +49,6 @@ export class HardsoftskillComponent implements OnInit {
   }
 
   editar(skills: Skill): void {
-  
     const dialog = this.dialog.open(EditarComponent, { data: skills });
 
     dialog.afterClosed().subscribe(() => {

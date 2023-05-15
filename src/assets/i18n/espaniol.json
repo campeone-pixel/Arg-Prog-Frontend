@@ -9,7 +9,8 @@
       "sobre_mi": "Empeze aprendiendo python porque necesitaba buscar una mejor manera de hacer mi trabajo y desde ahi no pare de aprender otros lenguajes. Ahora me di cuenta que la programacion es lo que me quiero dedicar. ",
       "ocupacion": "programador fullstack",
       "image_background_header": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
-      "image_perfil": "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg"
+      "image_perfil": "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
+      "image_sobre_mi": "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg"
     },
     {
       "id": 2,
@@ -50,7 +51,8 @@
       "id": 1,
       "nombre": "blog",
       "descripcion": "Un Blog que hice para el curso de Python en CoderHouse",
-      "link": "https://github.com/campeone-pixel/blog"
+      "link": "https://github.com/campeone-pixel/blog",
+      "link_foto": "sdfsdfdsfd"
     }
   ],
   "experiences": [
@@ -60,7 +62,8 @@
       "lugar": "11111",
       "desde": "5/4/2023",
       "hasta": "5/18/2023",
-      "empresa": "empresa provincial de la energia"
+      "empresa": "empresa provincial de la energia",
+      "descripcion": "dfasdfasdf fasdfasdfa sdafgsdfg dfgh sh dfghd fh  fthj fgjdthsrt  jdyjfyjdjdghjdghdfgh"
     }
   ],
   "educations": [

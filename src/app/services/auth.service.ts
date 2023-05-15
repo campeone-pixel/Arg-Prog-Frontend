@@ -1,43 +1,51 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private apiUrl = environment.apiUrl;
+  usuarioLogueado: BehaviorSubject<User | null> =
+    new BehaviorSubject<User | null>(null);
 
   constructor(private http: HttpClient) {}
 
-  login(email: string, password: string): Observable<any> {
+  login(email: string, password: string): void {
     const loginData = {
+      id: 0,
       email: email,
-      password: password,
+      contraseña: password,
     };
 
-    return this.http.post<any>(`${this.apiUrl}/login`, loginData).pipe(
-      tap((response) => {
-        localStorage.setItem('currentUser', JSON.stringify(response.user));
-        localStorage.setItem('token', response.token);
-      })
-    );
+    this.http
+      .post<any>(`${this.apiUrl}/login`, loginData)
+      .subscribe((response) => {
+        if (response) {
+          this.usuarioLogueado.next(loginData);
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('currentUser', JSON.stringify(loginData));
+        } else {
+          this.usuarioLogueado.next(null);
+        }
+      });
   }
 
   register(email: string, password: string): Observable<any> {
     const registerData = {
-   
       email: email,
-      password: password,
+      contraseña: password,
     };
 
-    return this.http.post<any>(`${this.apiUrl}/register`, registerData);
+    return this.http.post<any>(`${this.apiUrl}/crear/usuario`, registerData);
   }
 
   logout(): void {
-    localStorage.removeItem('currentUser');
     localStorage.removeItem('token');
+    this.usuarioLogueado.next(null);
   }
 
   isAuthenticated(): boolean {

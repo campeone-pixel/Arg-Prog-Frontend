@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AgregarComponent } from './abm/agregar/agregar.component';
 import { EditarComponent } from './abm/editar/editar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -14,17 +15,23 @@ import { EliminarComponent } from './abm/eliminar/eliminar.component';
 })
 export class ProjectsComponent implements OnInit {
   proyectos: Proyecto[] = [];
+  isAuthenticated: boolean = false;
   constructor(
     private datosProyecto: ProyectoService,
     public dialog: MatDialog,
-    private proyectoService: ProyectoService
+    private proyectoService: ProyectoService,
+    private authService: AuthService
   ) {
     this.datosProyecto.traerProyectos().subscribe((data) => {
       this.proyectos = data;
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.usuarioLogueado.subscribe((dato) => {
+      this.isAuthenticated = !!dato;
+    });
+  }
 
   agregar(): void {
     const dialog = this.dialog.open(AgregarComponent);

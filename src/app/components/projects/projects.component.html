@@ -1,7 +1,7 @@
 <article class="projects">
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar" (click)="agregar()">
+      <div class="boton-agregar" *ngIf="isAuthenticated" (click)="agregar()">
         <i class="fa-solid fa-square-plus"></i>
       </div>
     </div>
@@ -14,7 +14,7 @@
       <img src="{{ project?.link_foto }}" alt="personal photo" />
     </div>
     <div class="text-container">
-      <div class="modificaciones">
+      <div class="modificaciones" *ngIf="isAuthenticated">
         <div class="container-modificaciones">
           <div class="boton-editar" (click)="editar(project)">
             <i class="fa-regular fa-pen-to-square"></i>

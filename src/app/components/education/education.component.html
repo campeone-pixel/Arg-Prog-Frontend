@@ -1,7 +1,7 @@
 <article class="education">
   <div class="agregar">
     <div class="container-agregar">
-      <div class="boton-agregar" (click)="agregar()">
+      <div class="boton-agregar" *ngIf="isAuthenticated" (click)="agregar()">
         <i class="fa-solid fa-square-plus"></i>
       </div>
     </div>
@@ -10,7 +10,7 @@
   <h2>EDUCATION</h2>
   <section class="card-edu">
     <section *ngFor="let education of educacion">
-      <div class="modificaciones">
+      <div class="modificaciones" *ngIf="isAuthenticated">
         <div class="container-modificaciones">
           <div class="boton-editar" (click)="editar(education)">
             <i class="fa-regular fa-pen-to-square"></i>
@@ -22,18 +22,19 @@
       </div>
       <div class="line"></div>
 
-   
-
       <div class="title">
         <h4>{{ education.carrera }}</h4>
         <h6 class="font-weight-bolder">
           {{ education.escuela }}
           <span class="font-weight-light"
-            >&nbsp;|&nbsp;{{ education.inicio }} &ndash; {{ education.fin }}
+            >&nbsp;|&nbsp;{{
+              education.inicio | date : "dd MMMM yyyy" : "" : "es"
+            }}
+            &ndash; {{ education.fin | date : "dd MMMM yyyy" : "" : "es" }}
           </span>
         </h6>
         <div class="container-img">
-          <img src={{education?.imagen}} alt="personal photo" />
+          <img src="{{ education?.imagen }}" alt="personal photo" />
         </div>
       </div>
     </section>
