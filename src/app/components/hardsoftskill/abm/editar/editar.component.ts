@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {  Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Experiences, Skill } from 'src/app/models';
+import {  Skill } from 'src/app/models';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { SkillService } from 'src/app/services/skill.service';
 import { AgregarComponent } from '../agregar/agregar.component';

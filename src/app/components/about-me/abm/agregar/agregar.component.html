@@ -5,36 +5,52 @@
     <mat-form-field appearance="fill" class="mb-3 w-100">
       <mat-label>Nombres</mat-label>
       <input matInput formControlName="nombres">
-      <mat-error *ngIf="nombresControl.hasError('required')">Los nombres son requeridos</mat-error>
+      <mat-error *ngIf="personaForm.get('nombres')?.hasError('required')">Los nombres son requeridos</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
       <mat-label>Apellido</mat-label>
       <input matInput formControlName="apellido">
-      <mat-error *ngIf="apellidoControl.hasError('required')">El apellido es requerido</mat-error>
+      <mat-error *ngIf="personaForm.get('apellido')?.hasError('required')">El apellido es requerido</mat-error>
     </mat-form-field>
     
     <mat-form-field appearance="fill" class="mb-3 w-100">
-      <mat-label>Nacionalidad</mat-label>
-      <input matInput formControlName="nacionalidad">
-      <mat-error *ngIf="nacionalidadControl.hasError('required')">La nacionalidad es requerida</mat-error>
+      <mat-label>Nacionalidad (Español)</mat-label>
+      <input matInput formControlName="nacionalidad_es">
+      <mat-error *ngIf="personaForm.get('nacionalidad_es')?.hasError('required')">La nacionalidad en español es requerida</mat-error>
+    </mat-form-field> 
+
+    <mat-form-field appearance="fill" class="mb-3 w-100">
+      <mat-label>Nacionalidad (Inglés)</mat-label>
+      <input matInput formControlName="nacionalidad_en">
+      <mat-error *ngIf="personaForm.get('nacionalidad_en')?.hasError('required')">La nacionalidad en inglés es requerida</mat-error>
     </mat-form-field> 
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
       <mat-label>Email</mat-label>
       <input matInput type="email" formControlName="email">
-      <mat-error *ngIf="emailControl.hasError('required')">El email es requerido</mat-error>
-      <mat-error *ngIf="emailControl.hasError('email')">Ingresa un email válido</mat-error>
+      <mat-error *ngIf="personaForm.get('email')?.hasError('required')">El email es requerido</mat-error>
+      <mat-error *ngIf="personaForm.get('email')?.hasError('email')">Ingresa un email válido</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
-      <mat-label>Sobre mí</mat-label>
-      <textarea matInput formControlName="sobre_mi"></textarea>
+      <mat-label>Sobre mí (Español)</mat-label>
+      <textarea matInput formControlName="sobre_mi_es"></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
-      <mat-label>Ocupación</mat-label>
-      <input matInput formControlName="ocupacion">
+      <mat-label>Sobre mí (Inglés)</mat-label>
+      <textarea matInput formControlName="sobre_mi_en"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="mb-3 w-100">
+      <mat-label>Ocupación (Español)</mat-label>
+      <input matInput formControlName="ocupacion_es">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="mb-3 w-100">
+      <mat-label>Ocupación (Inglés)</mat-label>
+      <input matInput formControlName="ocupacion_en">
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
@@ -48,7 +64,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
-      <mat-label>Imagen sobre mi</mat-label>
+      <mat-label>Imagen sobre mí</mat-label>
       <input matInput formControlName="image_sobre_mi">
     </mat-form-field>
 

@@ -1,6 +1,6 @@
 import { Component, VERSION, Input } from '@angular/core';
 
-import { PortfolioService } from 'src/app/services/portfolio.service';
+
 
 @Component({
   selector: 'app-header',
@@ -15,12 +15,10 @@ export class HeaderComponent {
     { code: 'espaniol', label: 'Español' },
   ];
 
-  constructor(private datosPortfolio: PortfolioService) {}
+  constructor() {}
   miPortfolio: any;
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe((data) => {
-      this.miPortfolio = data;
-    });
+  
   }
 
   // changeLang(localeCode: string) {

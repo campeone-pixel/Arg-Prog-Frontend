@@ -6,7 +6,17 @@
 
     <div class="text-container">
       <div>
-        <h1 >Hola, mi nombre es <span>{{ datos?.nombres + " " + datos?.apellido }}</span><br> Soy <span> {{datos?.ocupacion}} </span> </h1>
+        <h1>
+          Hola, mi nombre es
+          <span>
+            {{ selectedLanguage === 'es' ? datos?.nombres : datos?.nombres }} {{ datos?.apellido }}
+          </span>
+          <br>
+          Soy
+          <span>
+            {{ selectedLanguage === 'es' ? datos?.ocupacion_es : datos?.ocupacion_en }}
+          </span>
+        </h1>
       </div>
 
 

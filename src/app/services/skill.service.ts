@@ -18,26 +18,21 @@ export class SkillService {
   constructor(private http: HttpClient) {}
 
   traerSkills(): Observable<Skill[]> {
-    return this.http.get<Skill[]>(`${this.apiUrl}/get/${this.endpoint}`);
+    return this.http.get<Skill[]>(`${this.apiUrl}/${this.endpoint}/todo`);
   }
-
-
 
   crearSkill(skill: Skill): Observable<Skill> {
     this.dataUpdated.emit();
-    return this.http.post<Skill>(`${this.apiUrl}/crear/${this.endpoint}`, skill);
+    return this.http.post<Skill>(`${this.apiUrl}/${this.endpoint}/crear`, skill);
   }
 
   actualizarSkill(skill: Skill): Observable<Skill> {
     this.dataUpdated.emit();
-    return this.http.patch<Skill>(
-      `${this.apiUrl}/editar/${this.endpoint}`,
-      skill
-    );
+    return this.http.put<Skill>(`${this.apiUrl}/${this.endpoint}/editar`, skill);
   }
 
   eliminarSkill(id: number): Observable<void> {
     this.dataUpdated.emit();
-    return this.http.delete<void>(`${this.apiUrl}/borrar/${this.endpoint}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/${this.endpoint}/eliminar/${id}`);
   }
 }

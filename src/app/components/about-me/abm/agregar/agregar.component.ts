@@ -9,7 +9,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Persona } from 'src/app/models';
 
 import { PersonaService } from 'src/app/services/persona.service';
-import { EditarComponent } from '../editar/editar.component';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -22,37 +21,30 @@ export class AgregarComponent implements OnInit, OnDestroy {
 
   personaForm: FormGroup;
 
-  nombresControl = new FormControl('', Validators.required);
-  apellidoControl = new FormControl('', Validators.required);
-  nacionalidadControl = new FormControl('', Validators.required);
-  emailControl = new FormControl('', [Validators.required, Validators.email]);
-  sobreMiControl = new FormControl('');
-  ocupacionControl = new FormControl('');
-  imagenFondoEncabezadoControl = new FormControl('');
-  imagenPerfilControl = new FormControl('');
-  image_sobre_miControl = new FormControl('');
-
   constructor(
-    public dialogRef: MatDialogRef<EditarComponent>,
+    public dialogRef: MatDialogRef<AgregarComponent>,
     private formBuilder: FormBuilder,
     private personaService: PersonaService
   ) {
     this.personaForm = this.formBuilder.group({
-      nombres: this.nombresControl,
-      apellido: this.apellidoControl,
-      nacionalidad: this.nacionalidadControl,
-      email: this.emailControl,
-      sobre_mi: this.sobreMiControl,
-      ocupacion: this.ocupacionControl,
-      image_background_header: this.imagenFondoEncabezadoControl,
-      image_perfil: this.imagenPerfilControl,
-      image_sobre_mi: this.image_sobre_miControl,
+      nombres: new FormControl('', Validators.required),
+      apellido: new FormControl('', Validators.required),
+      nacionalidad_es: new FormControl('', Validators.required),
+      nacionalidad_en: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      sobre_mi_es: new FormControl('',Validators.required),
+      sobre_mi_en: new FormControl('',Validators.required),
+      ocupacion_es: new FormControl('',Validators.required),
+      ocupacion_en: new FormControl('',Validators.required),
+      image_background_header: new FormControl('',Validators.required),
+      image_perfil: new FormControl('',Validators.required),
+      image_sobre_mi: new FormControl('',Validators.required),
     });
   }
+
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
-    console.log('se destruyó el agregar de aboutme');
   }
 
   ngOnInit(): void {}
@@ -63,25 +55,17 @@ export class AgregarComponent implements OnInit, OnDestroy {
 
   onSaveClick(): void {
     if (this.personaForm.valid) {
-      const nueva = {
-        nombres: this.personaForm.value.nombres,
-        apellido: this.personaForm.value.apellido,
-        nacionalidad: this.personaForm.value.nacionalidad,
-        email: this.personaForm.value.email,
-        sobre_mi: this.personaForm.value.sobre_mi,
-        ocupacion: this.personaForm.value.ocupacion,
-        image_background_header: this.personaForm.value.image_background_header,
-        image_perfil: this.personaForm.value.image_perfil,
-        image_sobre_mi: this.personaForm.value.image_sobre_mi,
+      const nuevaPersona: Persona = {
+        ...this.personaForm.value,
+        id: 0, // Opcional: Puedes asignar un valor al ID si es necesario
       };
 
       const peticionCrear = this.personaService
-        .crearPer(nueva)
+        .crearPer(nuevaPersona)
         .pipe(takeUntil(this.unsubscribe$))
         .subscribe(() => {
           this.dialogRef.close();
         });
-    } else {
     }
   }
 }

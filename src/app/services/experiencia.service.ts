@@ -2,10 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Experiences } from '../models/experiencia.model';
+import { Experiencia } from '../models/experiencia.model';
 import { EventEmitter } from '@angular/core';
-
-
 
 @Injectable({
   providedIn: 'root',
@@ -18,25 +16,22 @@ export class ExperienciaService {
 
   constructor(private http: HttpClient) {}
 
-  traerExperiencias(): Observable<Experiences[]> {
-    return this.http
-      .get<Experiences[]>(`${this.apiUrl}/get/${this.endpoint}`);
-
+  traerExperiencias(): Observable<Experiencia[]> {
+    return this.http.get<Experiencia[]>(`${this.apiUrl}/${this.endpoint}/todo`);
   }
 
-  crearExp(exp: Experiences): Observable<Experiences> {
+  crearExp(exp: Experiencia): Observable<Experiencia> {
     this.dataUpdated.emit();
-  
-    return this.http.post<Experiences>(
-      `${this.apiUrl}/crear/${this.endpoint}`,
+    return this.http.post<Experiencia>(
+      `${this.apiUrl}/${this.endpoint}/crear`,
       exp
     );
   }
 
-  actualizarExp(exp: Experiences): Observable<Experiences> {
+  actualizarExp(exp: Experiencia): Observable<Experiencia> {
     this.dataUpdated.emit();
-    return this.http.patch<Experiences>(
-      `${this.apiUrl}/editar/${this.endpoint}`,
+    return this.http.put<Experiencia>(
+      `${this.apiUrl}/${this.endpoint}/editar`,
       exp
     );
   }
@@ -44,7 +39,7 @@ export class ExperienciaService {
   eliminarExp(id: number | undefined): Observable<void> {
     this.dataUpdated.emit();
     return this.http.delete<void>(
-      `${this.apiUrl}/borrar/${this.endpoint}/${id}`
+      `${this.apiUrl}/${this.endpoint}/eliminar/${id}`
     );
   }
 }

@@ -12,7 +12,7 @@ export class BannerComponent {
 datos:Persona|null=null
 constructor(private aboutMeService: PersonaService){
 this.aboutMeService.traerPersonas().subscribe((datos)=>{
-this.datos = datos
+this.datos = datos[0]
 })
 }
 }

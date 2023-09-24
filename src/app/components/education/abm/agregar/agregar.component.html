@@ -8,8 +8,13 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
-      <mat-label>Título</mat-label>
-      <input matInput formControlName="titulo" />
+      <mat-label>Título (Español)</mat-label>
+      <input matInput formControlName="titulo_es" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="mb-3 w-100">
+      <mat-label>Título (Inglés)</mat-label>
+      <input matInput formControlName="titulo_en" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
@@ -18,12 +23,17 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
-      <mat-label>Carrera</mat-label>
-      <input matInput formControlName="carrera" />
+      <mat-label>Carrera (Español)</mat-label>
+      <input matInput formControlName="carrera_es" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
-      <mat-label>Hasta</mat-label>
+      <mat-label>Carrera (Inglés)</mat-label>
+      <input matInput formControlName="carrera_en" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="mb-3 w-100">
+      <mat-label>Inicio</mat-label>
       <input matInput [matDatepicker]="pickerInicio" formControlName="inicio" />
       <mat-datepicker-toggle
         matSuffix
@@ -33,7 +43,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="mb-3 w-100">
-      <mat-label>Hasta</mat-label>
+      <mat-label>Fin</mat-label>
       <input matInput [matDatepicker]="pickerFin" formControlName="fin" />
       <mat-datepicker-toggle
         matSuffix

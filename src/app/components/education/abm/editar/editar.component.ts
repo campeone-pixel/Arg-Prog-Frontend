@@ -1,71 +1,69 @@
 import { Component } from '@angular/core';
 
-import {  Inject } from '@angular/core';
+import { Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Educacion, Experiences } from 'src/app/models';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl,
+} from '@angular/forms';
+import { Educacion } from 'src/app/models';
 import { EducacionService } from 'src/app/services/educacion.service';
-
-
-
+import { LanguageService } from 'src/app/services/language-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-editar',
   templateUrl: './editar.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class EditarComponent {
   educationForm: FormGroup = new FormGroup({});
-
-  escuelaControl = new FormControl(this.data.escuela, Validators.required)
-  tituloControl =  new FormControl(this.data.titulo, Validators.required)
-  imagenControl = new FormControl(this.data.imagen, Validators.required)
-  carreraControl = new FormControl(this.data.carrera, Validators.required)
-  inicioControl =  new FormControl(new Date(this.data.inicio), Validators.required)
-  finControl = new FormControl(new Date(this.data.fin), Validators.required)
-
-
-
-
+  private languageSubscription: Subscription;
+  currentLanguage: string = 'es';
   constructor(
     public dialogRef: MatDialogRef<EditarComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Educacion,
-    private educacionService: EducacionService,public formBuilder: FormBuilder,
-  ) { 
-
+    private educacionService: EducacionService,
+    public formBuilder: FormBuilder,
+    private languageService: LanguageService
+  ) {
+    this.languageSubscription = this.languageService.currentLanguage$.subscribe((language) => {
+      this.currentLanguage = language;
+    });
     this.educationForm = this.formBuilder.group({
-      escuela: this.escuelaControl,
-      titulo: this.tituloControl,
-      imagen: this.imagenControl,
-      carrera: this.carreraControl,
-      inicio: this.inicioControl,
-      fin: this.finControl
+      id: [this.data.id],
+      escuela: [this.data.escuela, Validators.required],
+      titulo_es: [this.data.titulo_es, Validators.required],
+      titulo_en: [this.data.titulo_en, Validators.required],
+      imagen: [this.data.imagen, Validators.required],
+      carrera_es: [this.data.carrera_es, Validators.required],
+      carrera_en: [this.data.carrera_en, Validators.required],
+      inicio: [this.data.inicio, Validators.required],
+      fin: [this.data.fin, Validators.required],
     });
   }
 
+  
+  ngOnDestroy(): void {
+    // Cancela la suscripción al servicio de lenguaje en ngOnDestroy
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
+  }
+
   onSubmit() {
-   if (this.educationForm.valid) {
-    console.log(this.educationForm)
-      const nuevo: Educacion = {
-        id: this.data.id,
-        escuela: this.educationForm.value.escuela,
-        titulo: this.educationForm.value.titulo,
-        imagen: this.educationForm.value.imagen,
-        carrera: this.educationForm.value.carrera,
-        inicio: this.educationForm.value.inicio.toDateString(),
-        fin: this.educationForm.value.fin.toDateString()
-      };
+    if (this.educationForm.valid) {
+      const nuevo: Educacion = this.educationForm.value;
 
       this.educacionService.actualizarEdu(nuevo).subscribe(() => {
-       
-  
+        // Realiza alguna acción después de actualizar la educación, si es necesario
       });
 
       this.dialogRef.close();
     } else {
-      alert('no es valido');
-
+      alert('El formulario no es válido.');
       this.dialogRef.close();
     }
   }

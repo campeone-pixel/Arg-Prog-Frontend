@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-
-import { PortfolioService } from '../../services/portfolio.service';
-import { Proyecto, Skill } from 'src/app/models';
+import { Proyecto } from 'src/app/models';
 import { ProyectoService } from 'src/app/services/proyecto.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AgregarComponent } from './abm/agregar/agregar.component';
 import { EditarComponent } from './abm/editar/editar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { LanguageService } from 'src/app/services/language-service.service';
+import { Subscription } from 'rxjs';
+
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -16,12 +18,20 @@ import { AuthService } from 'src/app/services/auth.service';
 export class ProjectsComponent implements OnInit {
   proyectos: Proyecto[] = [];
   isAuthenticated: boolean = false;
+  private languageSubscription: Subscription;
+  selectedLanguage: string = 'es';
+
   constructor(
     private datosProyecto: ProyectoService,
     public dialog: MatDialog,
     private proyectoService: ProyectoService,
-    private authService: AuthService
+    private authService: AuthService,
+    private languageService: LanguageService // Inyecta tu servicio de idioma aquí
   ) {
+    this.languageSubscription = this.languageService.currentLanguage$.subscribe((language) => {
+      this.selectedLanguage = language;
+    });
+
     this.datosProyecto.traerProyectos().subscribe((data) => {
       this.proyectos = data;
     });

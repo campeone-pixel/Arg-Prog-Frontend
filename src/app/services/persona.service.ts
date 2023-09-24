@@ -14,26 +14,22 @@ export class PersonaService {
 
   constructor(private http: HttpClient) {}
 
-  traerPersonas(): Observable<Persona | null> {
-    return this.http.get<Persona[]>(`${this.apiUrl}/get/${this.endpoint}`).pipe(
-      map((personas) => {
-        return personas.length > 0 ? personas[0] : null;
-      })
-    );
+  traerPersonas(): Observable<Persona[]> {
+    return this.http.get<Persona[]>(`${this.apiUrl}/${this.endpoint}/todo`);
   }
 
   crearPer(per: Persona): Observable<Persona> {
     this.dataUpdated.emit();
     return this.http.post<Persona>(
-      `${this.apiUrl}/crear/${this.endpoint}`,
+      `${this.apiUrl}/${this.endpoint}/crear`,
       per
     );
   }
 
   actualizarPer(per: Persona): Observable<Persona> {
     this.dataUpdated.emit();
-    return this.http.patch<Persona>(
-      `${this.apiUrl}/editar/${this.endpoint}`,
+    return this.http.put<Persona>(
+      `${this.apiUrl}/${this.endpoint}/editar`,
       per
     );
   }
@@ -41,7 +37,7 @@ export class PersonaService {
   eliminarPer(id: number): Observable<void> {
     this.dataUpdated.emit();
     return this.http.delete<void>(
-      `${this.apiUrl}/borrar/${this.endpoint}/${id}`
+      `${this.apiUrl}/${this.endpoint}/eliminar/${id}`
     );
   }
 }

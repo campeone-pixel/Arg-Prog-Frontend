@@ -17,23 +17,21 @@ export class EducacionService {
   constructor(private http: HttpClient) {}
 
   traerEducations(): Observable<Educacion[]> {
-    return this.http.get<Educacion[]>(`${this.apiUrl}/get/${this.endpoint}`).pipe(map(data => data));
+    return this.http.get<Educacion[]>(`${this.apiUrl}/${this.endpoint}/todo`);
   }
 
-
-
-  crearEdu(edu: Educacion): Observable<Educacion> {
+  crearEdu(edu: Educacion): Observable<void> {
     this.dataUpdated.emit();
-    return this.http.post<Educacion>(`${this.apiUrl}/crear/${this.endpoint}`, edu);
+    return this.http.post<void>(`${this.apiUrl}/${this.endpoint}/crear`, edu);
   }
 
-  actualizarEdu(edu: Educacion): Observable<Educacion> {
+  actualizarEdu(edu: Educacion): Observable<void> {
     this.dataUpdated.emit();
-    return this.http.patch<Educacion>(`${this.apiUrl}/editar/${this.endpoint}`, edu);
+    return this.http.put<void>(`${this.apiUrl}/${this.endpoint}/editar`, edu);
   }
 
   eliminarEdu(id: number): Observable<void> {
     this.dataUpdated.emit();
-    return this.http.delete<void>(`${this.apiUrl}/borrar/${this.endpoint}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/${this.endpoint}/eliminar/${id}`);
   }
 }

@@ -1,15 +1,7 @@
-import { Component } from '@angular/core';
-
-import { Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-} from '@angular/forms';
-import { Experiences, Persona } from 'src/app/models';
-import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Persona } from 'src/app/models/persona.model'; // Asegúrate de importar la interfaz Persona correcta
 import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
@@ -19,23 +11,7 @@ import { PersonaService } from 'src/app/services/persona.service';
 })
 export class EditarComponent {
   personaForm: FormGroup;
-  nombresControl = new FormControl(this.data.nombres, Validators.required);
-  apellidoControl = new FormControl(this.data.apellido, Validators.required);
-  nacionalidadControl = new FormControl(
-    this.data.nacionalidad,
-    Validators.required
-  );
-  emailControl = new FormControl(this.data.email, [
-    Validators.required,
-    Validators.email,
-  ]);
-  sobreMiControl = new FormControl(this.data.sobre_mi);
-  ocupacionControl = new FormControl(this.data.ocupacion);
-  imagenFondoEncabezadoControl = new FormControl(
-    this.data.image_background_header
-  );
-  imagenPerfilControl = new FormControl(this.data.image_perfil);
-  image_sobre_miControl = new FormControl(this.data.image_sobre_mi);
+
   constructor(
     public dialogRef: MatDialogRef<EditarComponent>,
     private formBuilder: FormBuilder,
@@ -43,15 +19,18 @@ export class EditarComponent {
     private personaService: PersonaService
   ) {
     this.personaForm = this.formBuilder.group({
-      nombres: this.nombresControl,
-      apellido: this.apellidoControl,
-      nacionalidad: this.nacionalidadControl,
-      email: this.emailControl,
-      sobre_mi: this.sobreMiControl,
-      ocupacion: this.ocupacionControl,
-      image_background_header: this.imagenFondoEncabezadoControl,
-      image_perfil: this.imagenPerfilControl,
-      image_sobre_mi: this.image_sobre_miControl,
+      nombres: new FormControl(this.data.nombres, Validators.required),
+      apellido: new FormControl(this.data.apellido, Validators.required),
+      nacionalidad_es: new FormControl(this.data.nacionalidad_es, Validators.required),
+      nacionalidad_en: new FormControl(this.data.nacionalidad_en, Validators.required),
+      email: new FormControl(this.data.email, [Validators.required, Validators.email]),
+      sobre_mi_es: new FormControl(this.data.sobre_mi_es),
+      sobre_mi_en: new FormControl(this.data.sobre_mi_en),
+      ocupacion_es: new FormControl(this.data.ocupacion_es),
+      ocupacion_en: new FormControl(this.data.ocupacion_en),
+      image_background_header: new FormControl(this.data.image_background_header),
+      image_perfil: new FormControl(this.data.image_perfil),
+      image_sobre_mi: new FormControl(this.data.image_sobre_mi),
     });
   }
 
@@ -63,23 +42,25 @@ export class EditarComponent {
 
   onSaveClick(): void {
     if (this.personaForm.valid) {
-      const updatedPersona = {
-        id: this.data.id,
+      const updatedPersona: Persona = {
+        ...this.data,
         nombres: this.personaForm.value.nombres,
         apellido: this.personaForm.value.apellido,
-        nacionalidad: this.personaForm.value.nacionalidad,
+        nacionalidad_es: this.personaForm.value.nacionalidad_es,
+        nacionalidad_en: this.personaForm.value.nacionalidad_en,
         email: this.personaForm.value.email,
-        sobre_mi: this.personaForm.value.sobre_mi,
-        ocupacion: this.personaForm.value.ocupacion,
+        sobre_mi_es: this.personaForm.value.sobre_mi_es,
+        sobre_mi_en: this.personaForm.value.sobre_mi_en,
+        ocupacion_es: this.personaForm.value.ocupacion_es,
+        ocupacion_en: this.personaForm.value.ocupacion_en,
         image_background_header: this.personaForm.value.image_background_header,
         image_perfil: this.personaForm.value.image_perfil,
-        image_sobre_mi:this.personaForm.value.image_sobre_mi
+        image_sobre_mi: this.personaForm.value.image_sobre_mi,
       };
-   
-      this.personaService.actualizarPer(updatedPersona).subscribe();
-     
-      this.dialogRef.close(updatedPersona);
-    } else {
+
+      this.personaService.actualizarPer(updatedPersona).subscribe(() => {
+        this.dialogRef.close(updatedPersona);
+      });
     }
   }
 }

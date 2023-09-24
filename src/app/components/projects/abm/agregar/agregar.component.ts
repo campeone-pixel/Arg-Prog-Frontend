@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Experiences, Proyecto } from 'src/app/models';
-import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { Proyecto } from 'src/app/models';
+import { LanguageService } from 'src/app/services/language-service.service';
 import { ProyectoService } from 'src/app/services/proyecto.service';
+
 
 @Component({
   selector: 'app-agregar',
@@ -16,29 +12,47 @@ import { ProyectoService } from 'src/app/services/proyecto.service';
   styles: [],
 })
 export class AgregarComponent {
-  myForm: FormGroup = new FormGroup({});
+  myForm: FormGroup;
 
-  nombreControl = new FormControl('', [
+  nombre_esControl = new FormControl('', [
     Validators.required,
     Validators.minLength(5),
   ]);
 
-  descripcionControl = new FormControl('', [
+  nombre_enControl = new FormControl('', [
     Validators.required,
     Validators.minLength(5),
   ]);
+
+  descripcion_esControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(5),
+  ]);
+
+  descripcion_enControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(5),
+  ]);
+
   linkControl = new FormControl('', [Validators.required]);
   link_fotoControl = new FormControl('', [Validators.required]);
+
+  idiomaActual: string;
 
   constructor(
     public formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<AgregarComponent>,
-
-    private proyectoService: ProyectoService
+    private proyectoService: ProyectoService,
+    private languageService: LanguageService
   ) {
+    this.idiomaActual = this.languageService.getCurrentLanguage();
+
     this.myForm = this.formBuilder.group({
-      nombre: this.nombreControl,
-      descripcion: this.descripcionControl,
+      nombre_es: this.nombre_esControl,
+      nombre_en: this.nombre_enControl,
+      descripcion_es: this.descripcion_esControl,
+      descripcion_en: this.descripcion_enControl,
+      link: this.linkControl,
       link_foto: this.link_fotoControl,
     });
   }
@@ -46,8 +60,10 @@ export class AgregarComponent {
   add(): void {
     if (this.myForm.valid) {
       const newData: Proyecto = {
-        nombre: this.myForm.value.nombre,
-        descripcion: this.myForm.value.descripcion,
+        nombre_es: this.myForm.value.nombre_es,
+        nombre_en: this.myForm.value.nombre_en,
+        descripcion_es: this.myForm.value.descripcion_es,
+        descripcion_en: this.myForm.value.descripcion_en,
         link: this.myForm.value.link,
         link_foto: this.myForm.value.link_foto,
       };
@@ -56,7 +72,7 @@ export class AgregarComponent {
 
       this.dialogRef.close();
     } else {
-      alert('no es valido');
+      alert('No es válido. Asegúrate de que todos los campos estén completos y cumplan con los requisitos.');
 
       this.dialogRef.close();
     }

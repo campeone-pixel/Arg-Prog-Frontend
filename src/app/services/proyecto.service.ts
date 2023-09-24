@@ -11,28 +11,33 @@ export class ProyectoService {
   private readonly apiUrl = environment.apiUrl;
   private readonly endpoint = 'proyecto';
   dataUpdated = new EventEmitter<void>();
+
   constructor(private http: HttpClient) {}
 
   traerProyectos(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(`${this.apiUrl}/get/${this.endpoint}`);
+    return this.http.get<Proyecto[]>(`${this.apiUrl}/${this.endpoint}/todo`);
   }
-
 
   crearProy(proy: Proyecto): Observable<Proyecto> {
     this.dataUpdated.emit();
-    return this.http.post<Proyecto>(`${this.apiUrl}/crear/${this.endpoint}`, proy);
+    return this.http.post<Proyecto>(
+      `${this.apiUrl}/${this.endpoint}/crear`,
+      proy
+    );
   }
 
   actualizarProy(proy: Proyecto): Observable<Proyecto> {
     this.dataUpdated.emit();
-    return this.http.patch<Proyecto>(
-      `${this.apiUrl}/editar/${this.endpoint}`,
+    return this.http.put<Proyecto>(
+      `${this.apiUrl}/${this.endpoint}/editar`,
       proy
     );
   }
 
   eliminarProy(id: number): Observable<void> {
     this.dataUpdated.emit();
-    return this.http.delete<void>(`${this.apiUrl}/borrar/${this.endpoint}/${id}`);
+    return this.http.delete<void>(
+      `${this.apiUrl}/${this.endpoint}/eliminar/${id}`
+    );
   }
 }

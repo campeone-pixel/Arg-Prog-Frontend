@@ -23,18 +23,16 @@
       </div>
       <div class="line"></div>
       <div class="title">
-        <h4>{{ experience.empresa }}</h4>
+        <h4>{{ selectedLanguage === 'es' ? experience.puesto_es : experience.puesto_en }}</h4>
         <h6 class="font-weight-bolder">
-          {{ experience.puesto }}
-          <span class="font-weight-light"
-            >&nbsp;|&nbsp;{{
-              experience.desde | date : "dd MMMM yyyy" : "" : "es"
-            }}
-            &ndash; {{ experience.hasta | date : "dd MMMM yyyy" : "" : "es" }}
-          </span>
+          {{ selectedLanguage === 'es' ? experience.desde : experience.hasta }} -
+          {{ selectedLanguage === 'es' ? experience.hasta : experience.desde }}
+          <span class="font-weight-light">{{ experience.empresa }}</span>
         </h6>
       </div>
-      <div class="description">{{ experience.descripcion }}</div>
+      <div class="description">
+        {{ selectedLanguage === 'es' ? experience.descripcion_es : experience.descripcion_en }}
+      </div>
     </section>
   </section>
 </article>

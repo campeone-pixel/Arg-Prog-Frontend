@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
-import { Educacion, Skill } from 'src/app/models';
+
+import {  Skill } from 'src/app/models';
 import { SkillService } from 'src/app/services/skill.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AgregarComponent } from './abm/agregar/agregar.component';
 import { EditarComponent } from './abm/editar/editar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
 import { AuthService } from 'src/app/services/auth.service';
-import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-hardsoftskill',

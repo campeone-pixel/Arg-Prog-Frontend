@@ -8,26 +8,25 @@
     </mat-form-field>
 
     <mat-form-field class="mb-3 w-100">
-      <mat-label class="form-label">Puesto</mat-label>
-      <input matInput formControlName="puesto" />
+      <mat-label class="form-label">Puesto en español</mat-label>
+      <input matInput formControlName="puestoEs" />
+    </mat-form-field>
+
+    <mat-form-field class="mb-3 w-100">
+      <mat-label class="form-label">Puesto en inglés</mat-label>
+      <input matInput formControlName="puestoEn" />
     </mat-form-field>
 
     <mat-form-field class="mb-3 w-100">
       <input matInput [matDatepicker]="pickerDesde" formControlName="desde" />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="pickerDesde"
-      ></mat-datepicker-toggle>
+      <mat-datepicker-toggle matSuffix [for]="pickerDesde"></mat-datepicker-toggle>
       <mat-datepicker #pickerDesde></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field class="mb-3 w-100">
       <mat-label>Hasta</mat-label>
       <input matInput [matDatepicker]="pickerHasta" formControlName="hasta" />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="pickerHasta"
-      ></mat-datepicker-toggle>
+      <mat-datepicker-toggle matSuffix [for]="pickerHasta"></mat-datepicker-toggle>
       <mat-datepicker #pickerHasta></mat-datepicker>
     </mat-form-field>
 
@@ -37,11 +36,16 @@
     </mat-form-field>
 
     <mat-form-field class="mb-3 w-100">
-      <mat-label class="form-label">descripcion</mat-label>
-      <input matInput formControlName="descripcion" />
+      <mat-label class="form-label">Descripción en español</mat-label>
+      <input matInput formControlName="descripcionEs" />
     </mat-form-field>
 
-    <div mat-dialog-action>
+    <mat-form-field class="mb-3 w-100">
+      <mat-label class="form-label">Descripción en inglés</mat-label>
+      <input matInput formControlName="descripcionEn" />
+    </mat-form-field>
+
+    <div mat-dialog-actions>
       <button mat-button (click)="add()">Submit</button>
       <button mat-button (click)="onNoClick($event)">Cancelar</button>
     </div>

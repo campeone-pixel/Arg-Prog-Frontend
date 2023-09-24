@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { Subscription } from 'rxjs';
+import { LanguageService } from 'src/app/services/language-service.service';
 registerLocaleData(localeEs);
 
 @Component({
@@ -21,29 +22,35 @@ registerLocaleData(localeEs);
 export class EducationComponent implements OnInit {
   educacion: Educacion[] = [];
   isAuthenticated: boolean = false;
-  private dataUpdateSubscription: Subscription =
-    this.datosEducacion.dataUpdated.subscribe();
+  selectedLanguage: string = 'es';
+  private languageSubscription: Subscription;
+
   constructor(
     private datosEducacion: EducacionService,
     public dialog: MatDialog,
-    private authService: AuthService
+    private authService: AuthService,
+    private languageService: LanguageService
   ) {
     this.datosEducacion.traerEducations().subscribe((data) => {
       this.educacion = data;
     });
+    this.languageSubscription = this.languageService.currentLanguage$.subscribe((language) => {
+      this.selectedLanguage = language;
+    });
   }
-  ngOnInit(): void {
-    this.dataUpdateSubscription = this.datosEducacion.dataUpdated.subscribe(
-      () => {
-        this.datosEducacion.traerEducations().subscribe((datos) => {
-          this.educacion = datos;
-        });
-      }
-    );
 
+  ngOnInit(): void {
     this.authService.usuarioLogueado.subscribe((dato) => {
       this.isAuthenticated = !!dato;
     });
+  
+  }
+
+  ngOnDestroy(): void {
+    // Cancela la suscripción al servicio de lenguaje en ngOnDestroy
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
   }
 
   agregar(): void {
@@ -57,7 +64,6 @@ export class EducationComponent implements OnInit {
 
   editar(edu: Educacion): void {
     const dialog = this.dialog.open(EditarComponent, { data: edu });
-
     dialog.afterClosed().subscribe(() => {
       this.datosEducacion.traerEducations().subscribe((data) => {
         this.educacion = data;
@@ -70,7 +76,6 @@ export class EducationComponent implements OnInit {
       width: '250px',
       data: objetoAEliminar,
     });
-
     dialogRef.afterClosed().subscribe((result) => {
       this.datosEducacion.traerEducations().subscribe((data) => {
         this.educacion = data;

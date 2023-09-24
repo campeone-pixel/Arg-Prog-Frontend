@@ -8,6 +8,7 @@ import { EditarComponent } from './abm/editar/editar.component';
 import { AgregarComponent } from './abm/agregar/agregar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { LanguageService } from 'src/app/services/language-service.service';
 
 @Component({
   selector: 'app-about-me',
@@ -16,28 +17,34 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AboutMeComponent implements OnInit {
   persona?: Persona | null;
-
   isAuthenticated: boolean = false;
+  currentLanguage: string = 'es'; // Variable para almacenar el idioma actual
 
   constructor(
     private datosPersona: PersonaService,
     public dialog: MatDialog,
-    private authService: AuthService
+    private authService: AuthService,
+    private languageService: LanguageService // Inyecta el servicio de lenguaje
   ) {
     this.datosPersona.traerPersonas().subscribe((data) => {
-      this.persona = data;
+      this.persona = data[0];
     });
   }
 
   ngOnInit(): void {
     this.datosPersona.dataUpdated.subscribe(() => {
       this.datosPersona.traerPersonas().subscribe((datos) => {
-        this.persona = datos;
+        this.persona = datos[0];
       });
     });
 
     this.authService.usuarioLogueado.subscribe((dato) => {
       this.isAuthenticated = !!dato;
+    });
+
+    // Suscríbete al observable del idioma actual
+    this.languageService.currentLanguage$.subscribe((language) => {
+      this.currentLanguage = language;
     });
   }
 
@@ -45,7 +52,7 @@ export class AboutMeComponent implements OnInit {
     const dialog = this.dialog.open(AgregarComponent);
     dialog.afterClosed().subscribe(() => {
       this.datosPersona.traerPersonas().subscribe((data) => {
-        this.persona = data;
+        this.persona = data[0];
       });
     });
   }
@@ -56,7 +63,7 @@ export class AboutMeComponent implements OnInit {
 
     dialog.afterClosed().subscribe(() => {
       this.datosPersona.traerPersonas().subscribe((data) => {
-        this.persona = data;
+        this.persona = data[0];
       });
     });
   }
@@ -70,7 +77,7 @@ export class AboutMeComponent implements OnInit {
 
     dialog.afterClosed().subscribe(() => {
       this.datosPersona.traerPersonas().subscribe((data) => {
-        this.persona = data;
+        this.persona = data[0];
       });
     });
   }

@@ -23,7 +23,8 @@
       <div class="line"></div>
 
       <div class="title">
-        <h4>{{ education.carrera }}</h4>
+        <h4 *ngIf="selectedLanguage === 'es'">{{ education.carrera_es }}</h4>
+        <h4 *ngIf="selectedLanguage === 'en'">{{ education.carrera_en }}</h4>
         <h6 class="font-weight-bolder">
           {{ education.escuela }}
           <span class="font-weight-light"
@@ -37,6 +38,7 @@
           <img src="{{ education?.imagen }}" alt="personal photo" />
         </div>
       </div>
+      
     </section>
   </section>
 </article>

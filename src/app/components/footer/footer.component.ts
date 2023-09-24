@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PortfolioService } from '../../services/portfolio.service';
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -7,10 +7,8 @@ import { PortfolioService } from '../../services/portfolio.service';
 })
 export class FooterComponent {
   miPortfolio: any;
-  constructor(private datosPortfolio: PortfolioService){}
+  constructor(){}
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe((data) => {
-      this.miPortfolio = data;
-    });
+ 
   }
 }

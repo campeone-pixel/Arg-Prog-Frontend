@@ -1,5 +1,4 @@
 import { Component, Inject } from '@angular/core';
-
 import {
   FormGroup,
   FormControl,
@@ -7,8 +6,7 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Skill } from 'src/app/models';
-import { Experiences } from 'src/app/models/experiencia.model';
+import { Experiencia } from 'src/app/models/experiencia.model';
 
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
@@ -18,55 +16,58 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
   styles: [],
 })
 export class AgregarComponent {
+  registerForm: FormGroup; // No se necesita pasar argumentos a FormGroup
 
-
-
-  registerForm: FormGroup = new FormGroup({});
-
-  puestoControl = new FormControl('', [Validators.required]);
+  // Define los controles para cada campo
+  puestoEsControl = new FormControl('', [Validators.required]);
+  puestoEnControl = new FormControl('', [Validators.required]);
   lugarControl = new FormControl('', [Validators.required]);
   desdeControl = new FormControl('', [Validators.required]);
   hastaControl = new FormControl('', [Validators.required]);
   empresaControl = new FormControl('', [Validators.required]);
-  descripcionControl = new FormControl('', [Validators.required]);
+  descripcionEsControl = new FormControl('', [Validators.required]);
+  descripcionEnControl = new FormControl('', [Validators.required]);
 
   constructor(
     public formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<AgregarComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Experiences,
+    @Inject(MAT_DIALOG_DATA) public data: Experiencia, // Utiliza la interfaz Experiencia
     private experienciaService: ExperienciaService
   ) {
+    // Utiliza formBuilder.group() para crear el formulario
     this.registerForm = this.formBuilder.group({
-      puesto: this.puestoControl,
+      puestoEs: this.puestoEsControl,
+      puestoEn: this.puestoEnControl,
       lugar: this.lugarControl,
       desde: this.desdeControl,
       hasta: this.hastaControl,
       empresa: this.empresaControl,
-      descripcion: this.descripcionControl,
+      descripcionEs: this.descripcionEsControl,
+      descripcionEn: this.descripcionEnControl,
     });
-
-    console.log(this.registerForm);
   }
 
   add(): void {
     if (this.registerForm.valid) {
-      const nuevoExp: Experiences = {
-        puesto: this.registerForm.value.puesto,
+      const nuevaExperiencia: Experiencia = {
+        
+        puesto_es: this.registerForm.value.puestoEs,
+        puesto_en: this.registerForm.value.puestoEn,
         lugar: this.registerForm.value.lugar,
-        desde: this.registerForm.value.desde.toDateString(),
-        hasta: this.registerForm.value.hasta.toDateString(),
+        desde: this.registerForm.value.desde,
+        hasta: this.registerForm.value.hasta,
         empresa: this.registerForm.value.empresa,
-        descripcion: this.registerForm.value.descripcion,
+        descripcion_es: this.registerForm.value.descripcionEs,
+        descripcion_en: this.registerForm.value.descripcionEn,
       };
-      console.log(nuevoExp);
 
-      this.experienciaService.crearExp(nuevoExp).subscribe(() => {});
-     
-      this.dialogRef.close();
+      this.experienciaService.crearExp(nuevaExperiencia).subscribe(() => {
+        // Realiza acciones adicionales después de crear la experiencia
+        // Por ejemplo, cerrar el diálogo
+        this.dialogRef.close();
+      });
     } else {
-      alert('no es valido');
-      console.log(this.registerForm);
-      this.dialogRef.close();
+      alert('Los datos no son válidos.');
     }
   }
 

@@ -8,7 +8,7 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
-import { Experiences } from 'src/app/models';
+import { Experiencia } from 'src/app/models';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
 @Component({
@@ -19,55 +19,43 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 export class EditarComponent {
   form: FormGroup;
 
-  registerForm: FormGroup = new FormGroup({});
-  puestoControl = new FormControl(this.data.puesto, [Validators.required]);
-  lugarControl = new FormControl(this.data.lugar, [Validators.required]);
-  desdeControl = new FormControl(new Date(this.data.desde), [
-    Validators.required,
-  ]);
-  hastaControl = new FormControl(new Date(this.data.hasta), [
-    Validators.required,
-  ]);
-  empresaControl = new FormControl(this.data.empresa, [Validators.required]);
-  descripcionControl = new FormControl(this.data.descripcion, [
-    Validators.required,
-  ]);
-
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<EditarComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Experiences,
+    @Inject(MAT_DIALOG_DATA) public data: Experiencia, // Utiliza la interfaz Experiencia
     private experienciaService: ExperienciaService
   ) {
-    console.log(this.data.puesto);
-
     this.form = this.fb.group({
-      puesto: this.puestoControl,
-      lugar: this.lugarControl,
-      desde: this.desdeControl,
-      hasta: this.hastaControl,
-      empresa: this.empresaControl,
-      descripcion: this.descripcionControl,
+      puestoEs: new FormControl(this.data.puesto_es, [Validators.required]),
+      puestoEn: new FormControl(this.data.puesto_en, [Validators.required]),
+      lugar: new FormControl(this.data.lugar, [Validators.required]),
+      desde: new FormControl(new Date(this.data.desde), [Validators.required]),
+      hasta: new FormControl(new Date(this.data.hasta), [Validators.required]),
+      empresa: new FormControl(this.data.empresa, [Validators.required]),
+      descripcionEs: new FormControl(this.data.descripcion_es, [Validators.required]),
+      descripcionEn: new FormControl(this.data.descripcion_en, [Validators.required]),
     });
   }
 
   onGuardarClick(): void {
     if (this.form.valid) {
-      const editedObject = {
-        id: this.data.id,
-        puesto: this.form.value.puesto,
+      const editedObject: Experiencia = {
+        ...this.data, // Mantén el ID y otros campos inalterados
+        puesto_es: this.form.value.puestoEs,
+        puesto_en: this.form.value.puestoEn,
         lugar: this.form.value.lugar,
-        desde: this.form.value.desde.toLocaleDateString(),
-        hasta: this.form.value.hasta.toLocaleDateString(),
+        desde: this.form.value.desde.toISOString(), // Convierte a formato ISO
+        hasta: this.form.value.hasta.toISOString(), // Convierte a formato ISO
         empresa: this.form.value.empresa,
-        descripcion: this.form.value.descripcion,
+        descripcion_es: this.form.value.descripcionEs,
+        descripcion_en: this.form.value.descripcionEn,
       };
 
-      this.experienciaService.actualizarExp(editedObject).subscribe(() => {});
-      this.dialogRef.close();
+      this.experienciaService.actualizarExp(editedObject).subscribe(() => {
+        this.dialogRef.close();
+      });
     } else {
-      alert('no valido');
-      this.dialogRef.close();
+      alert('Datos no válidos');
     }
   }
 

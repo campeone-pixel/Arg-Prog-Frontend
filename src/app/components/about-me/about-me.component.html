@@ -26,10 +26,10 @@
       </div>
       <div class="title">
         <h4>{{persona?.nombres + " " + persona?.apellido }}</h4>
-        <h6 class="font-weight-bolder">{{persona?.ocupacion}}</h6>
+        <h6 class="font-weight-bolder">{{currentLanguage === 'es' ? persona?.ocupacion_es : persona?.ocupacion_en}}</h6>
       </div>
       <p>
-     {{persona?.sobre_mi}}
+        {{currentLanguage === 'es' ? persona?.sobre_mi_es : persona?.sobre_mi_en}}
       </p>
       <!-- <div class="wrapper">
         <a href="contact.html"

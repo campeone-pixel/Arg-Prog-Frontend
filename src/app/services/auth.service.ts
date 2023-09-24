@@ -13,35 +13,37 @@ export class AuthService {
     new BehaviorSubject<User | null>(null);
 
   constructor(private http: HttpClient) {}
-
-  login(email: string, password: string): void {
+  login(email: string, password: string): Observable<any> {
     const loginData = {
-      id: 0,
       email: email,
-      contraseña: password,
+      password: password, // Asegúrate de que sea "password" en lugar de "contraseña"
     };
 
-    this.http
-      .post<any>(`${this.apiUrl}/login`, loginData)
-      .subscribe((response: { token: string; }) => {
-        if (response) {
-          this.usuarioLogueado.next(loginData);
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('currentUser', JSON.stringify(loginData));
-        } else {
-          this.usuarioLogueado.next(null);
+    return this.http.post<any>(`${this.apiUrl}/auth/authenticate`, loginData)
+    .pipe(
+      tap(response => {
+        if (response && response.access_token) {
+          localStorage.setItem('token', response.access_token);
         }
-      });
+      })
+    );
   }
 
   register(email: string, password: string): Observable<any> {
     const registerData = {
       email: email,
-      contraseña: password,
+      password: password, // Asegúrate de que sea "password" en lugar de "contraseña"
     };
 
-    return this.http.post<any>(`${this.apiUrl}/crear/usuario`, registerData);
+    return this.http.post<any>(`${this.apiUrl}/auth/register`, registerData).pipe(
+      tap(response => {
+        if (response && response.access_token) {
+          localStorage.setItem('token', response.access_token);
+        }
+      })
+    );// Utiliza la ruta correcta para el registro
   }
+
 
   logout(): void {
     localStorage.removeItem('token');
@@ -49,8 +51,6 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return (
-      !!localStorage.getItem('currentUser') && !!localStorage.getItem('token')
-    );
+    return !!localStorage.getItem('token');
   }
 }

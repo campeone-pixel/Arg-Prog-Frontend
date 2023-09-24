@@ -1,30 +1,39 @@
-<h1 mat-dialog-title>Editar proyecto</h1>
-<div mat-dialog-content> 
+<h1 mat-dialog-title>Agregar proyecto</h1>
+<div mat-dialog-content>
+  <form [formGroup]="myForm">
+    <mat-form-field class="mb-3 w-100">
+      <mat-label>Nombre (en español)</mat-label>
+      <input matInput formControlName="nombre_es">
+    </mat-form-field>
 
-  
-  <form [formGroup]=myForm >
     <mat-form-field class="mb-3 w-100">
-      <mat-label>Nombre</mat-label>
-      <input matInput formControlName="nombre">
+      <mat-label>Nombre (en inglés)</mat-label>
+      <input matInput formControlName="nombre_en">
     </mat-form-field>
-    
+
     <mat-form-field class="mb-3 w-100">
-      <mat-label>Descripción</mat-label>
-      <textarea matInput formControlName="descripcion"></textarea>
+      <mat-label>Descripción (en español)</mat-label>
+      <textarea matInput formControlName="descripcion_es"></textarea>
     </mat-form-field>
-    
+
+    <mat-form-field class="mb-3 w-100">
+      <mat-label>Descripción (en inglés)</mat-label>
+      <textarea matInput formControlName="descripcion_en"></textarea>
+    </mat-form-field>
+
     <mat-form-field class="mb-3 w-100">
       <mat-label>Link</mat-label>
       <input matInput formControlName="link">
     </mat-form-field>
-    
+
     <mat-form-field class="mb-3 w-100">
-      <mat-label>Link</mat-label>
+      <mat-label>Link de la foto</mat-label>
       <input matInput formControlName="link_foto">
     </mat-form-field>
-    <div mat-dialog-action >
-      <button mat-button (click)="add()">Submit</button>
-      <button mat-button (click)="onNoClick($event)">Cancelar</button>
+
+    <div mat-dialog-action>
+      <button mat-button (click)="edit()">Guardar</button>
+      <button mat-button (click)="onCancelClick($event)">Cancelar</button>
     </div>
   </form>
 </div>

@@ -18,6 +18,7 @@ import { ProjectsModule } from './components/projects/projects.module';
 import { EducationModule } from './components/education/education.module';
 import { AuthModule } from './components/auth/auth.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MenuIdiomasComponent } from './components/menu-idiomas/menu-idiomas.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     HomeComponent,
     BannerComponent,
     ScrollSpyDirective,
+    MenuIdiomasComponent,
     
   ],
   imports: [

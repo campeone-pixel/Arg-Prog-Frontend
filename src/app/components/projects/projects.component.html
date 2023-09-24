@@ -7,11 +7,11 @@
     </div>
   </div>
 
-  <h2>PROYECTOS</h2>
+  <h2>{{ selectedLanguage === 'es' ? 'PROYECTOS' : 'PROJECTS' }}</h2>
 
   <section class="" *ngFor="let project of proyectos">
     <div class="container-img">
-      <img src="{{ project?.link_foto }}" alt="personal photo" />
+      <img src="{{ project.link_foto }}" alt="personal photo" />
     </div>
     <div class="text-container">
       <div class="modificaciones" *ngIf="isAuthenticated">
@@ -25,9 +25,15 @@
         </div>
       </div>
 
-      <h3>{{ project.nombre }}</h3>
+      <h3>{{ selectedLanguage === 'es' ? project.nombre_es : project.nombre_en }}</h3>
 
-      <p>{{ project.descripcion }}</p>
+      <p>
+        {{
+          selectedLanguage === 'es'
+            ? project.descripcion_es
+            : project.descripcion_en
+        }}
+      </p>
 
       <div class="wrapper">
         <a href="{{ project.link }}"><span>GITHUB</span></a>
