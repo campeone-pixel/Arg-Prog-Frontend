@@ -4,16 +4,12 @@
 
 .experience {
   display: flex;
-
   flex-direction: column;
   width: 100%;
   position: relative;
-
   .agregar{
-
     color:v.$text-icon;
   }
-
   .card-exp {
     flex: 1;
 
@@ -22,7 +18,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
-
     section {
       max-width: 420px;
       padding: 1.3em;
@@ -31,14 +26,12 @@
       grid-template-columns: 0.1fr 0.9fr;
       justify-content: start;
       justify-items: start;
-
       align-items: flex-start;
       background-color: v.$dark-primary;
       border-radius: 10px 10px 10px 10px;
       border-radius: 5px;
       border: 2px solid v.$divider-color;
       position: relative;
-
       .modificaciones{
         color:v.$text-icon;
       }
@@ -48,7 +41,6 @@
         grid-column: 1;
         grid-row: 1 / 3;
       }
-
       .description {
         font-family: t.$p;
         font-weight: 200;
@@ -57,13 +49,11 @@
         h4{
           font-family: t.$title;
         }
-      
       }
       .title {
         flex: 1;
         padding: 0;
         
-
       }
     }
   }

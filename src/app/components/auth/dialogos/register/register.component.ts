@@ -30,7 +30,7 @@ if (this.registerForm.valid) {
   this.authService.register(
     this.registerForm.value.email,
     this.registerForm.value.password
-  ).subscribe()
+  )
 
   this.dialogRef.close();
 } else{

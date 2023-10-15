@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <h2>EDUCATION</h2>
+  <h2>{{jsonData?.menu?.educacion}}</h2>
   <section class="card-edu">
     <section *ngFor="let education of educacion">
       <div class="modificaciones" *ngIf="isAuthenticated">

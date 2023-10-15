@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -12,38 +13,42 @@ export class AuthService {
   usuarioLogueado: BehaviorSubject<User | null> =
     new BehaviorSubject<User | null>(null);
 
-  constructor(private http: HttpClient) {}
-  login(email: string, password: string): Observable<any> {
+  constructor(
+    private http: HttpClient,
+    private jwtHelper: JwtHelperService
+  ) {}
+
+  login(email: string, password: string): void {
     const loginData = {
       email: email,
-      password: password, // Asegúrate de que sea "password" en lugar de "contraseña"
+      password: password,
     };
 
-    return this.http.post<any>(`${this.apiUrl}/auth/authenticate`, loginData)
-    .pipe(
-      tap(response => {
+    this.http
+      .post<any>(`${this.apiUrl}/auth/authenticate`, loginData)
+      .subscribe((response) => {
         if (response && response.access_token) {
           localStorage.setItem('token', response.access_token);
+          this.usuarioLogueado.next(this.jwtHelper.decodeToken(response.access_token));
         }
-      })
-    );
+      });
   }
 
-  register(email: string, password: string): Observable<any> {
+  register(email: string, password: string): void {
     const registerData = {
       email: email,
-      password: password, // Asegúrate de que sea "password" en lugar de "contraseña"
+      password: password,
     };
 
-    return this.http.post<any>(`${this.apiUrl}/auth/register`, registerData).pipe(
-      tap(response => {
+    this.http
+      .post<any>(`${this.apiUrl}/auth/register`, registerData)
+      .subscribe((response) => {
         if (response && response.access_token) {
           localStorage.setItem('token', response.access_token);
+          this.usuarioLogueado.next(this.jwtHelper.decodeToken(response.access_token));
         }
-      })
-    );// Utiliza la ruta correcta para el registro
+      });
   }
-
 
   logout(): void {
     localStorage.removeItem('token');
@@ -52,5 +57,18 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return !!localStorage.getItem('token');
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  hasPermission(permission: string): boolean {
+    const token = this.getToken();
+    if (token) {
+      const decodedToken = this.jwtHelper.decodeToken(token);
+      return decodedToken.permissions.includes(permission);
+    }
+    return false;
   }
 }

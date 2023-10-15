@@ -1,87 +1,15 @@
 {
-  "persona": [
-    {
-      "id": 1,
-      "nombres": "matias",
-      "apellido": "poses",
-      "nacionalidad": "argentina",
-      "email": "map_rc@hotmail.com",
-      "sobre_mi": "Empeze aprendiendo python porque necesitaba buscar una mejor manera de hacer mi trabajo y desde ahi no pare de aprender otros lenguajes. Ahora me di cuenta que la programacion es lo que me quiero dedicar. ",
-      "ocupacion": "programador fullstack",
-      "image_background_header": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
-      "image_perfil": "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
-      "image_sobre_mi": "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg"
-    },
-    {
-      "id": 2,
-      "nombres": "matias2",
-      "apellido": "poses2",
-      "nacionalidad": "argentino2",
-      "email": "map_rc@hotmail.com",
-      "sobre_mi": "sdfgdsgsdgfsdfg gsdfgdsf gsd gdg seargsd g sergsgh dfer teg ge g sdrgdh  ersh rgrg ser gh hrth yh eh tjrhj rteh rhjrt ha hj g hh sg reer ger ge ge hrjrt hjry rt yrthj rteh rtdhdfgj gf jty jtyer jty jtyjk tyj tyrj",
-      "ocupacion": "programador",
-      "image_background_header": "",
-      "image_perfil": ""
-    }
-  ],
-  "skills": [
-    {
-      "id": 1,
-      "nombre": "javascript",
-      "porcentaje": "40"
-    },
-    {
-      "id": 2,
-      "nombre": "python",
-      "porcentaje": "80"
-    },
-    {
-      "nombre": "java",
-      "porcentaje": 40,
-      "id": 3
-    },
-    {
-      "nombre": "java2",
-      "porcentaje": 40,
-      "id": 4
-    }
-  ],
-  "projects": [
-    {
-      "id": 1,
-      "nombre": "blog",
-      "descripcion": "Un Blog que hice para el curso de Python en CoderHouse",
-      "link": "https://github.com/campeone-pixel/blog",
-      "link_foto": "sdfsdfdsfd"
-    }
-  ],
-  "experiences": [
-    {
-      "id": 1,
-      "puesto": "111111",
-      "lugar": "11111",
-      "desde": "5/4/2023",
-      "hasta": "5/18/2023",
-      "empresa": "empresa provincial de la energia",
-      "descripcion": "dfasdfasdf fasdfasdfa sdafgsdfg dfgh sh dfghd fh  fthj fgjdthsrt  jdyjfyjdjdghjdghdfgh"
-    }
-  ],
-  "educations": [
-    {
-      "id": 2,
-      "escuela": "coderhouse",
-      "titulo": "javascript",
-      "imagen": "https://drive.google.com/file/d/1P0JI0v0POO2FUKD_cz4V0_zb6fja3qjo/view?usp=share_link",
-      "carrera": "desarrollo webbbb",
-      "inicio": "Thu May 18 2023",
-      "fin": "Thu May 18 2023"
-    }
-  ],
-  "users": [
-    {
-      "email": "admin@admin.com",
-      "password": "$2a$10$t2t2CnFOd/1Qzt6ehg6l9ennZ6WQpw5HjP09JAR6S5Wlo0HtPnOZi",
-      "id": 1
-    }
-  ]
+  "menu": {
+    "home": "inicio",
+    "sobreMi": "sobre mi",
+    "experiencias": "experiencias",
+    "educacion": "educacion",
+    "habilidades":"habilidades",
+    "proyectos":"proyectos"
+  },
+  "selectorIdiomas": {
+    "espaniol": "espaniol",
+    "ingles": "ingles"
+  }
+
 }

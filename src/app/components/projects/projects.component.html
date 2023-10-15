@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <h2>{{ selectedLanguage === 'es' ? 'PROYECTOS' : 'PROJECTS' }}</h2>
+  <h2>{{ jsonData?.menu?.proyectos }}</h2>
 
   <section class="" *ngFor="let project of proyectos">
     <div class="container-img">

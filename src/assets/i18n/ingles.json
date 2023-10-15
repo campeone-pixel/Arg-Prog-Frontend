@@ -1,0 +1,15 @@
+{
+    "menu": {
+      "home": "home",
+      "sobreMi": "about me",
+      "experiencias": "experiences",
+      "educacion": "education",
+      "habilidades":"skills",
+      "proyectos":"projects"
+    },
+    "selectorIdiomas": {
+      "espaniol": "spanish",
+      "ingles": "english"
+    }
+  
+  }

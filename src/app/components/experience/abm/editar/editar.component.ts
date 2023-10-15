@@ -40,7 +40,7 @@ export class EditarComponent {
   onGuardarClick(): void {
     if (this.form.valid) {
       const editedObject: Experiencia = {
-        ...this.data, // Mantén el ID y otros campos inalterados
+        id:this.data.id,
         puesto_es: this.form.value.puestoEs,
         puesto_en: this.form.value.puestoEn,
         lugar: this.form.value.lugar,

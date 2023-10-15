@@ -57,7 +57,7 @@ export class AgregarComponent implements OnInit, OnDestroy {
     if (this.personaForm.valid) {
       const nuevaPersona: Persona = {
         ...this.personaForm.value,
-        id: 0, // Opcional: Puedes asignar un valor al ID si es necesario
+       
       };
 
       const peticionCrear = this.personaService

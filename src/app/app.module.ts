@@ -19,7 +19,9 @@ import { EducationModule } from './components/education/education.module';
 import { AuthModule } from './components/auth/auth.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MenuIdiomasComponent } from './components/menu-idiomas/menu-idiomas.component';
-
+import { AuthInterceptor } from './helper/auth.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,14 @@ import { MenuIdiomasComponent } from './components/menu-idiomas/menu-idiomas.com
     
   ],
   imports: [
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function tokenGetter() {
+          
+          return localStorage.getItem('token');
+        }
+      },
+    }),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -44,6 +54,12 @@ import { MenuIdiomasComponent } from './components/menu-idiomas/menu-idiomas.com
     AuthModule,
     MatToolbarModule
    
+  ],  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true, // Esto permite que haya varios interceptores
+    },
   ],
  
   bootstrap: [AppComponent],

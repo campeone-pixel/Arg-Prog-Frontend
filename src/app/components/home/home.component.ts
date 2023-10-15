@@ -30,11 +30,6 @@ export class HomeComponent implements OnInit {
     );
   }
   ngOnInit(): void {
-    if (this.authService.isAuthenticated()) {
-      const usuarioString = localStorage.getItem('currentUser') || '';
-      const usuario: User = JSON.parse(usuarioString);
-
-      this.authService.login(usuario.email, usuario.contraseña);
-    }
+   
   }
 }

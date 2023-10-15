@@ -66,7 +66,7 @@
                 aria-current="page"
                 [routerLink]="['/']"
                 fragment="home"
-                ><span>HOME</span></a
+                ><span>{{data?.menu?.home | uppercase}}</span></a
               >
             </li>
             <li class="nav-item">
@@ -76,7 +76,7 @@
                 class="nav-link active"
                 aria-current="page"
                 [routerLink]="['/']"
-                ><span>SOBRE MI</span></a
+                ><span>{{data?.menu?.sobreMi | uppercase}}</span></a
               >
             </li>
             <li class="nav-item">
@@ -88,7 +88,7 @@
                 class="nav-link active"
                 aria-current="page"
                 [routerLink]="['/']"
-                ><span>EXPERIENCIAS</span></a
+                ><span>{{data?.menu?.experiencias | uppercase}}</span></a
               >
             </li>
             <li class="nav-item">
@@ -100,7 +100,7 @@
                 class="nav-link active"
                 aria-current="page"
                 [routerLink]="['/']"
-                ><span>EDUCACION</span></a
+                ><span>{{data?.menu?.educacion | uppercase}}</span></a
               >
             </li>
             <li class="nav-item">
@@ -110,7 +110,7 @@
                 class="nav-link active"
                 aria-current="page"
                 [routerLink]="['/']"
-                ><span>HABILIDADES</span></a
+                ><span>{{data?.menu?.habilidades | uppercase}}</span></a
               >
             </li>
             <li class="nav-item">
@@ -120,7 +120,7 @@
                 class="nav-link active"
                 aria-current="page"
                 [routerLink]="['/']"
-                ><span>PROYECTOS</span></a
+                ><span>{{data?.menu?.proyectos | uppercase}}</span></a
               >
             </li>
           </div>

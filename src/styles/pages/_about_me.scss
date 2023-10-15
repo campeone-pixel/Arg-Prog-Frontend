@@ -4,17 +4,13 @@
 
 .aboutme {
   height: auto;
-
   gap: 1em;
+  width: 100%;
   position: relative;
-
   overflow: hidden;
-
-  .agregar{
-
-    color:v.$text-icon;
+  .agregar {
+    color: v.$text-icon;
   }
-
   section {
     @include a.fx-col-all-center;
     border-radius: 5px;
@@ -24,39 +20,31 @@
     border: 2px solid v.$divider-color;
     padding: 1em;
     gap: 2em;
-
     .text-container {
       padding: 0.5em;
       flex: 1 1 50%;
       height: 100%;
       color: v.$text-icon;
-
       display: flex;
-
       flex-direction: column;
       gap: 2em;
       position: relative;
-
       h4 {
         align-self: flex-start;
-
         font-family: t.$title;
         text-transform: uppercase;
       }
-
       h6 {
         font-family: t.$subtitle;
         text-transform: uppercase;
         letter-spacing: 3px;
       }
-
       p {
         flex: 1;
         font-family: t.$p;
         font-style: normal;
         line-height: 1.5em;
       }
-
       .wrapper {
         align-self: flex-end;
       }
@@ -73,7 +61,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-     
         img {
           width: 100%;
           height: auto;

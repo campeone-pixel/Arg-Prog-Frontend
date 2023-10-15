@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Educacion, Persona } from 'src/app/models';
 import { EducacionService } from 'src/app/services/educacion.service';
@@ -8,34 +8,44 @@ import { EditarComponent } from './abm/editar/editar.component';
 import { EliminarComponent } from './abm/eliminar/eliminar.component';
 import { AuthService } from 'src/app/services/auth.service';
 
-import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
+
 import { Subscription } from 'rxjs';
 import { LanguageService } from 'src/app/services/language-service.service';
-registerLocaleData(localeEs);
+import { JsonLoaderService } from 'src/app/services/json-loader.service';
+
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss'],
 })
-export class EducationComponent implements OnInit {
+export class EducationComponent implements OnInit,OnDestroy {
   educacion: Educacion[] = [];
   isAuthenticated: boolean = false;
-  selectedLanguage: string = 'es';
   private languageSubscription: Subscription;
+  private jsonDataSubscription: Subscription;
+  selectedLanguage: string = 'es';
+  jsonData: any; // Variable para almacenar los datos JSON
 
   constructor(
     private datosEducacion: EducacionService,
     public dialog: MatDialog,
     private authService: AuthService,
-    private languageService: LanguageService
+    
+    private languageService: LanguageService,
+    private jsonLoaderService: JsonLoaderService
   ) {
     this.datosEducacion.traerEducations().subscribe((data) => {
       this.educacion = data;
     });
     this.languageSubscription = this.languageService.currentLanguage$.subscribe((language) => {
       this.selectedLanguage = language;
+      this.jsonLoaderService.loadJsonData(language);
+    });
+
+    this.jsonDataSubscription = this.jsonLoaderService.jsonData$.subscribe((jsonData) => {
+      // Almacena los datos JSON en la variable jsonData
+      this.jsonData = jsonData;
     });
   }
 
@@ -46,10 +56,15 @@ export class EducationComponent implements OnInit {
   
   }
 
-  ngOnDestroy(): void {
-    // Cancela la suscripción al servicio de lenguaje en ngOnDestroy
+
+  ngOnDestroy() {
+    // Limpiar las suscripciones cuando el componente se destruye
     if (this.languageSubscription) {
       this.languageSubscription.unsubscribe();
+    }
+
+    if (this.jsonDataSubscription) {
+      this.jsonDataSubscription.unsubscribe();
     }
   }
 
