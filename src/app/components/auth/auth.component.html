@@ -1,5 +1,7 @@
-<nav >
-  <mat-toolbar color="primary" >
+<nav>
+  <mat-toolbar color="primary">
+    <app-menu-idiomas></app-menu-idiomas>
+
     <mat-icon
       *ngIf="!isAuthenticated"
       (click)="openLoginDialog()"

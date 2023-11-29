@@ -17,7 +17,9 @@ export class EducacionService {
   constructor(private http: HttpClient) {}
 
   traerEducations(): Observable<Educacion[]> {
-    return this.http.get<Educacion[]>(`${this.apiUrl}/${this.endpoint}/todo`);
+    return this.http.get<any>(`${this.apiUrl}/${this.endpoint}/todo`).pipe(
+      map(response => response.dataResponse) // Accede a los datos dentro de dataResponse
+    );
   }
 
   crearEdu(edu: Educacion): Observable<void> {

@@ -15,7 +15,9 @@ export class PersonaService {
   constructor(private http: HttpClient) {}
 
   traerPersonas(): Observable<Persona[]> {
-    return this.http.get<Persona[]>(`${this.apiUrl}/${this.endpoint}/todo`);
+    return this.http.get<any>(`${this.apiUrl}/${this.endpoint}/todo`).pipe(
+      map(response => response.dataResponse) // Accede a los datos dentro de dataResponse
+    );
   }
 
   crearPer(per: Persona): Observable<Persona> {

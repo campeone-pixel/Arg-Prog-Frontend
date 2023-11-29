@@ -7,6 +7,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogosModule } from './dialogos/dialogos.module';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+
+import { MenuIdiomasModule } from '../menu-idiomas/menu-idiomas.module';
 @NgModule({
   declarations: [AuthComponent,],
   imports: [
@@ -14,7 +16,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatDialogModule,
     DialogosModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MenuIdiomasModule
   ],
   exports:[AuthComponent]
 })

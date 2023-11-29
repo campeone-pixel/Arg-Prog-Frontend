@@ -41,7 +41,7 @@ export class AgregarComponent {
         imagen: this.educationForm.value.imagen,
         carrera_es: this.educationForm.value.carrera_es,
         carrera_en: this.educationForm.value.carrera_en,
-        inicio: this.educationForm.value.inicio,
+        inicio: (this.educationForm.value.inicio),
         fin: this.educationForm.value.fin,
       };
 
@@ -56,6 +56,11 @@ export class AgregarComponent {
 
       this.dialogRef.close();
     }
+  }
+
+  private formatDate(dateString: string): string {
+    const [year, month, day] = dateString.split('-');
+    return `${day}-${month}-${year}`;
   }
 
   onCancel() {

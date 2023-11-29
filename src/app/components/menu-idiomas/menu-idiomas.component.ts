@@ -4,8 +4,7 @@ import { LanguageService } from 'src/app/services/language-service.service';
 @Component({
   selector: 'app-menu-idiomas',
   templateUrl: './menu-idiomas.component.html',
-  styles: [
-  ]
+  styleUrls: ['./menu-idiomas.scss'],
 })
 export class MenuIdiomasComponent {
   availableLanguages: string[] = ['es', 'en']; // Lista de idiomas disponibles
@@ -21,6 +20,10 @@ export class MenuIdiomasComponent {
       this.selectedLanguage = selectedLanguage;
       this.languageService.setCurrentLanguage(selectedLanguage);
     }
+  }
+
+  changeLanguageMenu(language: string): void {
+    this.languageService.setCurrentLanguage(language);
   }
   
   

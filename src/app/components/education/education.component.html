@@ -27,11 +27,11 @@
         <h4 *ngIf="selectedLanguage === 'en'">{{ education.carrera_en }}</h4>
         <h6 class="font-weight-bolder">
           {{ education.escuela }}
-          <span class="font-weight-light"
-            >&nbsp;|&nbsp;{{
-              education.inicio | date : "dd MMMM yyyy" : "" : "es"
-            }}
-            &ndash; {{ education.fin | date : "dd MMMM yyyy" : "" : "es" }}
+          <span class="font-weight-light">
+            &nbsp;|&nbsp;
+            {{
+              education.inicio | date : "dd-MM-yyyy"
+            }} - {{ education.fin | date : "dd-MM-yyyy" }}
           </span>
         </h6>
         <div class="container-img">

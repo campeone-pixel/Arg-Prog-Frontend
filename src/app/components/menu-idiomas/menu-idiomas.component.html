@@ -1,7 +1,11 @@
-<div class="language-selector">
-    <label for="languageSelect">Selecciona un idioma:</label>
-    <select id="languageSelect" (change)="changeLanguage($event)">
-      <option *ngFor="let language of availableLanguages" [value]="language">{{ language }}</option>
-    </select>
-  </div>
-  
+
+
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>language</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let language of availableLanguages" [value]="language" (click)="changeLanguageMenu(language)">
+    {{ language }}
+  </button>
+ 
+</mat-menu>

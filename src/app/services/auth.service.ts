@@ -27,9 +27,9 @@ export class AuthService {
     this.http
       .post<any>(`${this.apiUrl}/auth/authenticate`, loginData)
       .subscribe((response) => {
-        if (response && response.access_token) {
-          localStorage.setItem('token', response.access_token);
-          this.usuarioLogueado.next(this.jwtHelper.decodeToken(response.access_token));
+        if (response && response.dataResponse.access_token) {
+          localStorage.setItem('token', response.dataResponse.access_token);
+          this.usuarioLogueado.next(this.jwtHelper.decodeToken(response.dataResponse.access_token));
         }
       });
   }
@@ -43,9 +43,9 @@ export class AuthService {
     this.http
       .post<any>(`${this.apiUrl}/auth/register`, registerData)
       .subscribe((response) => {
-        if (response && response.access_token) {
-          localStorage.setItem('token', response.access_token);
-          this.usuarioLogueado.next(this.jwtHelper.decodeToken(response.access_token));
+        if (response && response.dataResponse.access_token) {
+          localStorage.setItem('token', response.dataResponse.access_token);
+          this.usuarioLogueado.next(this.jwtHelper.decodeToken(response.dataResponse.access_token));
         }
       });
   }

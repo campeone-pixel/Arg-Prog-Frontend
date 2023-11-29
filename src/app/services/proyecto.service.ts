@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable,EventEmitter  } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Proyecto } from '../models';
 
@@ -15,7 +15,9 @@ export class ProyectoService {
   constructor(private http: HttpClient) {}
 
   traerProyectos(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(`${this.apiUrl}/${this.endpoint}/todo`);
+    return this.http.get<any>(`${this.apiUrl}/${this.endpoint}/todo`).pipe(
+      map(response => response.dataResponse) // Accede a los datos dentro de dataResponse
+    );
   }
 
   crearProy(proy: Proyecto): Observable<Proyecto> {

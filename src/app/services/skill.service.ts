@@ -3,7 +3,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable,EventEmitter  } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Skill } from '../models';
 
@@ -18,7 +18,9 @@ export class SkillService {
   constructor(private http: HttpClient) {}
 
   traerSkills(): Observable<Skill[]> {
-    return this.http.get<Skill[]>(`${this.apiUrl}/${this.endpoint}/todo`);
+    return this.http.get<any>(`${this.apiUrl}/${this.endpoint}/todo`).pipe(
+      map(response => response.dataResponse) // Accede a los datos dentro de dataResponse
+    );;
   }
 
   crearSkill(skill: Skill): Observable<Skill> {

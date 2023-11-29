@@ -1,25 +1,23 @@
 <div class="container-grid">
-    
-    <app-header [currentSection]='currentSection' ></app-header>
-    
-    
-    <main id="parentDiv" scrollSpy [spiedTags]="['APP']" (sectionChange)="onSectionChange($event)"
-        style="overflow-y: scroll;">
-            
-        
-            <app-home id="home"></app-home>
-       
-            <app-about-me id="aboutme"></app-about-me>
-            <app-experience id="experience"></app-experience>
-            <app-education id="education"></app-education>
-            
-            <app-hardsoftskill id="skills"></app-hardsoftskill>
-            <app-projects id="projects"></app-projects>
-        
-            <app-footer></app-footer>
-    </main>
-    
-    
-   
-</div>
+  <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+  <app-header [currentSection]="currentSection"></app-header>
 
+  <main
+    id="parentDiv"
+    scrollSpy
+    [spiedTags]="['APP']"
+    (sectionChange)="onSectionChange($event)"
+    style="overflow-y: scroll"
+  >
+    <app-home id="home"></app-home>
+
+    <app-about-me id="aboutme"></app-about-me>
+    <app-experience id="experience"></app-experience>
+    <app-education id="education"></app-education>
+
+    <app-hardsoftskill id="skills"></app-hardsoftskill>
+    <app-projects id="projects"></app-projects>
+
+    <app-footer></app-footer>
+  </main>
+</div>
